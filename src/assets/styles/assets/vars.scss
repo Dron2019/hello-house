@@ -1,0 +1,54 @@
+$default-font: 'gilroy', sans-serif;
+$default-font2: 'montser', sans-serif;
+
+$mc2: #ff554c;
+$mc3: #e5df06;
+$mc4: #4f90b6;
+$gray: rgb(135, 135, 151);
+$text: #22223e;
+$wc: #fff;
+$bc: #000;
+$bc2: #000;
+
+$mc: #1a2941;
+$bg: #fafafa;
+$light: #fcfcfc;
+$dark: #1a2941;
+$gold: #cfa46e;
+$red: #e42629;
+$green: #008b64;
+$white: #ffffff;
+$black: #292935;
+$text-dark: #2c2e65;
+:root {
+  --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+  --header-h: 120px;
+  --logo-w: 193px;
+  --logo-h: 60px;
+  --sliceFigure: 239px;
+  --sliceFigure-big: 541px;
+  --padding: #{vw(155, 1920)};
+  --pad-h: #{vw(80, 1920)};
+}
+
+// @media screen and (max-width: 1440px) {
+//   :root {
+//     --header-h: 90px;
+//     --logo-w: 120px;
+//     --sliceFigure-big: 362px;
+//   }
+// }
+// @media screen and (max-width: 992px) {
+//   :root {
+//     --header-h: 110px;
+//     --logo-w: 90px;
+//     --sliceFigure-big: 44px;
+//   }
+// }
+// @media screen and (max-width: 576px) {
+//   :root {
+//     --header-h: 70px;
+//     --sliceFigure: 100px;
+//     --sliceFigure-big: 100px;
+//   }
+// }

@@ -1,0 +1,21 @@
+header.header
+    .header__left
+        a(href='index.html').header__logo
+            +svg('logo')
+    .header__right
+        .header__build-medal 
+            img(src="assets/images/build2021.jpg")
+            +svg('build-medal')
+        a(href="#").header__link Новини та акції
+        include ../components/lang/lang.pug
+        a(href='tel:+38 0442229970').header__link-call +38 (044) 222 99 70
+        a(href='#').header__link-realty.js-button
+            span Обрати квартиру
+        .burger(data-open-menu)
+            span.burger__name Меню
+            .burger__icon
+                +svg('burger')
+
+
+
+    

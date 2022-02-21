@@ -1,0 +1,445 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'flat-page'
+    var class_page = 'home'
+    var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+   
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/video-btn.js')
+block content
+  //- include ../includes/breadcrumbs.pug
+  section.main-section
+    video(class="video" autoplay loop preload="auto" muted width="100%" height="100%") 
+      <source src="./assets/images/UA_Kyiv.mp4" type="video/mp4">
+    h1 Привіт, моє сімейне гніздечко!
+    .btn-wrap 
+      .location-svg
+        a(href="#").main-section__link
+          .hover-text Хід будівництва онлайн
+          +svg('location').js-hover
+      .build-svg 
+        a(href="#").main-section__link
+          .hover-text м. Київ, Дніпровський район, вул. Миколи Кибальчича, 1
+          +svg('build').js-hover
+    .scroll-down 
+      +svg('scroll-down')
+      span Scroll 
+
+  section.about-section 
+    .video-container 
+      video(class="video2" autoplay loop preload="auto" muted width="100%" height="100%") 
+        <source src="./assets/images/hello.mp4" type="video/mp4">
+      <svg class="svg" preserveAspectRatio="none" width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM574.593 401.191V200H796V852H574.823V650.809C465.614 650.809 377.097 740.877 377.097 852H155V200H376.867C376.867 311.123 465.384 401.191 574.593 401.191Z" fill="white"/>
+        <path class="texture" d="M575.093 401.191V200.5H795.5V851.5H575.323V650.809V650.309H574.823C465.493 650.309 376.862 740.339 376.597 851.5H155.5V200.5H376.368C376.633 311.661 465.263 401.691 574.593 401.691H575.093V401.191Z" fill="white"/>
+        <path d="M575.093 401.191V200.5H795.5V851.5H575.323V650.809V650.309H574.823C465.493 650.309 376.862 740.339 376.597 851.5H155.5V200.5H376.368C376.633 311.661 465.263 401.691 574.593 401.691H575.093V401.191Z" fill="url(#pattern0)" fill-opacity="0.5"/>
+        <path d="M575.093 401.191V200.5H795.5V851.5H575.323V650.809V650.309H574.823C465.493 650.309 376.862 740.339 376.597 851.5H155.5V200.5H376.368C376.633 311.661 465.263 401.691 574.593 401.691H575.093V401.191Z" stroke="#292935"/>
+        <path d="M197.192 240.328V233.2H199.4V250H197.192V242.44H189.032V250H186.8V233.2H189.032V240.328H197.192ZM204.507 242.56V247.888H212.307V250H202.275V233.2H212.187V235.312H204.507V240.472H211.587V242.56H204.507ZM216.514 233.2V247.888H223.762V250H214.282V233.2H216.514ZM227.513 233.2V247.888H234.761V250H225.281V233.2H227.513ZM234.243 241.6C234.243 239.168 235.083 237.112 236.763 235.432C238.443 233.736 240.499 232.888 242.931 232.888C245.363 232.888 247.419 233.736 249.099 235.432C250.795 237.112 251.643 239.168 251.643 241.6C251.643 244.016 250.795 246.072 249.099 247.768C247.419 249.464 245.363 250.312 242.931 250.312C240.499 250.312 238.443 249.464 236.763 247.768C235.083 246.056 234.243 244 234.243 241.6ZM249.411 241.6C249.411 239.744 248.787 238.192 247.539 236.944C246.323 235.68 244.787 235.048 242.931 235.048C241.091 235.048 239.547 235.68 238.299 236.944C237.067 238.208 236.451 239.76 236.451 241.6C236.451 243.424 237.067 244.976 238.299 246.256C239.547 247.504 241.091 248.128 242.931 248.128C244.787 248.128 246.323 247.504 247.539 246.256C248.787 244.976 249.411 243.424 249.411 241.6ZM197.192 266.328V259.2H199.4V276H197.192V268.44H189.032V276H186.8V259.2H189.032V266.328H197.192ZM201.387 267.6C201.387 265.168 202.227 263.112 203.907 261.432C205.587 259.736 207.643 258.888 210.075 258.888C212.507 258.888 214.563 259.736 216.243 261.432C217.939 263.112 218.787 265.168 218.787 267.6C218.787 270.016 217.939 272.072 216.243 273.768C214.563 275.464 212.507 276.312 210.075 276.312C207.643 276.312 205.587 275.464 203.907 273.768C202.227 272.056 201.387 270 201.387 267.6ZM216.555 267.6C216.555 265.744 215.931 264.192 214.683 262.944C213.467 261.68 211.931 261.048 210.075 261.048C208.235 261.048 206.691 261.68 205.443 262.944C204.211 264.208 203.595 265.76 203.595 267.6C203.595 269.424 204.211 270.976 205.443 272.256C206.691 273.504 208.235 274.128 210.075 274.128C211.931 274.128 213.467 273.504 214.683 272.256C215.931 270.976 216.555 269.424 216.555 267.6ZM220.417 270.36V259.2H222.649V270.264C222.649 271.464 223.001 272.408 223.705 273.096C224.425 273.784 225.433 274.128 226.729 274.128C228.025 274.128 229.025 273.784 229.729 273.096C230.449 272.408 230.809 271.464 230.809 270.264V259.2H233.017V270.36C233.017 272.184 232.433 273.632 231.265 274.704C230.097 275.776 228.585 276.312 226.729 276.312C224.857 276.312 223.337 275.776 222.169 274.704C221.001 273.632 220.417 272.184 220.417 270.36ZM241.134 276.312C239.566 276.312 238.222 275.952 237.102 275.232C235.998 274.496 235.222 273.48 234.774 272.184L236.694 271.08C237.334 273.112 238.83 274.128 241.182 274.128C242.318 274.128 243.19 273.896 243.798 273.432C244.422 272.968 244.734 272.336 244.734 271.536C244.734 270.752 244.43 270.152 243.822 269.736C243.278 269.368 242.262 268.944 240.774 268.464L239.166 267.936C238.814 267.792 238.35 267.584 237.774 267.312C237.214 267.024 236.806 266.736 236.55 266.448C235.846 265.68 235.494 264.744 235.494 263.64C235.494 262.168 236.006 261.016 237.03 260.184C238.054 259.32 239.302 258.888 240.774 258.888C242.086 258.888 243.238 259.216 244.23 259.872C245.222 260.528 245.966 261.424 246.462 262.56L244.59 263.64C243.87 261.912 242.598 261.048 240.774 261.048C239.862 261.048 239.126 261.272 238.566 261.72C238.006 262.168 237.726 262.776 237.726 263.544C237.726 264.28 237.99 264.84 238.518 265.224C239.062 265.624 239.974 266.024 241.254 266.424L242.238 266.736C242.782 266.944 243.078 267.056 243.126 267.072C243.638 267.264 244.198 267.528 244.806 267.864C245.238 268.104 245.67 268.472 246.102 268.968C246.662 269.528 246.942 270.368 246.942 271.488C246.942 272.96 246.406 274.136 245.334 275.016C244.246 275.88 242.846 276.312 241.134 276.312ZM250.98 268.56V273.888H258.78V276H248.748V259.2H258.66V261.312H250.98V266.472H258.06V268.56H250.98Z" fill="#292935"/>
+        <path d="M659.597 773.2V787.888H661.397V793.216H659.165V790H648.077V793.216H645.845V787.888H647.309C648.349 786.576 648.869 784.608 648.869 781.984V773.2H659.597ZM649.829 787.888H657.365V775.288H651.101V782.032C651.101 784.56 650.677 786.512 649.829 787.888ZM675.925 790H673.693V777.472L665.053 790H663.253V773.2H665.485V785.752L674.125 773.2H675.925V790ZM688.398 781.288C689.182 781.672 689.798 782.208 690.246 782.896C690.694 783.584 690.918 784.368 690.918 785.248C690.918 786.592 690.446 787.72 689.502 788.632C688.558 789.544 687.406 790 686.046 790H678.798V773.2H685.518C686.846 773.2 687.958 773.64 688.854 774.52C689.766 775.4 690.222 776.488 690.222 777.784C690.222 779.288 689.614 780.456 688.398 781.288ZM685.518 775.288H681.03V780.424H685.518C686.222 780.424 686.814 780.176 687.294 779.68C687.774 779.184 688.014 778.576 688.014 777.856C688.014 777.152 687.766 776.552 687.27 776.056C686.79 775.544 686.206 775.288 685.518 775.288ZM681.03 787.912H686.046C686.798 787.912 687.43 787.648 687.942 787.12C688.454 786.592 688.71 785.944 688.71 785.176C688.71 784.424 688.446 783.784 687.918 783.256C687.422 782.728 686.798 782.464 686.046 782.464H681.03V787.912ZM705.516 790H703.284V777.472L694.644 790H692.844V773.2H695.076V785.752L703.716 773.2H705.516V790ZM707.022 773.2H719.142V775.312H714.174V790H711.966V775.312H707.022V773.2ZM733.303 790H731.071V777.472L722.431 790H720.631V773.2H722.863V785.752L731.503 773.2H733.303V790ZM744.072 790.312C741.512 790.312 739.408 789.472 737.76 787.792C736.112 786.128 735.288 784.064 735.288 781.6C735.288 779.136 736.112 777.072 737.76 775.408C739.408 773.728 741.512 772.888 744.072 772.888C745.592 772.888 747 773.256 748.296 773.992C749.592 774.728 750.6 775.72 751.32 776.968L749.376 778.096C748.896 777.168 748.176 776.432 747.216 775.888C746.272 775.328 745.224 775.048 744.072 775.048C742.12 775.048 740.536 775.672 739.32 776.92C738.104 778.152 737.496 779.712 737.496 781.6C737.496 783.472 738.104 785.024 739.32 786.256C740.536 787.504 742.12 788.128 744.072 788.128C745.224 788.128 746.272 787.856 747.216 787.312C748.176 786.752 748.896 786.016 749.376 785.104L751.32 786.208C750.616 787.456 749.616 788.456 748.32 789.208C747.04 789.944 745.624 790.312 744.072 790.312ZM757.478 773.2H764.198V790H761.99V783.568H758.654L754.31 790H751.79L756.254 783.424C755.102 783.168 754.15 782.56 753.398 781.6C752.646 780.656 752.27 779.592 752.27 778.408C752.27 776.968 752.774 775.744 753.782 774.736C754.806 773.712 756.038 773.2 757.478 773.2ZM757.478 781.552H761.99V775.288H757.478C756.678 775.288 755.974 775.592 755.366 776.2C754.774 776.792 754.478 777.528 754.478 778.408C754.478 779.288 754.774 780.032 755.366 780.64C755.974 781.248 756.678 781.552 757.478 781.552ZM711.186 807.288C711.97 807.672 712.586 808.208 713.034 808.896C713.482 809.584 713.706 810.368 713.706 811.248C713.706 812.592 713.234 813.72 712.29 814.632C711.346 815.544 710.194 816 708.834 816H701.586V799.2H708.306C709.634 799.2 710.746 799.64 711.642 800.52C712.554 801.4 713.01 802.488 713.01 803.784C713.01 805.288 712.402 806.456 711.186 807.288ZM708.306 801.288H703.818V806.424H708.306C709.01 806.424 709.602 806.176 710.082 805.68C710.562 805.184 710.802 804.576 710.802 803.856C710.802 803.152 710.554 802.552 710.058 802.056C709.578 801.544 708.994 801.288 708.306 801.288ZM703.818 813.912H708.834C709.586 813.912 710.218 813.648 710.73 813.12C711.242 812.592 711.498 811.944 711.498 811.176C711.498 810.424 711.234 809.784 710.706 809.256C710.21 808.728 709.586 808.464 708.834 808.464H703.818V813.912ZM715.632 816V799.2H717.864V816H715.632ZM733.06 799.2V813.888H734.86V819.216H732.628V816H721.54V819.216H719.308V813.888H720.772C721.812 812.576 722.332 810.608 722.332 807.984V799.2H733.06ZM723.292 813.888H730.828V801.288H724.564V808.032C724.564 810.56 724.14 812.512 723.292 813.888ZM738.947 808.56V813.888H746.747V816H736.715V799.2H746.627V801.312H738.947V806.472H746.027V808.56H738.947ZM747.717 807.6C747.717 805.168 748.557 803.112 750.237 801.432C751.917 799.736 753.973 798.888 756.405 798.888C758.837 798.888 760.893 799.736 762.573 801.432C764.269 803.112 765.117 805.168 765.117 807.6C765.117 810.016 764.269 812.072 762.573 813.768C760.893 815.464 758.837 816.312 756.405 816.312C753.973 816.312 751.917 815.464 750.237 813.768C748.557 812.056 747.717 810 747.717 807.6ZM762.885 807.6C762.885 805.744 762.261 804.192 761.013 802.944C759.797 801.68 758.261 801.048 756.405 801.048C754.565 801.048 753.021 801.68 751.773 802.944C750.541 804.208 749.925 805.76 749.925 807.6C749.925 809.424 750.541 810.976 751.773 812.256C753.021 813.504 754.565 814.128 756.405 814.128C758.261 814.128 759.797 813.504 761.013 812.256C762.261 810.976 762.885 809.424 762.885 807.6Z" fill="#292935"/>
+        <defs>
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.0452418" height="0.0444785">
+        <use xlink:href="#image0_985_17622" transform="scale(0.00156006)"/>
+        </pattern>
+        <image id="image0_985_17622" width="29" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAACXBIWXMAABwgAAAcIAHND5ueAAAF92lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmRiNWI3ZmE2LWM1ZDctNDYzMi04ZDQyLTI5YmRiZmE0NDM3ZSIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjczOGJhOTAyLTQ0NjYtN2Y0Ny04MGM5LTNjMDE5MzNiM2RlYiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjhlZjBmZDhlLWUxODItNDBmNy05ODE5LWM2NWJjYzJkOGQzMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGVmMGZkOGUtZTE4Mi00MGY3LTk4MTktYzY1YmNjMmQ4ZDMxIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZGI1YjdmYTYtYzVkNy00NjMyLThkNDItMjliZGJmYTQ0MzdlIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5h5Bq5AAAAM0lEQVRIie3VwQkAIBADQWP/PcceBA+E2QbmuWm7ptvjIhQKhUL/QpNc7ynWBoVCodBnHeVxBzXTvOG7AAAAAElFTkSuQmCC"/>
+        </defs>
+      </svg>
+      //- +svg('play').js-video 
+      .video-btn-container.js-video
+        button.cerchio
+          <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 23.3567V2.64335C0 1.06517 1.74231 0.10874 3.07376 0.956026L19.3485 11.3127C20.5835 12.0986 20.5835 13.9014 19.3485 14.6873L3.07375 25.044C1.7423 25.8913 0 24.9348 0 23.3567Z" fill="white"/>
+          </svg>
+          
+        .cursor-wrap.js-cursor-wrap
+          .cursor.js-cursor
+            <svg class="circle" width="25" height="25" viewBox="0 0 25 25"  stroke-width=".8">
+              <circle class="cursor__inner" cx="12.5" cy="12.5" r="6.25"></circle>
+            </svg>
+
+
+    .about-container
+      .about-container__text 
+        h2 Про комплекс
+        p Ми створили унікальний проект в якому поєднуються всі переваги комфортного міського життя з вигідним розташуванням біля парку та озера.
+        a(href="#").button.js-button
+          span Дізнатися більше
+  .bottom-delimiter
+
+  section.location 
+    .location__text 
+      h2 
+        span ЖК HELLO HOUSE
+        | сучасний житловий простір классу КОМФОРТ+
+      a(href="#").button.js-button
+        span Розташування
+    .location__img 
+      .round1 
+      .round2 
+      .round3
+      .round4
+      .round5
+      img(src="./assets/images/location.png").location-img
+
+
+  section.choose-flat 
+    .swiper-img 
+      .swiper-wrapper 
+        .swiper-slide 
+          img(src="./assets/images/slider-choose/1.jpg")
+        .swiper-slide 
+          img(src="./assets/images/slider-choose/2.jpg")
+        .swiper-slide 
+          img(src="./assets/images/slider-choose/3.jpg")
+        .swiper-slide 
+          img(src="./assets/images/slider-choose/4.jpg")
+    .choose-flat__container 
+      .choose-flat__navigation 
+        .title Hello house
+        .btn-container 
+          .button-choose-prev
+            +svg('gallery-prev')
+          .button-choose-next 
+            +svg('gallery-next')
+      .swiper-text 
+        .swiper-wrapper 
+          .swiper-slide
+            h2 Для молодої сім’ї
+            p Ви зможете гуляти зі своєю половинкою теплими вечорами алеєю для прогулянок на внутрішній прибудинковії території комплексу. Блаустрій внутрішнього двору передбачає: безкоштовний Wi-Fi, зелену зону відпочинку, спортивне поле та тренажери. Також неподалік знаходиться озеро па паркова зона, куди Ви зможете відправитися в міні-подорож на велосипедах.
+            a(href="#").button.js-button
+              span Обрати квартиру
+          .swiper-slide
+            h2 Для сім’ї з дітьми
+            p Для наймолодших мешканців HELLO HOUSE будуть створені дитячі майданчики з сучасними ігровими зонами для різних вікових груп. Ваші діти будуть рости та розвиватися у сучасному та безпечному середовищі, граючись на майданчиках з гумовим покриттям. А тим часом Ви зможете відпочити в ресторані-кафе з літньою терасою, яке також заплановано на території комплексу.
+            a(href="#").button.js-button
+              span Обрати квартиру
+          .swiper-slide
+            h2 Для батьків
+            p Безпека - одна з головних умов для спокійного, комфортного і щасливого життя, тому безпеці проживання для жителів комплексу приділяється особлива увага. Затишна зелена зона прибудинкової території комплексу буде під організацією сучасних систем безпеки включаючи цілодобовий відео нагляд. А фізичний захист та безпеку на всій території ЖК буде забезпечувати професійна служба охорони.
+            a(href="#").button.js-button 
+              span Обрати квартиру
+          .swiper-slide
+            h2 Для інвесторів
+            p Квартири в новобудовах м. Києва постійно ростуть в ціні, тому за весь термін будівництва ціни збільшуються до 300 долларів на кв. метрі. Відсоток окупності інвестиції в наш ЖК доходить до 30% річних. А максимальний прибуток від інвестицій в наші квартири може скласти від 30 000 $. Також, дуже вигідною пропозицією є вкладення інвестицій в ЖК з метою подальшої здачі квартир в оренду.
+            a(href="#").button.js-button
+              span Обрати квартиру
+      .choose-flat__paagination 
+        .pagination-choose 
+
+
+
+
+  section.gallery
+    .swiper-gallery 
+      .swiper-wrapper
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/1b.jpg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/2b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/3b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/4b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/1b.jpg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/2b.jpeg")
+      .swiper-btn-container
+        .swiper-button-prev.gallery-prev
+          +svg('gallery-prev')
+        .swiper-button-next.gallery-next
+          +svg('gallery-next')
+        .swiper-bottom-container
+          .swiper-gallery-bottom(thumbsSlider="")
+            .swiper-wrapper
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/1s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/2s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/3s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/4s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/1s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/2s.jpg")
+          //- .swiper-button-prev
+          //-   +svg('gallery-prev')
+          //- .swiper-button-next
+          //-   +svg('gallery-next')
+  .bottom-delimiter
+  section.our-benefits
+    h2 Наші переваги
+    .benefits-swiper 
+      .swiper-wrapper
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/1.jpg", alt="")
+          .swiper-slide__title 
+            h5 Безпека проживання
+            .num 01
+          .swiper-slide__description 
+            p Закрита прибудинкова територія, організація сучасних систем безпеки включаючи цілодобовий відео нагляд.
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/2.jpg", alt="")
+          .swiper-slide__title.swiper-slide__title-white
+            h5 Якість «Комфорт +»
+            .num 02
+          .swiper-slide__description 
+            p Сучасний житловий простір класу «КОМФОРТ+» за доступною ціною, в якому враховано потреби всіх мешканців.
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/3.jpg", alt="")
+          .swiper-slide__title.swiper-slide__title-white 
+            h5 прибудинкова територія
+            .num 03
+          .swiper-slide__description 
+            p Паркова алея та зелені зони відпочинку, спортивне поле та тренажери, дитячі ігрові майданчики, безкоштовний Wi-Fi.
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/4.jpg", alt="")
+          .swiper-slide__title
+            h5 5 хвилин до озера та парку
+            .num 04
+          .swiper-slide__description 
+            p ЖК HELLO HOUSE обирають всі ті хто веде активний спосіб життя. Комплекс знаходится в 5 хв від озера та парку. Тому ранкові пробіжки та пікніки у вихідні будуть поруч з природою.
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/5.jpg", alt="")
+          .swiper-slide__title.swiper-slide__title-white 
+            h5 Розвинена інфраструктура
+            .num 05
+          .swiper-slide__description 
+            p ТРЦ, супермаркети, школи, дитсадки, аптеки, фітнес клуби, ресторани, кафе, банки та сквери, все поряд з необхідною інфраструктурою. 
+        .swiper-slide
+          .swiper-slide__img
+            img(src="./assets/images/slider-benefits/6.jpg", alt="")
+          .swiper-slide__title.swiper-slide__title-white 
+            h5 20 хвилин до метро
+            .num 06
+          .swiper-slide__description 
+            p Зручне розташування комплексу, та розвинена транспортна мережа дозволить дістатися до найближчих станцій метро «Почайна», «Лівобережна», «Чернігівська» за мінімум часу.
+      .swiper-button-prev.benefits-prev
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="50" rx="50" ry="50" transform="rotate(90 50 50)" fill="#292935" fill-opacity="0.8"/>
+          <path d="M49.999 40L39.999 50M39.999 50L49.999 60M39.999 50H59.999" stroke="white"/>
+        </svg>
+      .swiper-button-next.benefits-next
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse rx="50" ry="50" transform="matrix(4.37114e-08 1 1 -4.37114e-08 50 50)" fill="#292935" fill-opacity="0.8"/>
+          <path d="M50 40L60 50M60 50L50 60M60 50H40" stroke="white"/>
+        </svg>
+  .bottom-delimiter
+  section.about-section.choose-apartment 
+    .some
+      <svg width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <image preserveAspectRatio="xMidYMid slice" x="0" y="0" href="./assets/images/bg.jpg" width="960" height="1053"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
+        //- <path d="M766.738 311V512.191C659.573 512.191 572.713 422.123 572.713 311H355V963H572.939C572.939 851.877 659.799 761.809 766.963 761.809V963H984V311H766.738Z" fill="#FF0000"/>
+      </svg>
+    .about-container
+      .about-container__text 
+        h2 Обрати квартиру
+        p Обирайте комфортні планування квартир на свій смак. Адже ЖК Hello House має високі стелі, та широкі вікна, які дають унікальну можливість правильного зонування житлового простору.
+        a(href="#").button.js-choose-hover.js-button
+          span Обрати квартиру
+  .bottom-delimiter
+  section.building 
+    .swiper-container 
+      .building-swiper 
+        .swiper-wrapper 
+          .swiper-slide 
+            .swiper-slide__img 
+              img(src="./assets/images/slider-building/building-sw1.jpg")
+          .swiper-slide 
+            .swiper-slide__img 
+              img(src="./assets/images/slider-building/building-sw2.jpg")
+          .swiper-slide 
+            .swiper-slide__img 
+              img(src="./assets/images/slider-building/building-sw3.jpg")
+          .swiper-slide 
+            .swiper-slide__img 
+              img(src="./assets/images/slider-building/building-sw4.jpg")
+      .button-building-prev 
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50.001" cy="50" rx="50" ry="50" transform="rotate(90 50.001 50)" fill="white"/>
+          <path d="M50 40L40 50M40 50L50 60M40 50H60" stroke="#292935"/>
+        </svg>
+      .button-building-next
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse rx="50" ry="50" transform="matrix(4.37114e-08 1 1 -4.37114e-08 50.001 50)" fill="white"/>
+          <path d="M50 40L60 50M60 50L50 60M60 50H40" stroke="#292935"/>
+        </svg>
+      .plagination-container
+        .pagination-building
+        .date Жовтень 2021
+    .about-container
+      .about-container__text 
+        h2 будівництво
+        h3 Динаміка будівництва за Жовтень 2021 року
+        h4 В цьому місяці виконані наступні роботи:
+        ul 
+          li / Влаштування паль;
+          li / Армування фундамнтної плити першої секції;
+          li / Облаштування фундаменту під кран;
+          li / Початок робіт з монтажу баштового крану;
+        a(href="#").button.js-button
+          span Дивитися всі звіти
+  .bottom-delimiter
+  section.our-benefits.news-section
+    h2 Новини та акції
+    .news 
+      ul.news__list 
+        li.news__item 
+          a(href="#").news__link
+            .news__img 
+              img(src="./assets/images/news/news1.jpg")
+            .date-container 
+              +svg('h-logo')
+              .date 01.02.2022
+            .news__description
+              p ЖК Hello House відзначено професійною нагородою премії «Український
+        li.news__item 
+          a(href="#").news__link
+            .news__img 
+              img(src="./assets/images/news/news2.jpg")
+            .date-container 
+              +svg('h-logo')
+              .date 01.02.2022
+            .news__description
+              p ЖК Hello House відзначено професійною нагородою премії «Український Будівельний Олімп – 2021»
+      a(href="#").button.js-button
+        span Більше пропозицій
+  .bottom-delimiter
+  section.contacts 
+    .contacts__description 
+      .contacts__hover 
+        <svg class="letter" width="641" height="652" viewBox="0 0 641 652" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" fill="white"/>
+          <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" fill="url(#pattern0)" fill-opacity="0.5"/>
+          <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" stroke="#292935"/>
+          <path d="M42.192 40.328V33.2H44.4V50H42.192V42.44H34.032V50H31.8V33.2H34.032V40.328H42.192ZM49.5073 42.56V47.888H57.3073V50H47.2753V33.2H57.1873V35.312H49.5073V40.472H56.5873V42.56H49.5073ZM61.5139 33.2V47.888H68.7619V50H59.2819V33.2H61.5139ZM72.5126 33.2V47.888H79.7606V50H70.2806V33.2H72.5126ZM79.2429 41.6C79.2429 39.168 80.0829 37.112 81.7629 35.432C83.4429 33.736 85.4989 32.888 87.9309 32.888C90.3629 32.888 92.4189 33.736 94.0989 35.432C95.7949 37.112 96.6429 39.168 96.6429 41.6C96.6429 44.016 95.7949 46.072 94.0989 47.768C92.4189 49.464 90.3629 50.312 87.9309 50.312C85.4989 50.312 83.4429 49.464 81.7629 47.768C80.0829 46.056 79.2429 44 79.2429 41.6ZM94.4109 41.6C94.4109 39.744 93.7869 38.192 92.5389 36.944C91.3229 35.68 89.7869 35.048 87.9309 35.048C86.0909 35.048 84.5469 35.68 83.2989 36.944C82.0669 38.208 81.4509 39.76 81.4509 41.6C81.4509 43.424 82.0669 44.976 83.2989 46.256C84.5469 47.504 86.0909 48.128 87.9309 48.128C89.7869 48.128 91.3229 47.504 92.5389 46.256C93.7869 44.976 94.4109 43.424 94.4109 41.6ZM42.192 66.328V59.2H44.4V76H42.192V68.44H34.032V76H31.8V59.2H34.032V66.328H42.192ZM46.3873 67.6C46.3873 65.168 47.2273 63.112 48.9073 61.432C50.5873 59.736 52.6433 58.888 55.0753 58.888C57.5073 58.888 59.5633 59.736 61.2433 61.432C62.9393 63.112 63.7873 65.168 63.7873 67.6C63.7873 70.016 62.9393 72.072 61.2433 73.768C59.5633 75.464 57.5073 76.312 55.0753 76.312C52.6433 76.312 50.5873 75.464 48.9073 73.768C47.2273 72.056 46.3873 70 46.3873 67.6ZM61.5553 67.6C61.5553 65.744 60.9313 64.192 59.6833 62.944C58.4673 61.68 56.9313 61.048 55.0753 61.048C53.2353 61.048 51.6913 61.68 50.4433 62.944C49.2113 64.208 48.5953 65.76 48.5953 67.6C48.5953 69.424 49.2113 70.976 50.4433 72.256C51.6913 73.504 53.2353 74.128 55.0753 74.128C56.9313 74.128 58.4673 73.504 59.6833 72.256C60.9313 70.976 61.5553 69.424 61.5553 67.6ZM65.4174 70.36V59.2H67.6494V70.264C67.6494 71.464 68.0014 72.408 68.7054 73.096C69.4254 73.784 70.4334 74.128 71.7294 74.128C73.0254 74.128 74.0254 73.784 74.7294 73.096C75.4494 72.408 75.8094 71.464 75.8094 70.264V59.2H78.0174V70.36C78.0174 72.184 77.4334 73.632 76.2654 74.704C75.0974 75.776 73.5854 76.312 71.7294 76.312C69.8574 76.312 68.3374 75.776 67.1694 74.704C66.0014 73.632 65.4174 72.184 65.4174 70.36ZM86.1343 76.312C84.5663 76.312 83.2223 75.952 82.1023 75.232C80.9983 74.496 80.2223 73.48 79.7743 72.184L81.6943 71.08C82.3343 73.112 83.8303 74.128 86.1823 74.128C87.3183 74.128 88.1903 73.896 88.7983 73.432C89.4223 72.968 89.7343 72.336 89.7343 71.536C89.7343 70.752 89.4303 70.152 88.8223 69.736C88.2783 69.368 87.2623 68.944 85.7743 68.464L84.1663 67.936C83.8143 67.792 83.3503 67.584 82.7743 67.312C82.2143 67.024 81.8063 66.736 81.5503 66.448C80.8463 65.68 80.4943 64.744 80.4943 63.64C80.4943 62.168 81.0063 61.016 82.0303 60.184C83.0543 59.32 84.3023 58.888 85.7743 58.888C87.0863 58.888 88.2383 59.216 89.2303 59.872C90.2223 60.528 90.9663 61.424 91.4623 62.56L89.5903 63.64C88.8703 61.912 87.5983 61.048 85.7743 61.048C84.8623 61.048 84.1263 61.272 83.5663 61.72C83.0063 62.168 82.7263 62.776 82.7263 63.544C82.7263 64.28 82.9903 64.84 83.5183 65.224C84.0623 65.624 84.9743 66.024 86.2543 66.424L87.2383 66.736C87.7823 66.944 88.0783 67.056 88.1263 67.072C88.6383 67.264 89.1983 67.528 89.8063 67.864C90.2383 68.104 90.6703 68.472 91.1023 68.968C91.6623 69.528 91.9423 70.368 91.9423 71.488C91.9423 72.96 91.4063 74.136 90.3343 75.016C89.2463 75.88 87.8463 76.312 86.1343 76.312ZM95.9801 68.56V73.888H103.78V76H93.7481V59.2H103.66V61.312H95.9801V66.472H103.06V68.56H95.9801Z" fill="#292935"/>
+          <path d="M551.892 581.6C551.892 579.168 552.732 577.112 554.412 575.432C556.092 573.736 558.148 572.888 560.58 572.888C563.012 572.888 565.068 573.736 566.748 575.432C568.444 577.112 569.292 579.168 569.292 581.6C569.292 584.016 568.444 586.072 566.748 587.768C565.068 589.464 563.012 590.312 560.58 590.312C558.148 590.312 556.092 589.464 554.412 587.768C552.732 586.056 551.892 584 551.892 581.6ZM567.06 581.6C567.06 579.744 566.436 578.192 565.188 576.944C563.972 575.68 562.436 575.048 560.58 575.048C558.74 575.048 557.196 575.68 555.948 576.944C554.716 578.208 554.1 579.76 554.1 581.6C554.1 583.424 554.716 584.976 555.948 586.256C557.196 587.504 558.74 588.128 560.58 588.128C562.436 588.128 563.972 587.504 565.188 586.256C566.436 584.976 567.06 583.424 567.06 581.6ZM580.256 588.224V590.12H578.072V588.224C575.672 588.048 573.744 587.392 572.288 586.256C570.848 585.104 570.128 583.552 570.128 581.6C570.128 579.648 570.848 578.096 572.288 576.944C573.744 575.808 575.672 575.152 578.072 574.976V573.08H580.256V574.976C582.688 575.152 584.616 575.808 586.04 576.944C587.496 578.096 588.224 579.648 588.224 581.6C588.224 583.552 587.496 585.104 586.04 586.256C584.616 587.392 582.688 588.048 580.256 588.224ZM580.256 577.016V586.184C582.096 586.056 583.512 585.608 584.504 584.84C585.496 584.056 585.992 582.976 585.992 581.6C585.992 580.224 585.496 579.152 584.504 578.384C583.512 577.6 582.096 577.144 580.256 577.016ZM573.824 578.384C572.832 579.152 572.336 580.224 572.336 581.6C572.336 582.976 572.832 584.048 573.824 584.816C574.816 585.584 576.232 586.032 578.072 586.16V577.016C576.232 577.144 574.816 577.6 573.824 578.384ZM589.942 590V573.2H592.174V590H589.942ZM602.954 590.312C600.394 590.312 598.29 589.472 596.642 587.792C594.994 586.128 594.17 584.064 594.17 581.6C594.17 579.136 594.994 577.072 596.642 575.408C598.29 573.728 600.394 572.888 602.954 572.888C604.474 572.888 605.882 573.256 607.178 573.992C608.474 574.728 609.482 575.72 610.202 576.968L608.258 578.096C607.778 577.168 607.058 576.432 606.098 575.888C605.154 575.328 604.106 575.048 602.954 575.048C601.002 575.048 599.418 575.672 598.202 576.92C596.986 578.152 596.378 579.712 596.378 581.6C596.378 583.472 596.986 585.024 598.202 586.256C599.418 587.504 601.002 588.128 602.954 588.128C604.106 588.128 605.154 587.856 606.098 587.312C607.058 586.752 607.778 586.016 608.258 585.104L610.202 586.208C609.498 587.456 608.498 588.456 607.202 589.208C605.922 589.944 604.506 590.312 602.954 590.312ZM495.988 599.2H508.18V616H505.948V601.312H498.22V616H495.988V599.2ZM511.065 599.2H517.161C518.697 599.2 519.985 599.72 521.025 600.76C522.065 601.8 522.585 603.08 522.585 604.6C522.585 606.12 522.065 607.4 521.025 608.44C519.985 609.48 518.697 610 517.161 610H513.297V616H511.065V599.2ZM513.297 607.912H517.161C518.105 607.912 518.873 607.6 519.465 606.976C520.073 606.32 520.377 605.528 520.377 604.6C520.377 603.64 520.073 602.848 519.465 602.224C518.857 601.6 518.089 601.288 517.161 601.288H513.297V607.912ZM523.496 607.6C523.496 605.168 524.336 603.112 526.016 601.432C527.696 599.736 529.752 598.888 532.184 598.888C534.616 598.888 536.672 599.736 538.352 601.432C540.048 603.112 540.896 605.168 540.896 607.6C540.896 610.016 540.048 612.072 538.352 613.768C536.672 615.464 534.616 616.312 532.184 616.312C529.752 616.312 527.696 615.464 526.016 613.768C524.336 612.056 523.496 610 523.496 607.6ZM538.664 607.6C538.664 605.744 538.04 604.192 536.792 602.944C535.576 601.68 534.04 601.048 532.184 601.048C530.344 601.048 528.8 601.68 527.552 602.944C526.32 604.208 525.704 605.76 525.704 607.6C525.704 609.424 526.32 610.976 527.552 612.256C528.8 613.504 530.344 614.128 532.184 614.128C534.04 614.128 535.576 613.504 536.792 612.256C538.04 610.976 538.664 609.424 538.664 607.6ZM554.422 599.2V613.888H556.222V619.216H553.99V616H542.902V619.216H540.67V613.888H542.134C543.174 612.576 543.694 610.608 543.694 607.984V599.2H554.422ZM544.654 613.888H552.19V601.288H545.926V608.032C545.926 610.56 545.502 612.512 544.654 613.888ZM571.541 616H569.165L567.797 612.232H560.237L558.869 616H556.493L562.757 599.2H565.277L571.541 616ZM564.005 601.864L561.005 610.144H567.029L564.005 601.864ZM584.683 607.408L591.427 616H588.883L582.523 607.936V616H580.315V607.936L573.955 616H571.435L578.155 607.408L571.675 599.2H574.195L580.315 606.904V599.2H582.523V606.904L588.643 599.2H591.187L584.683 607.408ZM592.918 616V599.2H595.15V616H592.918ZM607.634 607.288C608.418 607.672 609.034 608.208 609.482 608.896C609.93 609.584 610.154 610.368 610.154 611.248C610.154 612.592 609.682 613.72 608.738 614.632C607.794 615.544 606.642 616 605.282 616H598.034V599.2H604.754C606.082 599.2 607.194 599.64 608.09 600.52C609.002 601.4 609.458 602.488 609.458 603.784C609.458 605.288 608.85 606.456 607.634 607.288ZM604.754 601.288H600.266V606.424H604.754C605.458 606.424 606.05 606.176 606.53 605.68C607.01 605.184 607.25 604.576 607.25 603.856C607.25 603.152 607.002 602.552 606.506 602.056C606.026 601.544 605.442 601.288 604.754 601.288ZM600.266 613.912H605.282C606.034 613.912 606.666 613.648 607.178 613.12C607.69 612.592 607.946 611.944 607.946 611.176C607.946 610.424 607.682 609.784 607.154 609.256C606.658 608.728 606.034 608.464 605.282 608.464H600.266V613.912Z" fill="#292935"/>
+          <defs>
+          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.0452418" height="0.0444785">
+          <use xlink:href="#image0_902_17670" transform="scale(0.00156006)"/>
+          </pattern>
+          <image id="image0_902_17670" width="29" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAACXBIWXMAABwgAAAcIAHND5ueAAAF92lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmRiNWI3ZmE2LWM1ZDctNDYzMi04ZDQyLTI5YmRiZmE0NDM3ZSIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjczOGJhOTAyLTQ0NjYtN2Y0Ny04MGM5LTNjMDE5MzNiM2RlYiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjhlZjBmZDhlLWUxODItNDBmNy05ODE5LWM2NWJjYzJkOGQzMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGVmMGZkOGUtZTE4Mi00MGY3LTk4MTktYzY1YmNjMmQ4ZDMxIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZGI1YjdmYTYtYzVkNy00NjMyLThkNDItMjliZGJmYTQ0MzdlIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5h5Bq5AAAAM0lEQVRIie3VwQkAIBADQWP/PcceBA+E2QbmuWm7ptvjIhQKhUL/QpNc7ynWBoVCodBnHeVxBzXTvOG7AAAAAElFTkSuQmCC"/>
+          </defs>
+        </svg>
+        img(src="./assets/images/contact-hover+.svg").letter-hover
+        .container-eye
+          .eye
+      .contacts__text 
+        h2 Контакти
+        .contacts__container 
+          .sales-office 
+            h5 Офіс продажів:
+            p Зробіть правильний вибір, замовляйте порсональну консультацію наших менеджерів!
+            .table 
+              +svg('clock')
+              .text 
+                p Пн-Пт:	з 10:00 до 19:00
+                p Сб:	з 10:00 до 17:00
+                p Нд:	вихідній
+            .table 
+              +svg('map')
+              .text 
+                p м. Київ, Дніпровський район, вул. Миколи Кибальчича, 1
+          .sales-office 
+            h5 Зв’язок:
+            a(href="mailto:sale@hello-house.com.ua").contacts-link sale@hello-house.com.ua
+            a(href="tel:+380675990707").contacts-link +38 (067) 599 07 07
+            a(href="tel:+380442229970").contacts-link +38 (044) 222 99 70
+            button.button.js-button 
+              span Зворотній дзвінок
+            ul.social-list 
+              li.social-item
+                a(href="#").social-link.facebook
+                  //- +svg('facebook')
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.15 73.31">
+                    <path class="cls-1" d="M34.85,15.52h1.8V1.23L35.11,1A75.35,75.35,0,0,0,26.19.5,15.58,15.58,0,0,0,14.44,5.23C11.52,8.37,10,12.89,10,18.45v7.81H.5V42.09H10V72.81H25.16V42.09H34l.19-1.6,1.44-12.21.24-2H25.15v-6.6a5.32,5.32,0,0,1,.66-3.19c.33-.43,1.06-.95,3.1-.95Z"/>
+                  </svg>
+              li.social-item
+                a(href="#").social-link.instagram
+                  //- +svg('instagram')
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.12 70.12">
+                    <rect class="cls-1" x="0.5" y="0.5" width="69.12" height="69.12" rx="21.25"/>
+                    <circle class="cls-1 cls-1-1" cx="35.06" cy="35.06" r="14.47"/>
+                    <circle class="cls-1 cls-1-1" cx="53.87" cy="15.2" r="5.73"/>
+                  </svg>
+              li.social-item 
+                a(href="#").social-link.telegram
+                  //- +svg('telegram')
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.54 62.46">
+                    <path class="cls-1" d="M31.71,41,30.4,58.17a4.71,4.71,0,0,0,3.67-1.65L42.9,48.7,61.19,61.11c3.35,1.74,5.71.82,6.62-2.86l12-52.15h0C80.88,1.5,78-.3,74.75.83L4.2,25.88c-4.82,1.73-4.75,4.22-.82,5.35l18,5.2,41.9-24.31c2-1.21,3.76-.54,2.29.67Z"/>
+                  </svg>
+              li.social-item 
+                a(href="#").social-link.youtube
+                  //- +svg('youtube')
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.24 58.78">
+                    <rect class="cls-1" x="0.5" y="0.5" width="76.24" height="57.78" rx="15.4"/>
+                    <path class="cls-1 cls-1-1" d="M29.57,24.14v10.5a3.42,3.42,0,0,0,4.86,3.1l11.25-5.2a3.42,3.42,0,0,0,0-6.2L34.45,21.05A3.42,3.42,0,0,0,29.57,24.14Z"/>
+                  </svg>
+    .contacts__map 
+      .contacts__person
+        h4 Наші менеджери відділу продажів:
+        ul.contacts__list 
+          li.contacts__item 
+            img(src="./assets/images/manager/manager1.jpg ").manager-foto
+            .contacts__person-name Марина
+          li.contacts__item 
+            img(src="./assets/images/manager/manager2.jpg ").manager-foto
+            .contacts__person-name Олена
+          li.contacts__item 
+            img(src="./assets/images/manager/manager3.jpg ").manager-foto
+            .contacts__person-name Світлана
+          li.contacts__item 
+            img(src="./assets/images/manager/manager4.jpg ").manager-foto
+            .contacts__person-name Тетяна
+      .map 
+        h4 Як до нас дістатися:
+        .map-container 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10152.787077661847!2d30.572733352342215!3d50.493295477152174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d17a44664a2f%3A0x5867501e73cafef8!2z0JbQmiBIRUxMTyBIT1VTRSAtINCS0ZbQtNC00ZbQuyDQv9GA0L7QtNCw0LbRgw!5e0!3m2!1sru!2sua!4v1645094154227!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  .bottom-delimiter
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

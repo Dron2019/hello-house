@@ -1,0 +1,299 @@
+@mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
+  @font-face {
+    font-family: '#{$font-family}';
+    font-weight: #{$weight};
+    font-style: '#{$style}';
+
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot?#iefix') format('embedded-opentype'), url('#{$url}.woff') format('woff'),
+      url('#{$url}.ttf') format('truetype');
+  }
+}
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+  $remSize: $size / 14px;
+  @return #{$remSize}rem;
+}
+
+@mixin toh($max_height) {
+  @media screen and (max-height: $max_height) {
+    @content;
+  }
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+$full-width: 1200;
+$work-width: 80;
+$screen-height: 720;
+
+@function vmax($pixels, $context: $full-width) {
+  @return #{($pixels/$context) * 100}vmax;
+}
+@function vw($pixels, $context: $full-width) {
+  @return #{($pixels/$context) * 100}vw;
+}
+
+@function lh($lh, $fz) {
+  @return #{($lh/$fz)}em;
+}
+
+// my mixins
+
+@mixin main-text-b($color: $white) {
+  font-family: $default-font;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: $color;
+}
+@mixin main-text-s($color: #e1f2eb) {
+  font-family: $default-font;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin main-text-m {
+  font-family: $default-font;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #292935;
+}
+@mixin menu-text-b {
+  font-family: $default-font;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #292935;
+}
+@mixin menu-text-s {
+  font-family: $default-font;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #292935;
+}
+@mixin title-after($color: #ffffff) {
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: $color;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+@mixin title-little {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #292935;
+}
+@mixin btn($color: $green) {
+  height: 65px;
+  width: 290px;
+  padding: 23px 0;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: $color;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  &::after {
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    // top: 0;
+    // left: 0;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+
+    background: #2c2e65;
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s;
+    // z-index: 4;
+  }
+  &:hover::after {
+    width: 600px;
+    height: 600px;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+}
+@mixin hover-line {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #2c2e65;
+    top: 115%;
+    left: 0;
+    pointer-events: none;
+    transform-origin: 50% 100%;
+    transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      0 100%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 100%,
+      100% 100%,
+      100% 0%
+    );
+  }
+  &:hover::after {
+    @include from(992px) {
+      clip-path: polygon(
+        0% 0%,
+        0% 100%,
+        50% 100%,
+        50% 0,
+        50% 0,
+        50% 100%,
+        50% 100%,
+        0 100%,
+        100% 100%,
+        100% 0%
+      );
+    }
+  }
+}
+@mixin hover-menu {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  --speed: 0.3s;
+  --span-height: 1.3em;
+  // @include to(1440px) {
+  //   --span-height: 1.3em;
+  // }
+  // @include to(575px) {
+  //   --span-height: 1.6em;
+  // }
+  &:after {
+    position: absolute;
+    bottom: 105%;
+    content: attr(data-text);
+    left: 0%;
+    white-space: nowrap;
+    transition: var(--speed) ease;
+    color: $green;
+  }
+  & span {
+    transition: var(--speed) ease;
+    display: inline-block;
+  }
+  &:hover:after {
+    transform: translateY(var(--span-height));
+  }
+  &:hover span {
+    transform: translateY(39px);
+  }
+}
+@mixin hover-menu-s {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  --speed: 0.3s;
+  --span-height: 1em;
+  // @include to(1440px) {
+  //   --span-height: 1.3em;
+  // }
+  // @include to(575px) {
+  //   --span-height: 1.6em;
+  // }
+  &:after {
+    position: absolute;
+    bottom: 105%;
+    content: attr(data-text);
+    left: 0%;
+    white-space: nowrap;
+    transition: var(--speed) ease;
+    color: $green;
+  }
+  & span {
+    transition: var(--speed) ease;
+    display: inline-block;
+  }
+  &:hover:after {
+    transform: translateY(var(--span-height));
+  }
+  &:hover span {
+    transform: translateY(39px);
+  }
+}
+@mixin container-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: vw(155, 1920);
+}
+@mixin container-right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin bottom-delimiter {
+  width: 100vw;
+  height: 1px;
+  background: #292935;
+  position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/delimiter.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 79px;
+    height: 79px;
+    position: absolute;
+    top: -39px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 20;
+  }
+}

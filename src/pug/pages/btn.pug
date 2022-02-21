@@ -1,0 +1,58 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'flat-page'
+    var class_page = 'home'
+    var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+   
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  //- script(defer src='./assets/scripts/header.js')
+  //- script(defer src='./assets/scripts/home.js')
+  //- script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/video-btn.js')
+block content
+  //- include ../includes/breadcrumbs.pug
+  //- main
+  //-   .content
+  //-     button.button
+  //-       .button__deco
+  //-         .button__deco-filler
+				
+  //-       span.button__text
+  //-         span.button__text-inner SIGN UP
+
+
+  //- <svg class="cursor" width="25" height="25" viewBox="0 0 25 25">
+  //-   <circle class="cursor__inner" cx="12.5" cy="12.5" r="6.25"></circle>
+  //- </svg>
+  //- button.c-magnetic-btn.u-relative( data-threshold="60" data-ratio="3.5" data-max="100" data-scale="1.1" data-ease="0.225">)
+  //-   span.t-btn-label.u-flex.u-center-xy Hover me.
+  //-   span.o-circle.u-fit.u-absolute.u-pos-tl
+
+  button.cerchio.trigger-audio
+    <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 23.3567V2.64335C0 1.06517 1.74231 0.10874 3.07376 0.956026L19.3485 11.3127C20.5835 12.0986 20.5835 13.9014 19.3485 14.6873L3.07375 25.044C1.7423 25.8913 0 24.9348 0 23.3567Z" fill="white"/>
+    </svg>
+    
+  .cursor-wrap.js-cursor-wrap
+    .cursor.js-cursor
+      <svg class="circle" width="25" height="25" viewBox="0 0 25 25" stroke="#fff" stroke-width=".8">
+        <circle class="cursor__inner" cx="12.5" cy="12.5" r="6.25"></circle>
+      </svg>
