@@ -2,8 +2,8 @@
   @include row-flex();
 }
 .page__inner {
-  position: relative;
   overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -13,6 +13,9 @@
   }
   .page__footer-wrapper {
     flex-shrink: 0;
+  }
+  @include to(575px) {
+    overflow: hidden;
   }
 }
 .section-pading--top {

@@ -1,0 +1,52 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Нагороди'
+    var id_page = 'awards'
+    var class_page = 'awards'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/awards.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #awards-page 
+    h1 Нагороди
+    .awards-container 
+      .awards-container__text 
+        p За підсумками відбору премії "Український Будівельній Олімп - 2021" ЖК "Hello House" відзначено професійною нагородою в номінації: "Зразковий стандарт сучасного житла: безпека, благоустрій та комфорт"!
+        +svg('logo-nice')
+      .awards-container__swiper
+        .awards-swiper 
+          .swiper-wrapper 
+            .swiper-slide
+              .swiper-slide__img
+                img(src="./assets/images/award1.jpg")
+              p Диплом  “Український Будівельній Олімп - 2021”
+            .swiper-slide
+              .swiper-slide__img
+                img(src="./assets/images/award2.jpg")
+              p Сертифікат  “Український Будівельній Олімп - 2021”
+        .awards-btn-prev
+        .awards-btn-next
+
+
+
+  .bottom-delimiter
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

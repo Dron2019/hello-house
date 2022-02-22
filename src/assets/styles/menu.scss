@@ -32,6 +32,21 @@
     align-content: center;
     align-items: center;
     justify-content: space-between;
+    .burger:hover {
+      @include from(992px) {
+        .burger__icon svg {
+          animation: rotate-center 0.6s ease-in-out;
+        }
+      }
+    }
+    .burger__icon::before {
+      display: none;
+    }
+    .burger__icon svg {
+      // top: calc(50% - 8px);
+      // left: calc(50% - 8px);
+      // transform: translate(-50%, -50%);
+    }
   }
 
   // a {
@@ -218,7 +233,12 @@
   }
   .button {
     @include btn;
+    @include oval-hover;
     margin-top: 20px;
+
+    span {
+      z-index: 5;
+    }
   }
 }
 .tel {

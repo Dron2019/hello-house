@@ -3,9 +3,8 @@ extends ../layout/main
 block variable
   -
     var title_page = 'home'
-    var id_page = 'flat-page'
+    var id_page = 'home'
     var class_page = 'home'
-    var breadcrumbsBtn = 'filter'
     var breadcrumbsSubitem = [
       {
         label: 'About',
@@ -24,8 +23,8 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/video-btn.js')
 block content
   //- include ../includes/breadcrumbs.pug
@@ -43,12 +42,13 @@ block content
           .hover-text м. Київ, Дніпровський район, вул. Миколи Кибальчича, 1
           +svg('build').js-hover
     .scroll-down 
-      +svg('scroll-down')
+      .svg
+        +svg('scroll-down')
       span Scroll 
 
   section.about-section 
     .video-container 
-      video(class="video2" autoplay loop preload="auto" muted width="100%" height="100%") 
+      video(class="video2" id="video" loop preload="auto" muted width="100%" height="100%") 
         <source src="./assets/images/hello.mp4" type="video/mp4">
       <svg class="svg" preserveAspectRatio="none" width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM574.593 401.191V200H796V852H574.823V650.809C465.614 650.809 377.097 740.877 377.097 852H155V200H376.867C376.867 311.123 465.384 401.191 574.593 401.191Z" fill="white"/>
@@ -266,10 +266,14 @@ block content
   .bottom-delimiter
   section.about-section.choose-apartment 
     .some
-      <svg width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <image preserveAspectRatio="xMidYMid slice" x="0" y="0" href="./assets/images/bg.jpg" width="960" height="1053"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
-        //- <path d="M766.738 311V512.191C659.573 512.191 572.713 422.123 572.713 311H355V963H572.939C572.939 851.877 659.799 761.809 766.963 761.809V963H984V311H766.738Z" fill="#FF0000"/>
+      //- <svg width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
+      //-   <image preserveAspectRatio="xMidYMid slice" x="0" y="0" href="./assets/images/bg.jpg" width="960" height="1053"/>
+      //-   <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
+      //-   //- <path d="M766.738 311V512.191C659.573 512.191 572.713 422.123 572.713 311H355V963H572.939C572.939 851.877 659.799 761.809 766.963 761.809V963H984V311H766.738Z" fill="#FF0000"/>
+      //- </svg>
+      <svg preserveAspectRatio="none" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <image x="0" y="0" href="./assets/images/bg.jpg" width="100%" height="100%"/>
+        <path clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
       </svg>
     .about-container
       .about-container__text 
@@ -296,12 +300,12 @@ block content
               img(src="./assets/images/slider-building/building-sw4.jpg")
       .button-building-prev 
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="50.001" cy="50" rx="50" ry="50" transform="rotate(90 50.001 50)" fill="white"/>
+          <ellipse class="hover-svg" cx="50.001" cy="50" rx="50" ry="50" transform="rotate(90 50.001 50)" fill="white"/>
           <path d="M50 40L40 50M40 50L50 60M40 50H60" stroke="#292935"/>
         </svg>
       .button-building-next
         <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse rx="50" ry="50" transform="matrix(4.37114e-08 1 1 -4.37114e-08 50.001 50)" fill="white"/>
+          <ellipse class="hover-svg" rx="50" ry="50" transform="matrix(4.37114e-08 1 1 -4.37114e-08 50.001 50)" fill="white"/>
           <path d="M50 40L60 50M60 50L50 60M60 50H40" stroke="#292935"/>
         </svg>
       .plagination-container

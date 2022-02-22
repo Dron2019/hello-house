@@ -14,9 +14,11 @@ function menuOpen(menu) {
   const links1 = menu.querySelectorAll('[data-animation1]');
   const links2 = menu.querySelectorAll('[data-animation2]');
   const links3 = menu.querySelectorAll('[data-animation3]');
-  createAnimation(links1, 100, 0.5);
+  const links4 = menu.querySelectorAll('[data-animation4]');
+  createAnimation(links1, 100, 0.3);
   createAnimation(links2, 100, 0.2);
-  createAnimation(links3, 100, 1.1);
+  createAnimation(links3, 100, 0.1);
+  createAnimation(links4, 100, 0.2);
 }
 
 function menuClose(menu) {
@@ -66,3 +68,19 @@ btn.forEach(el =>
 );
 
 // button hover end
+
+// button hover social start
+const btnSociale = document.querySelectorAll('.js-social-hover');
+
+btnSociale.forEach(el =>
+  el.addEventListener('mouseenter', () => {
+    el.nextElementSibling.style.opacity = '1';
+  }),
+);
+btnSociale.forEach(el =>
+  el.addEventListener('mouseleave', () => {
+    el.nextElementSibling.style.opacity = '0';
+  }),
+);
+
+// button hover social end

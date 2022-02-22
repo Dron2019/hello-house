@@ -13,12 +13,14 @@ btn1.forEach(el =>
 
 // video start
 const videoHover = document.querySelector('.js-video');
-
+const video = document.getElementById('video');
 videoHover.addEventListener('mouseenter', () => {
   document.querySelector('.texture').style.opacity = '0';
+  video.play();
 });
 videoHover.addEventListener('mouseleave', () => {
   document.querySelector('.texture').style.opacity = '1';
+  video.pause();
 });
 
 // video end
@@ -54,6 +56,9 @@ const swiper3 = new Swiper('.swiper-gallery', {
   thumbs: {
     swiper: swiper2,
   },
+  // autoplay: {
+  //   delay: 5000,
+  // },
 });
 
 const swiper4 = new Swiper('.building-swiper', {

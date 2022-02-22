@@ -82,12 +82,12 @@
     svg {
       width: 7px;
       height: 30px;
-      transform: rotate(90deg);
       margin-right: 15px;
+      transform: rotate(90deg);
     }
-    // span {
-    //   transform: rotate(90deg);
-    // }
+    .svg {
+      animation: wiggleDw 2s linear infinite;
+    }
   }
 }
 
@@ -171,6 +171,7 @@
       }
       .button {
         @include btn(transparent);
+        @include btn-js-after;
         border: 1px solid #e1f2eb;
         span {
           transition: color 0.5s ease;
@@ -398,6 +399,18 @@
       position: absolute;
       z-index: 2;
       cursor: pointer;
+      &:hover {
+        .hover-svg {
+          fill: rgba(41, 41, 53, 0.8);
+          // fill: rgba(44, 46, 101, 0.589);
+        }
+        path {
+          stroke: #ffffff;
+        }
+        .hover-svg {
+          transition: fill 0.3s ease;
+        }
+      }
     }
     .button-building-next {
       right: 100px;
@@ -463,6 +476,7 @@
       }
       .button {
         @include btn;
+        @include btn-js-after;
         margin-top: 50px;
       }
     }
@@ -536,6 +550,7 @@
   }
   .button {
     @include btn;
+    @include btn-js-after;
     margin: 50px auto 0 auto;
   }
 }
@@ -598,6 +613,7 @@
     }
     .button {
       @include btn;
+      @include oval-hover;
       margin-top: 50px;
     }
   }
@@ -638,6 +654,7 @@
     }
     .button {
       @include btn;
+      @include btn-js-after;
       margin-top: 30px;
     }
   }
@@ -647,13 +664,13 @@
     height: 865px;
     position: relative;
     .round1 {
+      --size: 865px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: calc(50% - (var(--size) / 2));
+      left: calc(50% - (var(--size) / 2));
       z-index: 1;
-      width: 865px;
-      height: 865px;
+      width: var(--size);
+      height: var(--size);
       border-radius: 50%;
       background: linear-gradient(
         235.14deg,
@@ -663,16 +680,16 @@
         rgba(31, 74, 101, 0.05) 75.56%,
         rgba(43, 48, 101, 0.05) 100%
       );
-      // animation: pulse 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
     }
     .round2 {
+      --size: 806px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: calc(50% - (var(--size) / 2));
+      left: calc(50% - (var(--size) / 2));
+      width: var(--size);
+      height: var(--size);
       z-index: 2;
-      width: 806px;
-      height: 806px;
       border-radius: 50%;
       background: linear-gradient(
         235.14deg,
@@ -682,15 +699,16 @@
         rgba(31, 74, 101, 0.1) 75.56%,
         rgba(43, 48, 101, 0.1) 100%
       );
+      animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
     }
     .round3 {
+      --size: 745px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: calc(50% - (var(--size) / 2));
+      left: calc(50% - (var(--size) / 2));
+      width: var(--size);
+      height: var(--size);
       z-index: 3;
-      width: 745px;
-      height: 745px;
       border-radius: 50%;
       background: linear-gradient(
         235.14deg,
@@ -700,15 +718,16 @@
         rgba(31, 74, 101, 0.2) 75.56%,
         rgba(43, 48, 101, 0.2) 100%
       );
+      animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
     }
     .round4 {
+      --size: 685px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: calc(50% - (var(--size) / 2));
+      left: calc(50% - (var(--size) / 2));
+      width: var(--size);
+      height: var(--size);
       z-index: 4;
-      width: 685px;
-      height: 685px;
       border-radius: 50%;
       background: linear-gradient(
         235.14deg,
@@ -718,15 +737,16 @@
         rgba(31, 74, 101, 0.4) 75.56%,
         rgba(43, 48, 101, 0.4) 100%
       );
+      animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
     }
     .round5 {
+      --size: 622px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: calc(50% - (var(--size) / 2));
+      left: calc(50% - (var(--size) / 2));
+      width: var(--size);
+      height: var(--size);
       z-index: 5;
-      width: 622px;
-      height: 622px;
       border-radius: 50%;
       background: linear-gradient(
         234.17deg,
@@ -736,6 +756,7 @@
         #1f4a65 67.23%,
         #2b3065 100%
       );
+      animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
     }
     .location-img {
       position: absolute;
@@ -874,6 +895,7 @@
         }
         .button {
           @include btn;
+          @include btn-js-after;
           margin-top: 10px;
           margin-bottom: 46px;
         }

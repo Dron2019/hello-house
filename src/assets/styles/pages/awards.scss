@@ -1,0 +1,83 @@
+#awards-page {
+  padding: 0 var(--padding) 160px var(--padding);
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    position: relative;
+    margin-bottom: 20px;
+    &::after {
+      left: 16px;
+    }
+  }
+}
+.awards-container {
+  display: flex;
+  justify-content: space-between;
+  &__text {
+    width: 26%;
+    padding-top: 52px;
+    p {
+      @include main-text-s($black);
+    }
+    svg {
+      width: 268px;
+      height: 67px;
+      margin-top: 50px;
+    }
+  }
+  &__swiper {
+    width: 68%;
+    padding-left: 80px;
+  }
+}
+.awards-swiper {
+  overflow: hidden;
+  padding-top: 52px;
+  .swiper-slide {
+    border: 1px solid #292935;
+    background-image: url('../images/patern-drops.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: cover;
+    padding: 70px 90px 40px 90px;
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url('../images/delimiter.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 79px;
+      height: 79px;
+      position: absolute;
+      top: -39px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 20;
+    }
+    &__img {
+      width: 312px;
+      height: 396px;
+      margin-bottom: 42px;
+      img {
+        object-fit: fill;
+      }
+    }
+    p {
+      @include main-text-s($black);
+      text-align: center;
+      position: relative;
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: $black;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}

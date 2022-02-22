@@ -51,7 +51,7 @@ $screen-height: 720;
   font-family: $default-font;
   font-weight: 500;
   font-size: 72px;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: $color;
@@ -132,6 +132,8 @@ $screen-height: 720;
   position: relative;
   overflow: hidden;
   transform: translateZ(0);
+}
+@mixin btn-js-after {
   &::after {
     content: '';
     position: absolute;
@@ -155,6 +157,55 @@ $screen-height: 720;
   span {
     position: relative;
     z-index: 2;
+  }
+}
+@mixin round-hover {
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #292935;
+    width: 100%;
+    height: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    z-index: 2;
+  }
+  &:hover::before {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@mixin oval-hover($background: #2c2e65, $background2: $green) {
+  background: $background;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $background2;
+    width: 100%;
+    height: 100%;
+    padding-top: 100%;
+    border-radius: 10%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    z-index: -1;
+  }
+  &:hover::before {
+    transform: translate3d(0, -100%, 0);
   }
 }
 @mixin hover-line {
