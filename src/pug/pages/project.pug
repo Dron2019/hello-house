@@ -1,0 +1,69 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Про проєкт'
+    var id_page = 'about-project'
+    var class_page = 'about-project'
+   
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/animation.js')
+block content
+  #about-project-page 
+    .about-project__container 
+      .about-project__text 
+        .about-project__title
+          include ../includes/breadcrumbs.pug 
+          h1 Про проєкт
+        .text
+          p Житловий комплекс «Hello House» представляє собою комплекс класу «Комфорт+» закритого типу з внутрішньою інфраструктурою яка повністю задовольняє потреби його жителів, та розташований в Деснянському районі міста Києва, за адресою вул. Миколи Кибальчича, 1. 
+        ul.specification-list 
+          li.specification-item 
+            .num 26
+            p Кількість поверхів
+          li.specification-item 
+            .num 894
+            p Кількість квартир
+          li.specification-item 
+            .num 48
+            p Паркомісць
+      .about-project__img 
+        .project-img 
+          img(src="./assets/images/project1.jpg" data-paralax)
+    .bottom-delimiter
+    .about-project__container.bottom-container
+      .about-project__img 
+        .project-img 
+          img(src="./assets/images/project2.jpg" data-paralax)
+      .about-project__text 
+        .text
+          p Зручне розташування біля парку та озера, та розвинена зовнішня інфраструктура привертає увагу інвесторів та робить житловий комплекс дуже привабливим місцем для життя. 
+        ul.specification-list 
+          li.specification-item 
+            .num 1,09 га
+            p Площа забудови
+          li.specification-item 
+            .num 3
+            p Загальна кількість секцій
+        .text-bottom
+          h4 Введеня в експлуатацію:
+          p Перший будинок (перша черга) 4 кв. 2023 року 2,3 будинки — II квартал 2024 року
+      
+    .bottom-delimiter
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

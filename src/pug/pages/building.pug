@@ -1,0 +1,97 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'building'
+    var class_page = 'building'
+  block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/building.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #building-page 
+    h1 Хід будівництва
+  .building-status 
+    .building-status__text 
+      .text 
+        h4 Статус робіт:
+        p Виконується монтаж ліфтів. Триває влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. Проходять фасадні роботи на торцях. Виконується влаштування утеплення на балконах.
+      .text-section
+        ul.section-list 
+          li.section-item 
+            h4 1 секція
+            p 4 квартал 2020 року
+          li.section-item 
+            h4 4 секція
+            p 1 квартал 2021 року
+    .building-status__percent
+      ul.percent-list 
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='74')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            // hidden svg that we refer to
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Будівництво
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='25')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            // hidden svg that we refer to
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Фасад
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='62')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            // hidden svg that we refer to
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Благоустрій
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='17')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            // hidden svg that we refer to
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Мережі
+  .bottom-delimiter
+  ul.building-list(data-build-container)
+    li.building-item
+      .building-item__info 
+        .month Вересень
+        .info-container
+          .foto 
+            .num 14
+            .text фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

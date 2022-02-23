@@ -28,6 +28,7 @@
   &__swiper {
     width: 68%;
     padding-left: 80px;
+    position: relative;
   }
 }
 .awards-swiper {
@@ -80,4 +81,28 @@
       }
     }
   }
+}
+.awards-btn-prev,
+.awards-btn-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  &:hover {
+    @include from(992px) {
+      svg {
+        stroke: #2c2e65;
+      }
+    }
+  }
+  svg {
+    stroke: #292935;
+    width: 20px;
+    height: 20px;
+  }
+}
+.awards-btn-prev {
+  left: 0;
+}
+.awards-btn-next {
+  right: -70px;
 }

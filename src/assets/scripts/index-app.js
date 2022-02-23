@@ -1,6 +1,7 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import i18next from 'i18next';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import axios from 'axios';
 import * as yup from 'yup';
 import FormMonster from '../../pug/components/form/form';
@@ -11,6 +12,8 @@ import SexyInput from '../../pug/components/input/input';
  * smooth scroll start
  */
 global.gsap = gsap;
+global.ScrollTrigger = ScrollTrigger;
+gsap.registerPlugin(ScrollTrigger);
 global.axios = axios;
 
 /* eslint-disable-next-line */
@@ -167,3 +170,35 @@ forms.forEach(form => {
 //   window.locoScroll.update();
 // });
 /** ******************************* */
+// const paralaxImages = document.querySelectorAll('[data-paralax]');
+// paralaxImages.forEach(image => {
+//   const wrap = document.createElement('div');
+//   wrap.style.overflow = 'hidden';
+//   wrap.style.height = '100%';
+//   image.parentElement.prepend(wrap);
+//   gsap.set(image, { willChange: 'transform', scale: 1.1 });
+//   wrap.prepend(image);
+
+//   gsap
+//     .timeline({
+//       ease: 'none',
+//       scrollTrigger: {
+//         trigger: wrap,
+//         scrub: 0.5,
+//         onLeave: () => {
+//           // console.log('leave');
+//         },
+//         // markers: true,
+//       },
+//     })
+//     .fromTo(
+//       image,
+//       {
+//         y: -35,
+//       },
+//       {
+//         y: 35,
+//         ease: 'linear',
+//       },
+//     );
+// });

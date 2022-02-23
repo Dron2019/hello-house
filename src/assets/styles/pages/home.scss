@@ -304,10 +304,11 @@
   .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     svg {
       width: 30px;
       height: 30px;
+      stroke: #ffffff;
     }
   }
   .swiper-btn-container {

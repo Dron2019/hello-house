@@ -2,7 +2,8 @@
   @include row-flex();
 }
 .page__inner {
-  overflow: hidden;
+  // overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   display: flex;
   flex-direction: column;

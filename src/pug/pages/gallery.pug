@@ -1,0 +1,81 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Галерея'
+    var id_page = 'gallery'
+    var class_page = 'gallery'
+   
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/gallery.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #gallery-page 
+    h1 Галерея
+  .gallery
+    .swiper-gallery 
+      .swiper-wrapper
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/1b.jpg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/2b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/3b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/4b.jpeg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/1b.jpg")
+        .swiper-slide 
+          .swiper-slide__img 
+            img(src="./assets/images/slider-gallery/2b.jpeg")
+      .swiper-btn-container
+        .swiper-button-prev.gallery-prev
+          +svg('gallery-prev')
+        .swiper-button-next.gallery-next
+          +svg('gallery-next')
+        .swiper-bottom-container
+          .swiper-gallery-bottom(thumbsSlider="")
+            .swiper-wrapper
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/1s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/2s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/3s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/4s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/1s.jpg")
+              .swiper-slide 
+                .swiper-slide__img 
+                  img(src="./assets/images/slider-gallery/2s.jpg")
+
+
+
+  .bottom-delimiter
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,58 @@
+#documents-page {
+  padding: 0 var(--padding) 130px var(--padding);
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    position: relative;
+    margin-bottom: 72px;
+    &::after {
+      left: 16px;
+    }
+  }
+}
+
+.documents-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.documents-item {
+  position: relative;
+  display: flex;
+  width: calc(50% - 15px);
+  margin-bottom: 30px;
+  border: 1px solid #292935;
+  background-image: url('../images/patern-drops.png');
+  background-position: center;
+  background-image: cover;
+  &:nth-child(odd) {
+    margin-right: 30px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    width: 146px;
+    height: 200px;
+    border-right: 1px solid #292935;
+    margin-right: 30px;
+    flex-shrink: 0;
+    img {
+      object-fit: fill;
+    }
+  }
+  p {
+    @include main-text-m;
+    width: 49.4%;
+    margin-right: 164px;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: #292935;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+  }
+}

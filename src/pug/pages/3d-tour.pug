@@ -1,0 +1,45 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = '3D тур'
+    var id_page = '3d-tour'
+    var class_page = '3d-tour'
+    
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+  script(defer src='./assets/scripts/3d-tour.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #tour-page 
+    h1 3D тур
+    .tour-page__container 
+      .text 
+        p Житловий комплекс має унікальну архітектурну концепцію, в якій ми дбаємо про естетику, якість будівництва та функціональність кожного елементу.
+      .video-container 
+        video(class="video" id="video" loop preload="auto" muted width="100%" height="100%") 
+          <source src="./assets/images/hello.mp4" type="video/mp4">
+        .video-btn-container
+          button.cerchio
+            <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 23.3567V2.64335C0 1.06517 1.74231 0.10874 3.07376 0.956026L19.3485 11.3127C20.5835 12.0986 20.5835 13.9014 19.3485 14.6873L3.07375 25.044C1.7423 25.8913 0 24.9348 0 23.3567Z" fill="white"/>
+            </svg>
+
+
+  .bottom-delimiter
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

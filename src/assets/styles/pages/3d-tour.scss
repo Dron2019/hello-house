@@ -1,0 +1,37 @@
+#tour-page {
+  padding: 0 var(--padding) 160px var(--padding);
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    position: relative;
+    margin-bottom: 72px;
+    &::after {
+      left: 16px;
+    }
+  }
+}
+.tour-page__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .text {
+    width: 21.2%;
+    p {
+      @include main-text-s(#292935);
+    }
+  }
+  .video-container {
+    width: 77%;
+    height: 686px;
+    position: relative;
+    video {
+      object-fit: cover;
+    }
+    .video-btn-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

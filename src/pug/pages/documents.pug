@@ -1,0 +1,62 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Документи'
+    var id_page = 'documents'
+    var class_page = 'documents'
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #documents-page 
+    h1 Документи
+    ul.documents-list 
+      li.documents-item 
+        a(href="#")
+          .documents-item__img 
+            img(src="./assets/images/documents/document1.jpg", alt="")
+          p Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту ДАБI )
+          +svg('gallery-next')
+      li.documents-item 
+        a(href="#")
+          .documents-item__img 
+            img(src="./assets/images/documents/document2.jpg", alt="")
+          p Договір оренди земельної ділянки від 12.06.2020р
+          +svg('gallery-next')
+      li.documents-item 
+        a(href="#")
+          .documents-item__img 
+            img(src="./assets/images/documents/document3.jpg", alt="")
+          p Експертиза проєкту
+          +svg('gallery-next')
+      li.documents-item 
+        a(href="#")
+          .documents-item__img 
+            img(src="./assets/images/documents/document4.jpg", alt="")
+          p 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
+          +svg('gallery-next')
+      li.documents-item 
+        a(href="#")
+          .documents-item__img 
+            img(src="./assets/images/documents/document5.jpg", alt="")
+          p Договір оренди земельної ділянки від 12.06.2020р
+          +svg('gallery-next')
+
+  .bottom-delimiter
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

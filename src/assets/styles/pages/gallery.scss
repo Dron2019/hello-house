@@ -1,0 +1,12 @@
+#gallery-page {
+  padding: 0 var(--padding) 0 var(--padding);
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    position: relative;
+    margin-bottom: 72px;
+    &::after {
+      left: 16px;
+    }
+  }
+}
