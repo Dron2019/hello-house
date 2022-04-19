@@ -51,7 +51,6 @@ block content
             .percent-circle.pc3(data-percent='25')
               svg
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
-            // hidden svg that we refer to
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
           .text Фасад
@@ -60,7 +59,6 @@ block content
             .percent-circle.pc3(data-percent='62')
               svg
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
-            // hidden svg that we refer to
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
           .text Благоустрій
@@ -69,13 +67,26 @@ block content
             .percent-circle.pc3(data-percent='17')
               svg
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
-            // hidden svg that we refer to
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
           .text Мережі
   .bottom-delimiter
   ul.building-list(data-build-container)
-    li.building-item
+    //- li.building-item.js-build-card
+      .building-item__info 
+        .month Вересень
+        .info-container
+          p.foto 
+            span.num 14
+            | фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
+    //- li.building-item.js-build-card
       .building-item__info 
         .month Вересень
         .info-container
@@ -86,10 +97,41 @@ block content
             span(data-build-date) 23
             span(data-build-month) 01
             span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
+    //- li.building-item.js-build-card
+      .building-item__info 
+        .month Вересень
+        .info-container
+          .foto 
+            .num 14
+            .text фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
+    //- li.building-item.js-build-card
+      .building-item__info 
+        .month Вересень
+        .info-container
+          .foto 
+            .num 14
+            .text фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
 
-
-
-
+  button.button 
+    span Більше звітів
+  .bottom-delimiter
 block footer
   include ../includes/footer.pug
 

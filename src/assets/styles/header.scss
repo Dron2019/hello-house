@@ -34,7 +34,7 @@
   display: flex;
   align-content: center;
   align-items: center;
-  flex-shrink: 0;
+  // flex-shrink: 0;
   margin-right: 70px;
   img {
     width: 80px;
@@ -47,12 +47,11 @@
   }
 }
 .header__link {
-  // text-decoration: none;
   font-weight: 500;
   font-size: 18px;
   line-height: 100%;
   text-transform: uppercase;
-  white-space: nowrap;
+  // white-space: nowrap;
   color: $text-dark;
   margin-right: 70px;
   @include hover-line;
@@ -62,7 +61,7 @@
   font-size: 18px;
   line-height: 100%;
   text-transform: uppercase;
-  white-space: nowrap;
+  // white-space: nowrap;
   color: $text-dark;
   margin-right: 70px;
   @include hover-line;
@@ -80,8 +79,8 @@
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  white-space: nowrap;
-  min-width: max-content;
+  // white-space: nowrap;
+  // min-width: max-content;
   color: $white;
   margin-right: 70px;
   transition: all 0.3 cubic-bezier(0.17, 0.67, 0.83, 0.67);

@@ -1,0 +1,98 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Переваги'
+    var id_page = 'benefits'
+    var class_page = 'benefits'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/benefits.js')
+block content
+  #benefits-page 
+    .benefits__container 
+      .benefits__text 
+        .benefits__title
+          include ../includes/breadcrumbs.pug 
+          h1 Переваги
+        .text
+          h4 5 хвилин до озера та парку
+          p ЖК HELLO HOUSE обирають всі ті хто веде активний спосіб життя. Комплекс знаходится в 5 хв від озера та парку. Тому ранкові пробіжки та пікніки у вихідні будуть поруч з природою.
+          .scroll-down2 
+            .svg
+              +svg('scroll-down')
+            span Scroll
+      .benefits__img 
+        .project-img 
+          img(src="./assets/images/benefits1.jpg" data-paralax)
+    .bottom-delimiter
+    .benefits__section 
+      .left 
+        .left__img 
+          img(src="./assets/images/benefits2.jpg" data-paralax)
+        .left__text
+          h4 Якість будівництва «Комфорт +»
+          p Сучасний житловий простір класу «КОМФОРТ+» за доступною ціною, в якому враховано потреби всіх мешканців.
+      .right 
+        .right__content
+          .right__text
+            h4 Благоустрій прибудинкової території
+            p Паркова алея та зелені зони відпочинку, спортивне поле та тренажери, дитячі ігрові майданчики, безкоштовний Wi-Fi.
+          .right__img 
+            img(src="./assets/images/benefits3.jpg" data-paralax)
+    .bottom-delimiter
+    .benefits__section 
+      .left.padding
+        .left__img 
+          img(src="./assets/images/benefits4.jpg" data-paralax)
+      .right 
+        .right__content
+          .right__text
+            h4 20 хвилин до метро
+            p Зручне розташування комплексу, та розвинена транспортна мережа дозволить дістатися до найближчих станцій метро «Почайна», «Лівобережна», «Дарниця», «Чернігівська» за мінімум часу.
+    .bottom-delimiter
+    .benefits__section.benefits__last-section 
+      .left 
+        .left__text
+          h4 Безпека проживання
+          p Закрита прибудинкова територія, організація сучасних систем безпеки включаючи цілодобовий відео нагляд.
+        .left__img 
+          img(src="./assets/images/benefits6.jpg" data-paralax)
+      .right 
+        .right__content
+          .right__img 
+            img(src="./assets/images/benefits5.jpg" data-paralax)
+          .right__text
+            h4 Розвинена інфраструктура
+            p ТРЦ, супермаркети, школи, дитсадки, аптеки, фітнес клуби, ресторани, кафе, банки та сквери, все поряд з необхідною інфраструктурою.
+    .bottom-delimiter
+
+
+
+ 
+
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

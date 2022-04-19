@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "^3.9.0",
     "autoprefixer": "^8.6.0",
     "babel-eslint": "^8.2.3",
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.27.9",
     "browserify": "^16.5.2",
     "cssnano": "^4.1.10",
     "del": "^3.0.0",
@@ -88,6 +88,7 @@
     "intl-tel-input": "^17.0.12",
     "jquery": "^3.2.1",
     "locomotive-scroll": "^4.0.6",
+    "make": "^0.8.1",
     "on-change": "^2.2.1",
     "yup": "^0.32.8"
   }

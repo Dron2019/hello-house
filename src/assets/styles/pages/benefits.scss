@@ -1,0 +1,138 @@
+#benefits-page {
+  p {
+    @include main-text-s(#292935);
+  }
+  h4 {
+    @include main-text-m;
+    margin-bottom: 20px;
+  }
+}
+
+.benefits__container {
+  display: flex;
+}
+.benefits__text {
+  width: 50%;
+  border-right: 1px solid #292935;
+  .benefits__title {
+    border-bottom: 1px solid #292935;
+    padding-left: var(--padding);
+  }
+  .breadcrumbs {
+    margin-left: 0;
+  }
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    position: relative;
+    margin-bottom: 72px;
+    &::after {
+      left: 16px;
+    }
+  }
+  .text {
+    width: 100%;
+    padding: 50px 0 48px var(--padding);
+    p {
+      width: 52.2%;
+    }
+  }
+}
+.benefits__img {
+  width: 50%;
+  padding: calc(var(--header-h) + 50px) 113px 50px 113px;
+  .project-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.scroll-down2 {
+  // position: absolute;
+  // left: var(--padding);
+  // bottom: 25%;
+  margin-top: 228px;
+  margin-left: -30px;
+  height: 49px;
+  width: 116px;
+  background: #ffffff;
+  border: 1px solid #292935;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  color: $black;
+  transform: rotate(-90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 7px;
+    height: 30px;
+    margin-right: 15px;
+    transform: rotate(90deg);
+  }
+  .svg {
+    animation: wiggleDw 2s linear infinite;
+  }
+}
+.benefits__section {
+  display: flex;
+  .left {
+    width: 50%;
+    border-right: 1px solid #292935;
+    padding: 144px var(--padding);
+    &__img {
+      margin-bottom: 50px;
+    }
+    &__text {
+      width: 76%;
+    }
+  }
+  .padding {
+    padding: 110px vw(72, 1920) 110px var(--padding);
+    .left__img {
+      margin-bottom: 0;
+    }
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    &__content {
+      width: 51%;
+    }
+    &__img {
+      margin-top: 50px;
+    }
+  }
+}
+.benefits__last-section {
+  .left {
+    padding: 65px vw(311, 1920) 65px var(--padding);
+    &__img {
+      margin-bottom: 0;
+    }
+    &__text {
+      margin-bottom: 50px;
+    }
+  }
+  .right {
+    padding: 144px 0;
+    &__content {
+      width: 65.5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__img {
+      margin: 0 0 50px;
+    }
+    &__text {
+      width: 78%;
+    }
+  }
+}

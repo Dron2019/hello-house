@@ -1,0 +1,49 @@
+.building-popup(data-build-popup-container)
+  .building-popup__container
+    a(href='index.html').header__logo
+        +svg('logo')
+    .burger(data-close-build-popup)
+      span.burger__name Закрити
+      .burger__icon
+        //- <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //-   <circle cx="32.5" cy="32.5" r="32.5" fill="#292935"/>
+        //-   <path d="M40 40L26 26M26 40L40 26L26 40Z" stroke="white" stroke-width="1.5"/>
+        //- </svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 15L1 1M1 15L15 1L1 15Z" stroke="white" stroke-width="1.5"/>
+        </svg>
+    .popup-date-container
+      .date(data-build-date) 18 
+      .month(data-build-month) червня
+      .year(data-build-year) 2021
+
+    .building-popup__swiper-container
+      .swiper-building.js-build-big
+        .swiper-wrapper
+          //- .swiper-slide
+          //-   .swiper-slide__img
+          //-     img(src="./assets/images/building/building-sw1.jpg", alt="")
+          //- .swiper-slide
+          //-   .swiper-slide__img
+          //-     img(src="./assets/images/building/building-sw2.jpg")
+          //- .swiper-slide
+          //-   .swiper-slide__img
+          //-     img(src="./assets/images/building/building-sw3.jpg", alt="")
+          
+        .swiper-btn-container
+          .swiper-button-prev.building-prev
+            +svg('gallery-prev')
+          .swiper-button-next.building-next
+            +svg('gallery-next')
+          .swiper-bottom-container
+            .swiper-building-bottom(thumbsSlider="").js-build-mini
+              .swiper-wrapper(data-slides-wrap)
+                //- .swiper-slide 
+                //-   .swiper-slide__img 
+                //-     img(src="./assets/images/building/building1.jpg")
+                //- .swiper-slide 
+                //-   .swiper-slide__img 
+                //-     img(src="./assets/images/building/building2.jpg")
+                //- .swiper-slide 
+                //-   .swiper-slide__img 
+                //-     img(src="./assets/images/building/building3.jpg")
