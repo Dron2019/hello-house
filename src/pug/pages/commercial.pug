@@ -43,10 +43,19 @@ block content
             h4 офісні приміщення другий поверх
     .lightbox.js-lightbox
       .lightbox__overlay
-      .lightbox__content
+        .lightbox__header 
+          +svg('logo')
+          .close(data-action="close-lightbox")
+            p Закрити
+            button(class="lightbox__button"  type="button") 
         img(class="lightbox__image" src="" alt="")
-      button(class="lightbox__button" data-action="close-lightbox" type="button") 
-    .bottom-delimiter
+      //- .lightbox__content
+        img(class="lightbox__image" src="" alt="")
+      //- .close
+      //- button(class="lightbox__button" data-action="close-lightbox" type="button") Закрити
+      
+      
+  .bottom-delimiter
 
 
 

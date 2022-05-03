@@ -103,6 +103,7 @@
   opacity: 0;
   pointer-events: none;
   // transition: opacity var(--animation-duration) var(--timing-function);
+  z-index: 101;
 }
 
 .lightbox.is-open {
@@ -116,7 +117,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: #ffffff;
+  // z-index: 20;
+  padding-bottom: 30px;
+  img {
+    margin: 0 auto;
+    transform: scale(0.8);
+  }
 }
 
 .lightbox__content {
@@ -135,27 +142,60 @@
   max-height: 100vh;
   max-width: 100vw;
 }
-
-.lightbox__button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+.close {
+  // position: absolute;
+  // top: 300px;
+  // right: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #435055;
+    margin-right: 15px;
+  }
+}
+.lightbox__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: transparent;
-  color: #fff;
   cursor: pointer;
   // transition: background-color var(--animation-duration) var(--timing-function);
   outline: none;
-  // background-image: url("../images/icon-close.svg");
-  background-position: center;
-  background-size: 60%;
-  background-repeat: no-repeat;
+
+  // z-index: 51;
+  background: #292935;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../images/icon-close.svg');
+    background-position: center;
+
+    background-repeat: no-repeat;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.lightbox__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 80px;
+  svg {
+    width: 193px;
+    height: 60px;
+  }
 }
