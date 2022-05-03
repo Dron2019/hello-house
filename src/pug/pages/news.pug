@@ -1,0 +1,89 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Новини та акції'
+    var id_page = 'news'
+    var class_page = 'news'
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/news.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #news-page 
+    h1 Новини та акції
+    .filter 
+      button.filter__item.active(data-view="all") Всі
+      button.filter__item(data-view="news") Новини
+      button.filter__item(data-view="promotion") Акції
+    ul.news.items
+      li.news__item.promotion
+        a(href="single-news.html")
+          .news__img 
+            img(src="./assets/images/news/news1.jpg")
+            .promotion
+              .promotion__bg 
+              .text Акція
+          .news__content
+            .news__description
+              h2 ЖК Hello House відзначено професійною нагородою премії «Український
+              p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та qqqqqqq qqqqqq qqqqqqqqqqqq qqqqqqq qqqq qqqqqqqqqqqqq qqqqq qqqq qqqq
+            .news__date 01.02.2022
+      li.news__item.news
+        a(href="single-news.html")
+          .news__img 
+            img(src="./assets/images/news/news2.jpg")
+          .news__content
+            .news__description
+              h2 ЖК Hello House відзначено професійною нагородою премії «Український
+              p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та qqqqqqq qqqqqq qqqqqqqqqqqq qqqqqqq qqqq qqqqqqqqqqqqq qqqqq qqqq qqqq
+            .news__date 01.02.2022
+      li.news__item.news
+        a(href="single-news.html")
+          .news__img 
+            img(src="./assets/images/news/news3.jpg")
+          .news__content
+            .news__description
+              h2 ЖК Hello House відзначено професійною нагородою премії «Український
+              p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та qqqqqqq qqqqqq qqqqqqqqqqqq qqqqqqq qqqq qqqqqqqqqqqqq qqqqq qqqq qqqq
+            .news__date 01.02.2022
+      li.news__item.promotion
+        a(href="single-news.html")
+          .news__img 
+            img(src="./assets/images/news/news4.jpg")
+            .promotion
+              .promotion__bg 
+              .text Акція
+          .news__content
+            .news__description
+              h2 ЖК Hello House відзначено професійною нагородою премії «Український
+              p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та qqqqqqq qqqqqq qqqqqqqqqqqq qqqqqqq qqqq qqqqqqqqqqqqq qqqqq qqqq qqqq
+            .news__date 01.02.2022
+      li.news__item.news
+        a(href="single-news.html")
+          .news__img 
+            img(src="./assets/images/news/news5.jpg")
+          .news__content
+            .news__description
+              h2 ЖК Hello House відзначено професійною нагородою премії «Український
+              p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та qqqqqqq qqqqqq qqqqqqqqqqqq qqqqqqq qqqq qqqqqqqqqqqqq qqqqq qqqq qqqq
+            .news__date 01.02.2022
+    button.button.js-button 
+      span Бідьше новин та акцій
+  .bottom-delimiter
+
+   
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

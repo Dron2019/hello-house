@@ -1,73 +1,149 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'Kонтакти'
-    var id_page = 'contacts'
-    var class_page = 'contacts'
-    // var breadcrumbsBtn = 'filter'
-    var breadcrumbsSubitem = [
-      {
-        label: 'Contacts',
-        link: pagesLink[0].contacts
-      }
-    ]
+    var title_page = 'Контакти'
+    var id_page = 'id-page-contacts'
+    var class_page = 'class-page-contacts'
 block meta
   title= title_page
   meta(name='description', content='')
 block head
-  link(rel='stylesheet', href="./assets/styles/main.min.css")
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
-  script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/contacts.js')
 block content
-  .contacts
-    include ../includes/breadcrumbs.pug
-    h1.title контакти
-    .contact
-      .contact__location
-        .contact__title Розташування:
-        .contact__desc м. Київ, Оболонський район,<br> пр-т Степана Бандрери, 30
-        a(href="").contact__link
-          span Показати на Google Maps
-          .contact__link__arrow
-            +svg('arrow')
-      .contact__sales
-        .contact__title Відділ продажів:
-        .contact__phone 044 555-55-55
-        .contact__mail info@beregresidence.com
-        .contact__work-time
-          span Пн-пт: 09:00-19:00
-          span Сб-вс: 10:00-18:00
+  #contacts-page
+    .contacts 
+      .contacts__description 
+        .contacts__hover 
+          include ../includes/breadcrumbs.pug 
+          <svg class="letter" width="641" height="652" viewBox="0 0 641 652" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" fill="white"/>
+            <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" fill="url(#pattern0)" fill-opacity="0.5"/>
+            <path d="M420.093 201.191V0.5H640.5V651.5H420.323V450.809V450.309H419.823C310.493 450.309 221.862 540.339 221.597 651.5H0.5V0.5H221.367C221.633 111.661 310.263 201.691 419.593 201.691H420.093V201.191Z" stroke="#292935"/>
+            <path d="M42.192 40.328V33.2H44.4V50H42.192V42.44H34.032V50H31.8V33.2H34.032V40.328H42.192ZM49.5073 42.56V47.888H57.3073V50H47.2753V33.2H57.1873V35.312H49.5073V40.472H56.5873V42.56H49.5073ZM61.5139 33.2V47.888H68.7619V50H59.2819V33.2H61.5139ZM72.5126 33.2V47.888H79.7606V50H70.2806V33.2H72.5126ZM79.2429 41.6C79.2429 39.168 80.0829 37.112 81.7629 35.432C83.4429 33.736 85.4989 32.888 87.9309 32.888C90.3629 32.888 92.4189 33.736 94.0989 35.432C95.7949 37.112 96.6429 39.168 96.6429 41.6C96.6429 44.016 95.7949 46.072 94.0989 47.768C92.4189 49.464 90.3629 50.312 87.9309 50.312C85.4989 50.312 83.4429 49.464 81.7629 47.768C80.0829 46.056 79.2429 44 79.2429 41.6ZM94.4109 41.6C94.4109 39.744 93.7869 38.192 92.5389 36.944C91.3229 35.68 89.7869 35.048 87.9309 35.048C86.0909 35.048 84.5469 35.68 83.2989 36.944C82.0669 38.208 81.4509 39.76 81.4509 41.6C81.4509 43.424 82.0669 44.976 83.2989 46.256C84.5469 47.504 86.0909 48.128 87.9309 48.128C89.7869 48.128 91.3229 47.504 92.5389 46.256C93.7869 44.976 94.4109 43.424 94.4109 41.6ZM42.192 66.328V59.2H44.4V76H42.192V68.44H34.032V76H31.8V59.2H34.032V66.328H42.192ZM46.3873 67.6C46.3873 65.168 47.2273 63.112 48.9073 61.432C50.5873 59.736 52.6433 58.888 55.0753 58.888C57.5073 58.888 59.5633 59.736 61.2433 61.432C62.9393 63.112 63.7873 65.168 63.7873 67.6C63.7873 70.016 62.9393 72.072 61.2433 73.768C59.5633 75.464 57.5073 76.312 55.0753 76.312C52.6433 76.312 50.5873 75.464 48.9073 73.768C47.2273 72.056 46.3873 70 46.3873 67.6ZM61.5553 67.6C61.5553 65.744 60.9313 64.192 59.6833 62.944C58.4673 61.68 56.9313 61.048 55.0753 61.048C53.2353 61.048 51.6913 61.68 50.4433 62.944C49.2113 64.208 48.5953 65.76 48.5953 67.6C48.5953 69.424 49.2113 70.976 50.4433 72.256C51.6913 73.504 53.2353 74.128 55.0753 74.128C56.9313 74.128 58.4673 73.504 59.6833 72.256C60.9313 70.976 61.5553 69.424 61.5553 67.6ZM65.4174 70.36V59.2H67.6494V70.264C67.6494 71.464 68.0014 72.408 68.7054 73.096C69.4254 73.784 70.4334 74.128 71.7294 74.128C73.0254 74.128 74.0254 73.784 74.7294 73.096C75.4494 72.408 75.8094 71.464 75.8094 70.264V59.2H78.0174V70.36C78.0174 72.184 77.4334 73.632 76.2654 74.704C75.0974 75.776 73.5854 76.312 71.7294 76.312C69.8574 76.312 68.3374 75.776 67.1694 74.704C66.0014 73.632 65.4174 72.184 65.4174 70.36ZM86.1343 76.312C84.5663 76.312 83.2223 75.952 82.1023 75.232C80.9983 74.496 80.2223 73.48 79.7743 72.184L81.6943 71.08C82.3343 73.112 83.8303 74.128 86.1823 74.128C87.3183 74.128 88.1903 73.896 88.7983 73.432C89.4223 72.968 89.7343 72.336 89.7343 71.536C89.7343 70.752 89.4303 70.152 88.8223 69.736C88.2783 69.368 87.2623 68.944 85.7743 68.464L84.1663 67.936C83.8143 67.792 83.3503 67.584 82.7743 67.312C82.2143 67.024 81.8063 66.736 81.5503 66.448C80.8463 65.68 80.4943 64.744 80.4943 63.64C80.4943 62.168 81.0063 61.016 82.0303 60.184C83.0543 59.32 84.3023 58.888 85.7743 58.888C87.0863 58.888 88.2383 59.216 89.2303 59.872C90.2223 60.528 90.9663 61.424 91.4623 62.56L89.5903 63.64C88.8703 61.912 87.5983 61.048 85.7743 61.048C84.8623 61.048 84.1263 61.272 83.5663 61.72C83.0063 62.168 82.7263 62.776 82.7263 63.544C82.7263 64.28 82.9903 64.84 83.5183 65.224C84.0623 65.624 84.9743 66.024 86.2543 66.424L87.2383 66.736C87.7823 66.944 88.0783 67.056 88.1263 67.072C88.6383 67.264 89.1983 67.528 89.8063 67.864C90.2383 68.104 90.6703 68.472 91.1023 68.968C91.6623 69.528 91.9423 70.368 91.9423 71.488C91.9423 72.96 91.4063 74.136 90.3343 75.016C89.2463 75.88 87.8463 76.312 86.1343 76.312ZM95.9801 68.56V73.888H103.78V76H93.7481V59.2H103.66V61.312H95.9801V66.472H103.06V68.56H95.9801Z" fill="#292935"/>
+            <path d="M551.892 581.6C551.892 579.168 552.732 577.112 554.412 575.432C556.092 573.736 558.148 572.888 560.58 572.888C563.012 572.888 565.068 573.736 566.748 575.432C568.444 577.112 569.292 579.168 569.292 581.6C569.292 584.016 568.444 586.072 566.748 587.768C565.068 589.464 563.012 590.312 560.58 590.312C558.148 590.312 556.092 589.464 554.412 587.768C552.732 586.056 551.892 584 551.892 581.6ZM567.06 581.6C567.06 579.744 566.436 578.192 565.188 576.944C563.972 575.68 562.436 575.048 560.58 575.048C558.74 575.048 557.196 575.68 555.948 576.944C554.716 578.208 554.1 579.76 554.1 581.6C554.1 583.424 554.716 584.976 555.948 586.256C557.196 587.504 558.74 588.128 560.58 588.128C562.436 588.128 563.972 587.504 565.188 586.256C566.436 584.976 567.06 583.424 567.06 581.6ZM580.256 588.224V590.12H578.072V588.224C575.672 588.048 573.744 587.392 572.288 586.256C570.848 585.104 570.128 583.552 570.128 581.6C570.128 579.648 570.848 578.096 572.288 576.944C573.744 575.808 575.672 575.152 578.072 574.976V573.08H580.256V574.976C582.688 575.152 584.616 575.808 586.04 576.944C587.496 578.096 588.224 579.648 588.224 581.6C588.224 583.552 587.496 585.104 586.04 586.256C584.616 587.392 582.688 588.048 580.256 588.224ZM580.256 577.016V586.184C582.096 586.056 583.512 585.608 584.504 584.84C585.496 584.056 585.992 582.976 585.992 581.6C585.992 580.224 585.496 579.152 584.504 578.384C583.512 577.6 582.096 577.144 580.256 577.016ZM573.824 578.384C572.832 579.152 572.336 580.224 572.336 581.6C572.336 582.976 572.832 584.048 573.824 584.816C574.816 585.584 576.232 586.032 578.072 586.16V577.016C576.232 577.144 574.816 577.6 573.824 578.384ZM589.942 590V573.2H592.174V590H589.942ZM602.954 590.312C600.394 590.312 598.29 589.472 596.642 587.792C594.994 586.128 594.17 584.064 594.17 581.6C594.17 579.136 594.994 577.072 596.642 575.408C598.29 573.728 600.394 572.888 602.954 572.888C604.474 572.888 605.882 573.256 607.178 573.992C608.474 574.728 609.482 575.72 610.202 576.968L608.258 578.096C607.778 577.168 607.058 576.432 606.098 575.888C605.154 575.328 604.106 575.048 602.954 575.048C601.002 575.048 599.418 575.672 598.202 576.92C596.986 578.152 596.378 579.712 596.378 581.6C596.378 583.472 596.986 585.024 598.202 586.256C599.418 587.504 601.002 588.128 602.954 588.128C604.106 588.128 605.154 587.856 606.098 587.312C607.058 586.752 607.778 586.016 608.258 585.104L610.202 586.208C609.498 587.456 608.498 588.456 607.202 589.208C605.922 589.944 604.506 590.312 602.954 590.312ZM495.988 599.2H508.18V616H505.948V601.312H498.22V616H495.988V599.2ZM511.065 599.2H517.161C518.697 599.2 519.985 599.72 521.025 600.76C522.065 601.8 522.585 603.08 522.585 604.6C522.585 606.12 522.065 607.4 521.025 608.44C519.985 609.48 518.697 610 517.161 610H513.297V616H511.065V599.2ZM513.297 607.912H517.161C518.105 607.912 518.873 607.6 519.465 606.976C520.073 606.32 520.377 605.528 520.377 604.6C520.377 603.64 520.073 602.848 519.465 602.224C518.857 601.6 518.089 601.288 517.161 601.288H513.297V607.912ZM523.496 607.6C523.496 605.168 524.336 603.112 526.016 601.432C527.696 599.736 529.752 598.888 532.184 598.888C534.616 598.888 536.672 599.736 538.352 601.432C540.048 603.112 540.896 605.168 540.896 607.6C540.896 610.016 540.048 612.072 538.352 613.768C536.672 615.464 534.616 616.312 532.184 616.312C529.752 616.312 527.696 615.464 526.016 613.768C524.336 612.056 523.496 610 523.496 607.6ZM538.664 607.6C538.664 605.744 538.04 604.192 536.792 602.944C535.576 601.68 534.04 601.048 532.184 601.048C530.344 601.048 528.8 601.68 527.552 602.944C526.32 604.208 525.704 605.76 525.704 607.6C525.704 609.424 526.32 610.976 527.552 612.256C528.8 613.504 530.344 614.128 532.184 614.128C534.04 614.128 535.576 613.504 536.792 612.256C538.04 610.976 538.664 609.424 538.664 607.6ZM554.422 599.2V613.888H556.222V619.216H553.99V616H542.902V619.216H540.67V613.888H542.134C543.174 612.576 543.694 610.608 543.694 607.984V599.2H554.422ZM544.654 613.888H552.19V601.288H545.926V608.032C545.926 610.56 545.502 612.512 544.654 613.888ZM571.541 616H569.165L567.797 612.232H560.237L558.869 616H556.493L562.757 599.2H565.277L571.541 616ZM564.005 601.864L561.005 610.144H567.029L564.005 601.864ZM584.683 607.408L591.427 616H588.883L582.523 607.936V616H580.315V607.936L573.955 616H571.435L578.155 607.408L571.675 599.2H574.195L580.315 606.904V599.2H582.523V606.904L588.643 599.2H591.187L584.683 607.408ZM592.918 616V599.2H595.15V616H592.918ZM607.634 607.288C608.418 607.672 609.034 608.208 609.482 608.896C609.93 609.584 610.154 610.368 610.154 611.248C610.154 612.592 609.682 613.72 608.738 614.632C607.794 615.544 606.642 616 605.282 616H598.034V599.2H604.754C606.082 599.2 607.194 599.64 608.09 600.52C609.002 601.4 609.458 602.488 609.458 603.784C609.458 605.288 608.85 606.456 607.634 607.288ZM604.754 601.288H600.266V606.424H604.754C605.458 606.424 606.05 606.176 606.53 605.68C607.01 605.184 607.25 604.576 607.25 603.856C607.25 603.152 607.002 602.552 606.506 602.056C606.026 601.544 605.442 601.288 604.754 601.288ZM600.266 613.912H605.282C606.034 613.912 606.666 613.648 607.178 613.12C607.69 612.592 607.946 611.944 607.946 611.176C607.946 610.424 607.682 609.784 607.154 609.256C606.658 608.728 606.034 608.464 605.282 608.464H600.266V613.912Z" fill="#292935"/>
+            <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.0452418" height="0.0444785">
+            <use xlink:href="#image0_902_17670" transform="scale(0.00156006)"/>
+            </pattern>
+            <image id="image0_902_17670" width="29" height="29" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAACXBIWXMAABwgAAAcIAHND5ueAAAF92lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjItMDItMDNUMTI6MTQ6MTArMDI6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmRiNWI3ZmE2LWM1ZDctNDYzMi04ZDQyLTI5YmRiZmE0NDM3ZSIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjczOGJhOTAyLTQ0NjYtN2Y0Ny04MGM5LTNjMDE5MzNiM2RlYiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjhlZjBmZDhlLWUxODItNDBmNy05ODE5LWM2NWJjYzJkOGQzMSIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGVmMGZkOGUtZTE4Mi00MGY3LTk4MTktYzY1YmNjMmQ4ZDMxIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZGI1YjdmYTYtYzVkNy00NjMyLThkNDItMjliZGJmYTQ0MzdlIiBzdEV2dDp3aGVuPSIyMDIyLTAyLTAzVDEyOjE0OjEwKzAyOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5h5Bq5AAAAM0lEQVRIie3VwQkAIBADQWP/PcceBA+E2QbmuWm7ptvjIhQKhUL/QpNc7ynWBoVCodBnHeVxBzXTvOG7AAAAAElFTkSuQmCC"/>
+            </defs>
+          </svg>
+          img(src="./assets/images/contact-hover+.svg").letter-hover
+          .container-eye
+            .eye
+        .contacts__text 
+          h2 Контакти
+          .contacts__container 
+            .sales-office 
+              h5 Офіс продажів:
+              p Зробіть правильний вибір, замовляйте порсональну консультацію наших менеджерів!
+              .table 
+                +svg('clock')
+                .text 
+                  p Пн-Пт:	з 10:00 до 19:00
+                  p Сб:	з 10:00 до 17:00
+                  p Нд:	вихідній
+              .table 
+                +svg('map')
+                .text 
+                  p м. Київ, Дніпровський район, вул. Миколи Кибальчича, 1
+            .sales-office 
+              h5 Зв’язок:
+              a(href="mailto:sale@hello-house.com.ua").contacts-link sale@hello-house.com.ua
+              a(href="tel:+380675990707").contacts-link +38 (067) 599 07 07
+              a(href="tel:+380442229970").contacts-link +38 (044) 222 99 70
+              button.button.js-button 
+                span Зворотній дзвінок
+              ul.social-list 
+                li.social-item
+                  a(href="#").social-link.facebook
+                    //- +svg('facebook')
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.15 73.31">
+                      <path class="cls-1" d="M34.85,15.52h1.8V1.23L35.11,1A75.35,75.35,0,0,0,26.19.5,15.58,15.58,0,0,0,14.44,5.23C11.52,8.37,10,12.89,10,18.45v7.81H.5V42.09H10V72.81H25.16V42.09H34l.19-1.6,1.44-12.21.24-2H25.15v-6.6a5.32,5.32,0,0,1,.66-3.19c.33-.43,1.06-.95,3.1-.95Z"/>
+                    </svg>
+                li.social-item
+                  a(href="#").social-link.instagram
+                    //- +svg('instagram')
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.12 70.12">
+                      <rect class="cls-1" x="0.5" y="0.5" width="69.12" height="69.12" rx="21.25"/>
+                      <circle class="cls-1 cls-1-1" cx="35.06" cy="35.06" r="14.47"/>
+                      <circle class="cls-1 cls-1-1" cx="53.87" cy="15.2" r="5.73"/>
+                    </svg>
+                li.social-item 
+                  a(href="#").social-link.telegram
+                    //- +svg('telegram')
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.54 62.46">
+                      <path class="cls-1" d="M31.71,41,30.4,58.17a4.71,4.71,0,0,0,3.67-1.65L42.9,48.7,61.19,61.11c3.35,1.74,5.71.82,6.62-2.86l12-52.15h0C80.88,1.5,78-.3,74.75.83L4.2,25.88c-4.82,1.73-4.75,4.22-.82,5.35l18,5.2,41.9-24.31c2-1.21,3.76-.54,2.29.67Z"/>
+                    </svg>
+                li.social-item 
+                  a(href="#").social-link.youtube
+                    //- +svg('youtube')
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.24 58.78">
+                      <rect class="cls-1" x="0.5" y="0.5" width="76.24" height="57.78" rx="15.4"/>
+                      <path class="cls-1 cls-1-1" d="M29.57,24.14v10.5a3.42,3.42,0,0,0,4.86,3.1l11.25-5.2a3.42,3.42,0,0,0,0-6.2L34.45,21.05A3.42,3.42,0,0,0,29.57,24.14Z"/>
+                    </svg>
+    .manager 
+      h4 Наші менеджери відділу продажів:
+      ul.manager__list 
+        li.manager__item 
+          .manager__img 
+            img(src="./assets/images/contacts/manager4.jpg ")
+          .manager__name
+            .container
+              p Марина
+        li.manager__item 
+          .manager__img 
+            img(src="./assets/images/contacts/manager3.jpg ")
+          .manager__name
+            .container
+              p Олена  
+        li.manager__item 
+          .manager__img 
+            img(src="./assets/images/contacts/manager2.jpg ")
+          .manager__name
+            .container
+              p Світлана
+        li.manager__item 
+          .manager__img 
+            img(src="./assets/images/contacts/manager1.jpg ")
+          .manager__name
+            .container
+              p Тетяна 
+    .contacts__map 
+      .map 
+        h4 Як до нас дістатися:
+        .map-container 
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10152.787077661847!2d30.572733352342215!3d50.493295477152174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d17a44664a2f%3A0x5867501e73cafef8!2z0JbQmiBIRUxMTyBIT1VTRSAtINCS0ZbQtNC00ZbQuyDQv9GA0L7QtNCw0LbRgw!5e0!3m2!1sru!2sua!4v1645094154227!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      .form
+        h4 Зворотній дзвінок:
+        form( action="#" class="contact-form" data-callback-form)
+          .form-field
+            .form-field-input(data-field-input data-field-name data-status="field--inactive")
+              label(for="callback-form-name") ваше im’я
+              input(class="input-sideform form-name form-field__input contact-form-input" type="text" name="name" id="callback-form-name" placeholder="Iм’я" autocomplete="on" value="")
+              .input-message(data-input-message)
+            .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+              label(for="callback-form-phone") Ваш телефон
+              input(class="input-sideform form-tel form-field__input contact-form-input js-input-form" type="text" id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+              //- span.placeholder-form.js-placeholder-form Номер
+              .input-message(data-input-message)
+          
+            .form-field-confirm
+              button(class="contact-form__btn js-button" type="submit" data-btn-submit="data-btn-submit") 
+                p Надіслати
+                //- span(data-btn-submit-text="")
+        
+    .bottom-delimiter
 
-    .form
-      h5.form-label.home-contact--width Залишились питання?
-      form(data-home-contact autocomplete="off").home-contact--width
-        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-          input(type='text' name="name" placeholder="Ім’я:").form-field__input
-          .form-field-message Ваше ім’я
-          .input-message(data-input-message)
 
-        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-          input(type='text' name="phone" placeholder="Телефон:").form-field__input
-          .form-field-message Ваш телефон
-          .mask-absolute.js-mask-absolute
-          .input-message(data-input-message)
-
-        .form-textarea
-          textarea(placeholder="Повідомлення:")
-          .form-field-message Введіть ваше повідомлення
-
-        .form-btn-wrap.df.jcsb.aic
-          button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
-            span.main-button__text(data-btn-submit-text="data-btn-submit-text") Надіслати
-            .main-button__arrow
-              +svg('arrow')
-
-      //include ../components/form/form.pug
-
+       
 block footer
   include ../includes/footer.pug
 

@@ -1,15 +1,11 @@
 const btn1 = document.querySelectorAll('.js-hover');
 
-btn1.forEach(el =>
-  el.addEventListener('mouseenter', () => {
-    el.previousElementSibling.style.opacity = '1';
-  }),
-);
-btn1.forEach(el =>
-  el.addEventListener('mouseleave', () => {
-    el.previousElementSibling.style.opacity = '0';
-  }),
-);
+btn1.forEach(el => el.addEventListener('mouseenter', () => {
+  el.previousElementSibling.style.opacity = '1';
+}));
+btn1.forEach(el => el.addEventListener('mouseleave', () => {
+  el.previousElementSibling.style.opacity = '0';
+}));
 
 // video start
 const videoHover = document.querySelector('.js-video');

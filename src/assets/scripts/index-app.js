@@ -34,9 +34,9 @@ global.axios = axios;
  * form handlers start
  */
 const forms = ['[data-home-contact]'];
-const formsWithRedirect = ['[data-popup-form]'];
+const formsWithRedirect = ['[data-popup-form], [data-callback-form]'];
 
-formsWithRedirect.forEach(form => {
+formsWithRedirect.forEach((form) => {
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */
@@ -93,7 +93,7 @@ formsWithRedirect.forEach(form => {
   }
 });
 
-forms.forEach(form => {
+forms.forEach((form) => {
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */

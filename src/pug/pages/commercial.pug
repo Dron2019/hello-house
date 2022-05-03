@@ -1,0 +1,58 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комерційна нерухомість'
+    var id_page = 'commercial'
+    var class_page = 'commercial'
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/commercial.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #commercial-page 
+    h1 Комерційна нерухомість
+    .commercial-container
+      ul.commercial-list.js-commercial
+        //- li.commercial-item.js-commercial 
+        //-   a(href="#")
+        //-     img(src="./assets/images/commercial1.jpg")
+        //-     h4 Паркінг
+        //- li.commercial-item.js-commercial 
+        //-   a(href="#")
+        //-     img(src="./assets/images/commercial2.jpg")
+        //-     h4 Підвальні приміщення
+      ul.commercial-list 
+        li.commercial-item 
+          a(href="#")
+            img(src="./assets/images/commercial3.jpg")
+            h4 комерційні приміщення перший поверх
+        li.commercial-item 
+          a(href="#")
+            img(src="./assets/images/commercial4.jpg")
+            h4 офісні приміщення другий поверх
+    .lightbox.js-lightbox
+      .lightbox__overlay
+      .lightbox__content
+        img(class="lightbox__image" src="" alt="")
+      button(class="lightbox__button" data-action="close-lightbox" type="button") 
+    .bottom-delimiter
+
+
+
+   
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

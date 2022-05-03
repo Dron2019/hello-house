@@ -1,0 +1,104 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Характеристики'
+    var id_page = 'characteristics'
+    var class_page = 'characteristics'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/characteristics.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #characteristics-page 
+    h1 Характеристики
+    .characteristics__number 
+      ul.characteristics__deco-list
+        li.characteristics__deco-item 
+          h2 1,09 га 
+          p Площа забудови
+        li.characteristics__deco-item 
+          h2 3
+          p Загальна кількість секцій
+      ul.characteristics__list
+        li.characteristics__item
+          .characteristics__text
+            h2 Тип території: 
+            p Закрита від машин та сторонніх 
+        li.characteristics__item 
+          .characteristics__text
+            h2 Технологія будівництва: 
+            p Монолітно-каркасна.
+    .characteristics__description
+      ul.characteristics__description-fill
+        li.characteristics__description-item 
+          +svg('heating')
+          .text
+            h2 Опалення та гаряче водопостачання:
+            p Від власної дахової газової котельні.
+        li.characteristics__description-item 
+          +svg('bath')
+          .text
+            h2 Система водопостачання
+            p Централізована від міських мереж.
+      .characteristics__description-container
+        ul.characteristics__description-list
+          li.characteristics__item
+            .characteristics__text
+              h2 Фасад житлової частини: 
+              p Мінеральна штукатурка з утепленням мінеральною ватою.
+          li.characteristics__item 
+            .characteristics__text
+              h2 Фасад перших 2-х поверхів: 
+              p Вентильований фасад утеплення мінеральною ватою.
+        ul.characteristics__deco-list
+          li.characteristics__deco-item 
+            h2 26
+            p Кількість поверхів
+          li.characteristics__deco-item 
+            h2 894
+            p Кількість квартир
+          li.characteristics__deco-item 
+            h2 48
+            p Паркомісць
+    .characteristics__terms 
+      ul.characteristics__list
+        li.characteristics__item
+          .characteristics__text
+            h2 Стіни:
+            p Газобетон 250 мм.
+        li.characteristics__item 
+          .characteristics__text
+            h2 Вікна: 
+            p Панорамні.   
+        li.characteristics__item
+          .characteristics__text
+            h2 Ліфти: 
+            p Європейських виробників Осно.
+        li.characteristics__item 
+          .characteristics__text
+            h2 Срок здачі:
+            p 1-й будинок — IV квартал 2023р; 
+            p 2,3 будинки — II квартал 2024р
+    .bottom-delimiter
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

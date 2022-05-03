@@ -1,5 +1,5 @@
 const paralaxImages = document.querySelectorAll('[data-paralax]');
-paralaxImages.forEach(image => {
+paralaxImages.forEach((image) => {
   const wrap = document.createElement('div');
   wrap.style.overflow = 'hidden';
   wrap.style.height = '100%';

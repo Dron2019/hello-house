@@ -4,9 +4,9 @@
 //     window.locoScroll.scrollTo(0);
 //   });
 // }
-$(function() {
+$(() => {
   // при нажатии на кнопку scrollup
-  $('.js-btn-up').click(function() {
+  $('.js-btn-up').click(() => {
     // переместиться в верхнюю часть страницы
     $('html, body').animate(
       {

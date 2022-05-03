@@ -32,7 +32,7 @@ function menuInit() {
 }
 
 function init() {
-  const unSelectHandler = container => {
+  const unSelectHandler = (container) => {
     const elem = container.querySelector('.select-items');
     if (!elem.classList.contains('select-hide')) {
       container.classList.remove('select-arrow-active');
@@ -57,30 +57,24 @@ window.addEventListener('DOMContentLoaded', init);
 
 // button hover start
 const btn = document.querySelectorAll('.js-button');
-btn.forEach(el =>
-  el.addEventListener('mousemove', e => {
-    const x = e.pageX - el.offsetLeft;
-    const y = e.pageY - el.offsetTop;
+btn.forEach(el => el.addEventListener('mousemove', (e) => {
+  const x = e.pageX - el.offsetLeft;
+  const y = e.pageY - el.offsetTop;
 
-    el.style.setProperty('--x', x + 'px');
-    el.style.setProperty('--y', y + 'px');
-  }),
-);
+  el.style.setProperty('--x', `${x}px`);
+  el.style.setProperty('--y', `${y}px`);
+}));
 
 // button hover end
 
 // button hover social start
 const btnSociale = document.querySelectorAll('.js-social-hover');
 
-btnSociale.forEach(el =>
-  el.addEventListener('mouseenter', () => {
-    el.nextElementSibling.style.opacity = '1';
-  }),
-);
-btnSociale.forEach(el =>
-  el.addEventListener('mouseleave', () => {
-    el.nextElementSibling.style.opacity = '0';
-  }),
-);
+btnSociale.forEach(el => el.addEventListener('mouseenter', () => {
+  el.nextElementSibling.style.opacity = '1';
+}));
+btnSociale.forEach(el => el.addEventListener('mouseleave', () => {
+  el.nextElementSibling.style.opacity = '0';
+}));
 
 // button hover social end

@@ -1,0 +1,76 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'ЖК Hello House відзначено професійною нагородою премії «Український Будівельний Олімп – 2021»'
+    var id_page = 'single-news'
+    var class_page = 'single-news'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Новини та акції',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/single-news.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #single-news-page 
+    h1 ЖК Hello House відзначено професійною нагородою премії «Український Будівельний Олімп – 2021»
+    .single-news__container 
+      .single-news__description
+        .single-news__title
+          h2 Яким буде Київ через 10 років? За версією нашої компанії, він буде найкомфортнішим містом у світі. 
+          p Саме такий BHAG ми собі поставили та до якого впевнено рухаємося з кожним новим проєктом. Про те, що вже зараз ми змінюємо обличчя Києва та створюємо проєкти майбутнього, говорить і редакція НВ. У новому номері вона разом з архітекторами, забудовниками та урбаністами склала рейтинг 10 знакових об’єктів столиці та включила до нього відразу два проєкти, які ми реалізуємо спільно з партнерами Perfect Group і Kyivproekt Development — Новий Поділ та KYЇVPROEKT City Space.
+        .single-news__date 
+          p 01.02.2022
+      .single-news__img 
+        img(src="./assets/images/news/news1.jpg")
+      .single-news__title
+        h2 Новий Поділ НВ відзначив за наш підхід до будівництва кварталів, насичену інфраструктуру та головну родзинку району — набережну завдовжки 1 км.
+        p Вона буде відкрита для всіх охочих і стане улюбленим місцем для відпочинку та прогулянок містян і мешканців району. Вона буде відкрита для всіх охочих і стане улюбленим місцем для відпочинку та прогулянок містян і мешканців району. Вона буде відкрита для всіх охочих і стане улюбленим місцем для відпочинку та прогулянок містян і мешканців району:
+        ul 
+          li «Гарна набережна, яка відкриється на Новому Подолі, стане окрасою Києва», — зазначає у статті НВ головний архітектор Архіматики Дмитро Васильєв.
+          li «Гарна набережна, яка відкриється на Новому Подолі
+          li «Гарна набережна на Новому Подолі, стане окрасою Києва», — зазначає
+      a(href="#").button.js-button 
+        span Обрати квартиру  
+    h2.last-news Останні Новини та акції
+    ul.single-news__list 
+      li.single-news__item 
+        a(href="#")
+          .img
+            img(src="./assets/images/news/news3.jpg")
+          .date 
+            p 01.02.2022
+          .title
+            h4 ЖК Hello House - ДАРУЄ ЗНИЖКИ ДО ДНЯ ВСІХ ЗАКОХАНИХ!
+      li.single-news__item 
+        a(href="#")
+          .img
+            img(src="./assets/images/news/news4.jpg")
+          .date 
+            p 01.02.2022
+          .title
+            h4 ЖК Hello House відзначено професійною нагородою премії «Український
+          .promotion
+            .promotion__bg 
+            .text Акція
+  .bottom-delimiter
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

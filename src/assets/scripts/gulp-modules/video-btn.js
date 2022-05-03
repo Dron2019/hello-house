@@ -1,7 +1,7 @@
-var cerchio = document.querySelectorAll('.cerchio');
+const cerchio = document.querySelectorAll('.cerchio');
 
-cerchio.forEach(function(elem) {
-  $(document).on('mousemove touch', function(e) {
+cerchio.forEach((elem) => {
+  $(document).on('mousemove touch', (e) => {
     magnetize(elem, e);
   });
 });
@@ -11,18 +11,18 @@ cerchio.forEach(function(elem) {
 // });
 
 function magnetize(el, e) {
-  var mX = e.pageX,
-    mY = e.pageY;
+  const mX = e.pageX;
+  const mY = e.pageY;
   const item = $(el);
 
   const customDist = item.data('dist') * 20 || 120;
   const centerX = item.offset().left + item.width() / 2;
   const centerY = item.offset().top + item.height() / 2;
 
-  var deltaX = Math.floor(centerX - mX) * -0.45;
-  var deltaY = Math.floor(centerY - mY) * -0.45;
+  const deltaX = Math.floor(centerX - mX) * -0.45;
+  const deltaY = Math.floor(centerY - mY) * -0.45;
 
-  var distance = calculateDistance(item, mX, mY);
+  const distance = calculateDistance(item, mX, mY);
 
   if (distance < customDist) {
     TweenMax.to(item, 0.5, { y: deltaY, x: deltaX, scale: 1.1 });
@@ -36,13 +36,13 @@ function magnetize(el, e) {
 function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(
     Math.sqrt(
-      Math.pow(mouseX - (elem.offset().left + elem.width() / 2), 2) +
-        Math.pow(mouseY - (elem.offset().top + elem.height() / 2), 2),
+      Math.pow(mouseX - (elem.offset().left + elem.width() / 2), 2)
+        + Math.pow(mouseY - (elem.offset().top + elem.height() / 2), 2),
     ),
   );
 }
 
-/*- MOUSE STICKY -*/
+/* - MOUSE STICKY -*/
 function lerp(a, b, n) {
   return (1 - n) * a + n * b;
 }
@@ -51,7 +51,7 @@ function lerp(a, b, n) {
 class Cursor {
   constructor() {
     this.bind();
-    //seleziono la classe del cursore
+    // seleziono la classe del cursore
     this.cursor = document.querySelector('.js-cursor');
 
     this.mouseCurrent = {
@@ -113,7 +113,7 @@ const cursor = new Cursor();
 
 cursor.init();
 
-//play sound on hover
+// play sound on hover
 // var SoundHover = $('#sound-hover')[0];
 // $('.trigger-audio').on('mouseenter', function() {
 //   SoundHover.play();

@@ -1,0 +1,35 @@
+.page404-wrap {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/menu-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    @include main-text-b($text-dark);
+    @include title-after($text-dark);
+    font-size: 200px;
+    position: relative;
+    margin-bottom: 42px;
+  }
+  p {
+    @include main-text-m;
+    text-transform: none;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 28%;
+  }
+  a {
+    @include btn;
+    @include btn-js-after;
+  }
+  svg {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+  }
+}

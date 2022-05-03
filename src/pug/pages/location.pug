@@ -1,0 +1,93 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Розташування'
+    var id_page = 'location'
+    var class_page = ' location'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/location.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #location-page 
+    h1 Розташування
+    .location__map 
+      .map
+        //- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10152.787077661847!2d30.572733352342215!3d50.493295477152174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d17a44664a2f%3A0x5867501e73cafef8!2z0JbQmiBIRUxMTyBIT1VTRSAtINCS0ZbQtNC00ZbQuyDQv9GA0L7QtNCw0LbRgw!5e0!3m2!1sru!2sua!4v1645094154227!5m2!1sru!2sua" width="100%" height="850px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        #map
+      .map-markers 
+        ul.map-markers__list 
+          li.map-markers__item
+            +svg('marker-h')
+            p ЖК Hello House
+          li.map-markers__item
+            +svg('marker-school')
+            p Школи
+          li.map-markers__item
+            +svg('marker-kindergarden')
+            p Дитячий садок
+          li.map-markers__item
+            +svg('marker-pharmacy')
+            p Медицина
+          li.map-markers__item
+            +svg('marker-shopping')
+            p Торговий центр
+          li.map-markers__item
+            +svg('marker-cafe')
+            p Кафе/ресторани
+          li.map-markers__item
+            +svg('marker-bench')
+            p Місця для відпочинку
+          li.map-markers__item
+            +svg('marker-gym')
+            p Спорт та культура
+  .benefits
+    .benefits__item 
+      .text-left 
+        h3 Благоустрій території
+        p Благоустрою прибудинкової території комплексу наші архітектори приділили особливу увагу. Біля комплексу будуть створені дитячі майданчики з сучасними ігровими зонами, спортивне поле та тренажери. Благоустрій внутрішнього двору передбачає безкоштовний Wi-Fi та зелені зони відпочинку. Заплановано розміщення ресторану-кафе з літньою терасою.
+    .benefits__item 
+      .img-letter
+        img(src="./assets/images/location1.jpg")
+  .bottom-delimiter
+  .benefits
+    .benefits__item 
+      .img
+        img(src="./assets/images/location2.jpg")
+    .benefits__item 
+      .text-right 
+        h3 Безпека
+        p Безпека Вашої родини – один з наших головних пріоритетів. Проект ЖК передбачає закриту територію, яка перебуватиме під цілодобовою охороною і матиме пропускну систему. Системи відеоспостереження та контролю доступу будуть «стежити» за безпекою житлового комплексу. В'їзд на територію комплексу буде здійснюватися через стаціонарний контрольно-пропускний пункт охорони зі шлагбаумами на виїздах у двір з автоматичним управлінням. Під’їзди житлового комплексу будуть обладнані сучасними внутрішніми та зовнішніми відео-домофонними системами, які забезпечують якісне відео та аудіозв’язок між відвідувачами та квартирою.
+  .bottom-delimiter
+  .benefits
+    .benefits__item 
+      .text-left.left-padding
+        h3 Підземний паркінг
+        p В сучасних житлових районах паркінг є важливою частиною інфраструктури. Підземний паркінг у житловому комплексі — це надійний та зручний спосіб зберігання свого транспортного засобу. Тому інвестори, які шукають сучасне житло, дуже частіше звертають увагу на новобудови з підземною парковкою, як у ЖК HELLO HOUSE. Завдяки cучасним охоронним системам та цілодобовому відеонагляду власник транспортного засобу може бути впевнений у надійності зберігання свого авто.
+    .benefits__item 
+      .img-letter
+        img(src="./assets/images/location3.jpg")
+  .bottom-delimiter
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

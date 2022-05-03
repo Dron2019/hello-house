@@ -1,61 +1,152 @@
-// .page-contacts {
-//   .footer {
-//     background: #1c2029;
-//   }
-// }
-// .contacts {
-//   display: flex;
-//   justify-content: space-around;
-//   align-content: flex-start;
-//   align-items: flex-start;
-//   flex-wrap: wrap;
-//   height: 100%;
-//   min-height: 100vh;
-//   width: 100%;
-//   padding: 185px 0 230px;
-//   background: #1c2029;
-//   .title {
-//     position: relative;
-//     width: 100%;
-//     text-align: center;
-//     padding: 0 0 30px;
-//     margin: 33px 0 50px;
-//     &:after {
-//       content: '';
-//       position: absolute;
-//       bottom: 0;
-//       left: 50%;
-//       display: inline-block;
-//       width: 50px;
-//       transform: translateX(-50%);
-//       border-bottom: 1px solid rgba(226, 227, 228, 0.3);
-//       @include to(576px) {
-//         display: none;
-//       }
-//     }
-//     @include to(1440px) {
-//       padding: 0 0 20px;
-//       margin: 15px 0 40px;
-//     }
-//     @include to(992px) {
-//       padding: 0 0 20px;
-//       margin: 36px 0 50px;
-//     }
-//     @include to(576px) {
-//       padding: 0 40px;
-//       margin: 20px 0 30px;
-//       text-align: left;
-//     }
-//   }
-//   @include to(1440px) {
-//     padding: 135px 0 160px;
-//   }
-//   @include to(992px) {
-//     flex-direction: column;
-//     flex-wrap: nowrap;
-//     padding: 140px 0 160px;
-//   }
-//   @include to(576px) {
-//     padding: 90px 0 110px;
-//   }
-// }
+#contacts-page {
+  h4 {
+    @include main-text-m;
+    margin-bottom: 30px;
+  }
+  .contacts {
+    padding-bottom: 140px;
+    margin-left: var(--padding);
+    margin-right: var(--padding);
+    margin-bottom: 0;
+    border-bottom: 1px solid #292935;
+    &__description {
+      justify-content: space-between;
+    }
+  }
+  .contacts__hover {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    .letter {
+      top: 40px;
+      left: 0;
+    }
+    .letter-hover {
+      top: 40px;
+      left: 0;
+    }
+    .container-eye {
+      top: calc(50% + 40px);
+    }
+  }
+  .breadcrumbs {
+    margin: 0;
+  }
+  .contacts__text {
+    padding-top: 40px;
+    padding-right: 0;
+  }
+  .button {
+    margin: 10px 0 45px 0;
+  }
+  .contacts__map {
+    margin-top: 0;
+    border-top: none;
+    padding-bottom: 200px;
+    justify-content: space-between;
+    .map {
+      width: 49%;
+    }
+    .form {
+      width: 49%;
+    }
+  }
+  .map-container {
+    height: -webkit-fill-available;
+  }
+}
+.manager {
+  padding: 100px 0;
+  margin: 0 var(--padding);
+  border-bottom: 1px solid #292935;
+  h4 {
+    text-align: center;
+  }
+}
+.manager__list {
+  display: flex;
+  justify-content: space-between;
+}
+.manager__item {
+  width: 23.6%;
+  position: relative;
+}
+.manager__img {
+  height: 600px;
+}
+.manager__name {
+  width: 150px;
+  height: 46px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  .container {
+    width: 100%;
+    height: 100%;
+    background: #008b64;
+    padding: 13px 17px;
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url('../images/h-white.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 45px;
+      height: 100%;
+      position: absolute;
+      left: -45px;
+      top: 0;
+    }
+  }
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}
+.contact-form {
+  background-image: url('../images/menu-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 110px vw(110, 1920);
+  label {
+    @include menu-text-s;
+    font-weight: 500;
+    color: #2c2e65;
+    margin-bottom: 12px;
+  }
+  input {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    padding-left: 30px;
+    &::placeholder {
+      @include menu-text-s;
+      text-transform: none;
+      text-align: left;
+    }
+  }
+
+  .form-field-input {
+    height: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  &__btn {
+    @include btn;
+    // @include btn-js-after;
+  }
+}
