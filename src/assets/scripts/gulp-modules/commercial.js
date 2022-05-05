@@ -21,9 +21,7 @@ galleryEl.insertAdjacentHTML('afterbegin', cardsMarkup);
 function galleryImg(list) {
   return list
     .map(
-      ({
-        preview, original, description, h,
-      }) => `<li class="commercial-item">
+      ({ preview, original, description, h }) => `<li class="commercial-item">
           <a href="#">
             <img
               src="${preview}"
@@ -57,14 +55,25 @@ const backdrop = document.querySelector('.lightbox__overlay');
 closeModalBtn.addEventListener('click', onCloseModal);
 backdrop.addEventListener('click', onBackdropClick);
 
-function onCloseModal() {
-  lightBox.classList.remove('is-open');
-  header.style.display = '';
-  bigPhoto.removeAttribute('src');
-  bigPhoto.removeAttribute('alt');
-  document.addEventListener('keydown', onEscKeyPress);
+// function onCloseModal() {
+//   lightBox.classList.remove('is-open');
+//   header.style.display = '';
+//   bigPhoto.removeAttribute('src');
+//   bigPhoto.removeAttribute('alt');
+//   document.addEventListener('keydown', onEscKeyPress);
+// }
+function onOpenModal(event) {
+  event.preventDefault();
+  // if (event.target.nodeName !== 'IMG') {
+  //   return;
+  // }
+  const targetWithImage = event.target.closest('li').querySelector('img');
+  lightBox.classList.add('is-open');
+  header.style.display = 'none';
+  const linkBigPhoto = targetWithImage.dataset.source;
+  bigPhoto.src = linkBigPhoto;
+  bigPhoto.alt = event.target.alt;
 }
-
 function onEscKeyPress(event) {
   const ESC_KEY_CODE = 'Escape';
   const isEscKey = event.code === ESC_KEY_CODE;

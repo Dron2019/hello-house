@@ -78,3 +78,31 @@ btnSociale.forEach(el => el.addEventListener('mouseleave', () => {
 }));
 
 // button hover social end
+// feedback form start
+const btnCallMenu = document.querySelectorAll('.js-call');
+const btnClose = document.querySelectorAll('.js-close');
+const formCall = document.querySelector('.feedback-form');
+const formGratitude = document.querySelector('.thanks-page');
+// const btnForm = document.querySelectorAll('form-button-js');
+
+btnCallMenu.forEach(el => el.addEventListener('click', () => {
+  formCall.classList.toggle('feedback-active');
+  document.querySelector('body').style.overflow = 'hidden';
+}));
+
+btnClose.forEach(el => el.addEventListener('click', () => {
+  formCall.classList.remove('feedback-active');
+  document.querySelector('body').style.overflow = 'auto';
+}));
+// btnClose.forEach(el =>
+//   el.addEventListener('click', () => {
+//     formGratitude.classList.remove('sideform-active');
+//     document.querySelector('body').style.overflow = 'auto';
+//   }),
+// );
+// btnForm.forEach(el =>
+//   el.addEventListener('click', () => {
+//     formGratitude.classList.remove('sideform-active');
+//     document.querySelector('body').style.overflow = 'auto';
+//   }),
+// );

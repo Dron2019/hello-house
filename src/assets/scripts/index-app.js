@@ -33,8 +33,10 @@ global.axios = axios;
 /*
  * form handlers start
  */
-const forms = ['[data-home-contact]'];
-const formsWithRedirect = ['[data-popup-form], [data-callback-form]'];
+// const forms = ['[data-home-contact]'];
+// const formsWithRedirect = ['[data-callback-form], [data-home-contact]'];
+const formsWithRedirect = ['[data-callback-form]'];
+const formsTel = ['[data-home-contact]'];
 
 formsWithRedirect.forEach((form) => {
   const $form = document.querySelector(form);
@@ -46,7 +48,8 @@ formsWithRedirect.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          window.location.href = 'message';
+          const backdrop = document.querySelector('.thanks-page');
+          gsap.to(backdrop, { autoAlpha: 1 });
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -63,7 +66,19 @@ formsWithRedirect.forEach((form) => {
             valid: false,
             error: [],
           },
-
+          // email: {
+          //   inputWrapper: new SexyInput({
+          //     animation: 'none',
+          //     $field: $form.querySelector('[data-field-email]'),
+          //   }),
+          //   rule: yup
+          //     .string()
+          //     .required(i18next.t('required'))
+          //     .trim(),
+          //   defaultMessage: i18next.t('name'),
+          //   valid: false,
+          //   error: [],
+          // },
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -93,7 +108,7 @@ formsWithRedirect.forEach((form) => {
   }
 });
 
-forms.forEach((form) => {
+formsTel.forEach((form) => {
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */
@@ -103,7 +118,8 @@ forms.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          window.location.href = 'message';
+          const backdrop = document.querySelector('.thanks-page');
+          gsap.to(backdrop, { autoAlpha: 1 });
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -120,7 +136,19 @@ forms.forEach((form) => {
             valid: false,
             error: [],
           },
-
+          email: {
+            inputWrapper: new SexyInput({
+              animation: 'none',
+              $field: $form.querySelector('[data-field-email]'),
+            }),
+            rule: yup
+              .string()
+              .required(i18next.t('required'))
+              .trim(),
+            defaultMessage: i18next.t('name'),
+            valid: false,
+            error: [],
+          },
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -130,7 +158,7 @@ forms.forEach((form) => {
             rule: yup
               .string()
               .required(i18next.t('required'))
-              .min(17, i18next.t('field_too_short', { cnt: 17 - 5 })),
+              .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
 
             defaultMessage: i18next.t('phone'),
             valid: false,
@@ -149,6 +177,75 @@ forms.forEach((form) => {
     );
   }
 });
+
+// forms.forEach(form => {
+//   const $form = document.querySelector(form);
+//   if ($form) {
+//     /* eslint-disable */
+//     new FormMonster({
+//       /* eslint-enable */
+//       elements: {
+//         $form,
+//         showSuccessMessage: false,
+//         successAction: () => {
+//           window.location.href = 'message';
+//         },
+//         $btnSubmit: $form.querySelector('[data-btn-submit]'),
+//         fields: {
+//           name: {
+//             inputWrapper: new SexyInput({
+//               animation: 'none',
+//               $field: $form.querySelector('[data-field-name]'),
+//             }),
+//             rule: yup
+//               .string()
+//               .required(i18next.t('required'))
+//               .trim(),
+//             defaultMessage: i18next.t('name'),
+//             valid: false,
+//             error: [],
+//           },
+//           // email: {
+//           //   inputWrapper: new SexyInput({
+//           //     animation: 'none',
+//           //     $field: $form.querySelector('[data-field-email]'),
+//           //   }),
+//           //   rule: yup
+//           //     .string()
+//           //     .required(i18next.t('required'))
+//           //     .trim(),
+//           //   defaultMessage: i18next.t('name'),
+//           //   valid: false,
+//           //   error: [],
+//           // },
+//           phone: {
+//             inputWrapper: new SexyInput({
+//               animation: 'none',
+//               $field: $form.querySelector('[data-field-phone]'),
+//               typeInput: 'phone',
+//             }),
+//             rule: yup
+//               .string()
+//               .required(i18next.t('required'))
+//               .min(17, i18next.t('field_too_short', { cnt: 17 - 5 })),
+
+//             defaultMessage: i18next.t('phone'),
+//             valid: false,
+//             error: [],
+//           },
+//         },
+//       },
+//     });
+
+//     $form.querySelector('.js-mask-absolute').addEventListener(
+//       'click',
+//       () => {
+//         $form.querySelector('[name="phone"]').focus();
+//       },
+//       false,
+//     );
+//   }
+// });
 
 /*
  * form handlers end

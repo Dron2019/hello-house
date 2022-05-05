@@ -55,3 +55,33 @@
   p Наш менеджер зв'яжеться з Вами найближчим часом
   a(href="index.html") На головну
   +svg('logo-nice')
+
+
+.feedback-form
+  h2 ЗАМОВИТИ ДЗВІНОК
+  h3 Залиште свої контактні дані 
+  .form-close.js-close
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 15L1 1M1 15L15 1L1 15Z" stroke="white" stroke-width="1.5"/>
+    </svg>
+  form( action="#" class="contact-form" data-home-contact)
+    .form-field
+      .form-field-input(data-field-input data-field-name data-status="field--inactive")
+        label(for="callback-form-name") Ваше im’я
+        input(class="input-sideform form-name form-field__input contact-form-input" type="text" name="name" id="callback-form-name" placeholder="Iм’я" autocomplete="on" value="")
+        .input-message(data-input-message)
+      .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+        label(for="callback-form-phone") Ваш телефон
+        input(class="input-sideform form-tel form-field__input contact-form-input js-input-form" type="text" id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+        //- span.placeholder-form.js-placeholder-form Номер
+        .input-message(data-input-message)
+      .form-field-input(data-field-input data-field-email data-status="field--inactive")
+        label(for="callback-form-email") Ваш E-mail
+        input(class="input-sideform form-tel form-field__input contact-form-input js-input-form" type="text" id="callback-form-email" placeholder="E-mail" autocomplete="on" name="email" inputmode="email")
+        //- span.placeholder-form.js-placeholder-form Номер
+        .input-message(data-input-message)
+      p.confirm-text Натискаючи на кнопку, Ви погоджуєтесь з обробкою персональних даних. 
+      .form-field-confirm
+        button(class="contact-form__btn" type="submit" data-btn-submit="data-btn-submit") 
+          p Надіслати
+          //- span(data-btn-submit-text="")
