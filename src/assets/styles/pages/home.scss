@@ -6,6 +6,41 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  @include to(1440px) {
+    height: 770px;
+  }
+  @include to(992px) {
+    height: 990px;
+  }
+  .header-medal {
+    display: none;
+    @include to(992px) {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 100px;
+      left: var(--padding);
+      img {
+        width: 80px;
+        height: 80px;
+        margin-right: 16px;
+        @include to(575px) {
+          width: 55px;
+          height: 55px;
+          margin-right: 12px;
+        }
+      }
+      svg {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+        @include to(575px) {
+          width: 55px;
+          height: 55px;
+        }
+      }
+    }
+  }
   .video {
     position: absolute;
     top: 0;
@@ -19,6 +54,14 @@
     @include main-text-b;
     width: 420px;
     padding-top: 70px;
+    @include to(1440px) {
+      font-size: 64px;
+    }
+    @include to(992px) {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 50px;
+    }
   }
   &__link {
     display: flex;
@@ -31,6 +74,11 @@
     svg {
       width: 65px;
       height: 65px;
+      flex-shrink: 0;
+      @include to(1440px) {
+        width: 50px;
+        height: 50px;
+      }
     }
     .location-svg {
       margin-bottom: 20px;
@@ -47,6 +95,9 @@
       position: relative;
       opacity: 0;
       transition: opacity 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      @include to(1440px) {
+        padding: 12px 18px;
+      }
       &::after {
         content: '';
         background-image: url('../images/triangle.svg');
@@ -79,6 +130,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    @include to(992px) {
+      display: none;
+    }
     svg {
       width: 7px;
       height: 30px;
@@ -98,11 +153,29 @@
   width: 100%;
   height: 1066px;
   display: flex;
-
+  @include to(1440px) {
+    height: 750px;
+  }
+  @include to(992px) {
+    height: auto;
+    flex-direction: column;
+  }
   .video-container {
     @include container-left;
     padding-left: 0;
     position: relative;
+    @include to(992px) {
+      height: 406px;
+      width: 54%;
+      margin: 45px auto;
+      .tablet-letter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
     .video2 {
       width: 100%;
       height: 100%;
@@ -114,6 +187,9 @@
       left: 0;
       width: 100%;
       height: 100%;
+      @include to(992px) {
+        display: none;
+      }
       .texture {
         opacity: 1;
         transition: opacity 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
@@ -142,6 +218,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include to(992px) {
+      padding: 114px 0;
+    }
     &__text {
       width: 40%;
       text-align: center;
@@ -149,10 +228,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @include to(992px) {
+        width: 48%;
+      }
       h2 {
         @include main-text-b;
         margin-bottom: 42px;
         position: relative;
+        // @include to(1440px) {
+        //   font-size: 48px;
+        // }
+
         &::after {
           content: '';
           display: inline-block;
@@ -168,6 +254,9 @@
       p {
         @include main-text-s;
         margin-bottom: 50px;
+        @include to(1440px) {
+          margin-bottom: 40px;
+        }
       }
       .button {
         @include btn(transparent);
@@ -195,9 +284,24 @@
 }
 .choose-apartment {
   height: 1053px;
+  @include to(1440px) {
+    height: 750px;
+  }
+  @include to(992px) {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  .tablet-letter {
+    @include to(992px) {
+      margin: 45px auto 60px auto;
+    }
+  }
   .some {
     width: 50%;
     height: 100%;
+    @include to(992px) {
+      display: none;
+    }
     svg {
       width: 100%;
       height: 100%;
@@ -209,13 +313,22 @@
 }
 
 .our-benefits {
-  padding: 210px var(--padding) 210px vw(304, 1920);
+  padding: 210px 0;
   position: relative;
+  @include to(1440px) {
+    padding: 120px 0;
+  }
+  // @include to(992px) {
+  //   padding: 120px var(--padding) 120px vw(147, 744);
+  // }
   h2 {
     @include main-text-b($text-dark);
     margin: 0 auto 72px auto;
     text-align: center;
     position: relative;
+    @include to(1440px) {
+      margin: 0 auto 42px auto;
+    }
     &::after {
       content: '';
       display: inline-block;
@@ -229,11 +342,30 @@
     }
   }
   .benefits-swiper {
+    padding: 0 var(--padding) 0 vw(304, 1920);
+    @include to(1440px) {
+      padding: 0 var(--padding) 0 vw(211, 1440);
+    }
+    @include to(992px) {
+      padding: 0 var(--padding) 0 vw(147, 744);
+    }
     .swiper-button-next,
     .swiper-button-prev {
       position: absolute;
       // top: calc(50% - 40px);
       top: 50%;
+      @include to(1440px) {
+        svg {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      @include to(992px) {
+        svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
     }
     .swiper-button-prev {
       left: var(--pad-h);
@@ -246,6 +378,9 @@
     .swiper-slide {
       height: 760px;
       position: relative;
+      @include to(1440px) {
+        height: 547px;
+      }
       &__img {
         position: absolute;
         top: 0;
@@ -269,6 +404,10 @@
         letter-spacing: -0.03em;
         text-transform: uppercase;
         color: #292935;
+        @include to(1440px) {
+          padding: 20px 30px 0 30px;
+          font-size: 20px;
+        }
         .num {
           color: #292935;
           width: 79px;
@@ -290,6 +429,10 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        @include to(1440px) {
+          width: 71%;
+          padding: 30px;
+        }
         p {
           @include main-text-s(#ffffff);
         }
@@ -301,6 +444,12 @@
 .gallery {
   position: relative;
   height: 1000px;
+  @include to(1440px) {
+    height: 750px;
+  }
+  @include to(992px) {
+    height: 990px;
+  }
   .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
@@ -332,6 +481,12 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    @include to(1440px) {
+      height: 750px;
+    }
+    @include to(992px) {
+      height: 990px;
+    }
     &::after {
       content: '';
       background: linear-gradient(180deg, rgba(41, 41, 53, 0) 0%, #292935 100%);
@@ -362,6 +517,9 @@
     width: 640px;
     z-index: 3;
     overflow: hidden;
+    @include to(992px) {
+      width: 590px;
+    }
     .swiper-wrapper {
       height: 110px;
       display: flex;
@@ -379,12 +537,24 @@
 .building {
   display: flex;
   width: 100%;
+  @include to(992px) {
+    flex-direction: column;
+    .about-container {
+      padding: 78px 0;
+    }
+  }
   .swiper-container {
     @include container-right;
     .building-swiper {
       height: 1050px;
       overflow: hidden;
       position: relative;
+      @include to(1440px) {
+        height: 750px;
+      }
+      @include to(992px) {
+        height: 495px;
+      }
       .swiper-slide__img {
         width: 100%;
         height: 100%;
@@ -400,6 +570,16 @@
       position: absolute;
       z-index: 2;
       cursor: pointer;
+      @include to(1440px) {
+        svg {
+          width: 80px;
+          height: 80px;
+          @include to(992px) {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
       &:hover {
         .hover-svg {
           fill: rgba(41, 41, 53, 0.8);
@@ -415,9 +595,15 @@
     }
     .button-building-next {
       right: 100px;
+      @include to(992px) {
+        right: vw(30, 774);
+      }
     }
     .button-building-prev {
       left: 100px;
+      @include to(992px) {
+        left: vw(30, 774);
+      }
     }
     .plagination-container {
       position: absolute;
@@ -436,6 +622,27 @@
       color: #292935;
       white-space: nowrap;
       z-index: 2;
+      @include to(1440px) {
+        bottom: 100px;
+        font-size: 16px;
+        padding: 11px 39px;
+      }
+      @include to(992px) {
+        bottom: 40px;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-left: 30px solid transparent;
+          border-right: 30px solid transparent;
+          border-bottom: 30px solid #ffffff;
+          position: absolute;
+          bottom: -40px;
+          left: 50%;
+          transform: translate(-50%);
+        }
+      }
       .pagination-building {
         margin-right: 1ch;
       }
@@ -444,12 +651,16 @@
   .about-container {
     @include container-right;
     &__text {
+      @include main-text-s(#292935);
       width: 40%;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @include to(1440px) {
+        width: 60%;
+      }
       h2 {
         @include main-text-b(#292935);
         margin-bottom: 42px;
@@ -474,6 +685,19 @@
         text-transform: uppercase;
         color: #292935;
         margin-bottom: 30px;
+        @include to(1440px) {
+          font-size: 18px;
+          margin-bottom: 20px;
+        }
+      }
+      h4 {
+        @include to(1440px) {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          text-align: center;
+          color: #292935;
+        }
       }
       .button {
         @include btn;
@@ -486,14 +710,32 @@
 
 .news-section {
   padding-left: var(--padding);
+  padding-right: var(--padding);
+  @include to(992px) {
+    padding-left: vw(88, 744);
+    padding-right: vw(88, 744);
+  }
   .news__list {
     display: flex;
     flex-wrap: wrap;
+    @include to(992px) {
+      flex-direction: column;
+    }
   }
   .news__item {
     height: 490px;
     width: calc((100% / 2) - 15px);
     position: relative;
+    @include to(1440px) {
+      height: 350px;
+      width: calc((100% / 2) - 10px);
+    }
+    @include to(992px) {
+      width: 100%;
+      &:first-child {
+        margin-bottom: 30px;
+      }
+    }
     &::after {
       content: '';
       width: 100%;
@@ -506,6 +748,12 @@
     }
     &:nth-child(odd) {
       margin-right: 30px;
+      @include to(1440px) {
+        margin-right: 20px;
+      }
+      @include to(992px) {
+        margin-right: 0;
+      }
     }
   }
   .news__img {
@@ -525,6 +773,9 @@
     justify-content: space-between;
     padding: 40px 30px 0 40px;
     z-index: 2;
+    @include to(1440px) {
+      padding: 30px;
+    }
     svg {
       width: 19px;
       height: 20px;
@@ -548,24 +799,88 @@
     letter-spacing: -0.03em;
     text-transform: uppercase;
     color: #ffffff;
+    @include to(1440px) {
+      padding: 30px;
+      width: 64%;
+      font-size: 20px;
+    }
+  }
+  .promotion {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    // background: #008b64;
+    @include to(1440px) {
+      width: 80px;
+      height: 80px;
+    }
+    &__bg {
+      border-bottom: 100px solid #008b64;
+      border-left: 100px solid transparent;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      @include to(1440px) {
+        border-bottom: 80px solid #008b64;
+        border-left: 80px solid transparent;
+      }
+    }
+    .text {
+      @include main-text-s(#ffffff);
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+      z-index: 2;
+      transform: rotate(-45deg);
+      padding-top: 55px;
+      width: 100px;
+      height: 100px;
+      @include to(1440px) {
+        width: 80px;
+        height: 80px;
+        font-size: 16px;
+        padding-top: 45px;
+      }
+    }
   }
   .button {
     @include btn;
     @include btn-js-after;
     margin: 50px auto 0 auto;
+    @include to(992px) {
+      margin-top: 30px;
+    }
   }
 }
 
 .choose-flat {
   padding: 0 var(--padding) 210px var(--padding);
-
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @include to(1440px) {
+    padding: 0 var(--padding) 120px var(--padding);
+  }
+  @include to(992px) {
+    flex-direction: column;
+    padding: 0 vw(88, 744) 120px vw(88, 744);
+  }
   .swiper-img {
     width: 44.5%;
     height: 800px;
     overflow: hidden;
+    @include to(1440px) {
+      height: 550px;
+    }
+    @include to(992px) {
+      width: 100%;
+      height: 400px;
+      .swiper-slide {
+        width: 100%;
+      }
+    }
   }
   &__container {
     width: 49%;
@@ -574,12 +889,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include to(992px) {
+      width: 100%;
+    }
   }
   &__navigation {
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
     border-bottom: 1px solid #292935;
+    @include to(992px) {
+      padding-top: 40px;
+    }
     .title {
       font-weight: 500;
       font-size: 18px;
@@ -604,6 +925,14 @@
   .swiper-text {
     padding-top: 52px;
     width: 100%;
+    @include to(1440px) {
+      padding-top: 30px;
+    }
+    .swiper-slide {
+      @include to(992px) {
+        padding: 0 5px;
+      }
+    }
     h2 {
       @include main-text-b(#2c2e65);
       margin-bottom: 20px;
@@ -611,11 +940,23 @@
     p {
       @include main-text-s(#292935);
       width: 53%;
+      @include to(1440px) {
+        width: 83%;
+      }
+      @include to(992px) {
+        width: 100%;
+      }
     }
     .button {
       @include btn;
       @include oval-hover;
       margin-top: 50px;
+      @include to(1440px) {
+        margin-top: 60px;
+      }
+      @include to(992px) {
+        margin-top: 30px;
+      }
     }
   }
   &__paagination {
@@ -623,6 +964,9 @@
     justify-content: flex-end;
     padding-bottom: 20px;
     border-bottom: 1px solid #292935;
+    @include to(992px) {
+      padding: 60px 0 20px 0;
+    }
     .pagination-choose {
       font-weight: 500;
       font-size: 18px;
@@ -631,18 +975,35 @@
       letter-spacing: -0.03em;
       text-transform: uppercase;
       color: #292935;
+      @include to(1440px) {
+        font-size: 16px;
+      }
     }
   }
 }
 .location-main {
   padding: var(--padding) 0;
   display: flex;
+  @include to(1440px) {
+    padding: 120px 0;
+  }
+  @include to(992px) {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
   &__text {
     @include container-left;
     flex-direction: column;
     align-items: flex-start;
+    @include to(992px) {
+      padding-bottom: 120px;
+      padding-left: vw(88, 744);
+    }
     h2 {
       @include main-text-b(#2c2e65);
+      @include to(992px) {
+        width: 60%;
+      }
       span {
         font-weight: 500;
         font-size: 24px;
@@ -651,6 +1012,12 @@
         text-transform: uppercase;
         color: #008b64;
         margin-right: 5ch;
+        @include to(1440px) {
+          font-size: 18px;
+        }
+        @include to(992px) {
+          margin-right: 2ch;
+        }
       }
     }
     .button {
@@ -664,6 +1031,13 @@
     padding-right: vw(80, 1920);
     height: 865px;
     position: relative;
+    @include to(1440px) {
+      height: 623px;
+    }
+    @include to(992px) {
+      height: 680px;
+      padding: 100px 0 110px 0;
+    }
     .round1 {
       --size: 865px;
       position: absolute;
@@ -682,6 +1056,12 @@
         rgba(43, 48, 101, 0.05) 100%
       );
       animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      @include to(1440px) {
+        --size: 624px;
+      }
+      @include to(992px) {
+        --size: 568px;
+      }
     }
     .round2 {
       --size: 806px;
@@ -701,6 +1081,12 @@
         rgba(43, 48, 101, 0.1) 100%
       );
       animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      @include to(1440px) {
+        --size: 580px;
+      }
+      @include to(992px) {
+        --size: 528px;
+      }
     }
     .round3 {
       --size: 745px;
@@ -720,6 +1106,12 @@
         rgba(43, 48, 101, 0.2) 100%
       );
       animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      @include to(1440px) {
+        --size: 535px;
+      }
+      @include to(992px) {
+        --size: 488px;
+      }
     }
     .round4 {
       --size: 685px;
@@ -739,6 +1131,12 @@
         rgba(43, 48, 101, 0.4) 100%
       );
       animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      @include to(1440px) {
+        --size: 491px;
+      }
+      @include to(992px) {
+        --size: 448px;
+      }
     }
     .round5 {
       --size: 622px;
@@ -758,6 +1156,12 @@
         #2b3065 100%
       );
       animation: pulse 4s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+      @include to(1440px) {
+        --size: 447px;
+      }
+      @include to(992px) {
+        --size: 408px;
+      }
     }
     .location-img {
       position: absolute;
@@ -767,28 +1171,56 @@
       z-index: 6;
       width: 438px;
       height: 670px;
+      @include to(1440px) {
+        width: 315px;
+        height: 466px;
+      }
     }
   }
 }
 .contacts {
   // --padding: #{vw(155, 1920)};
   margin: 210px 0;
-
+  @include to(1440px) {
+    margin: 120px 0;
+  }
+  @include to(992px) {
+    margin: 0;
+  }
   &__description {
     width: 100%;
     height: 100%;
     display: flex;
     height: 652px;
+    @include to(1440px) {
+      height: 470px;
+    }
+    @include to(992px) {
+      height: auto;
+      flex-direction: column;
+    }
+    .tablet-letter {
+      @include to(992px) {
+        margin: 0 auto 120px auto;
+      }
+    }
   }
   &__hover {
     @include container-left;
     position: relative;
+    @include to(992px) {
+      display: none;
+    }
     .letter {
       position: absolute;
       top: 0;
       left: var(--padding);
       width: 641px;
       height: 652px;
+      @include to(1440px) {
+        width: 462px;
+        height: 470px;
+      }
     }
     .letter-hover {
       position: absolute;
@@ -798,6 +1230,10 @@
       height: 652px;
       opacity: 0;
       transition: opacity 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      @include to(1440px) {
+        width: 462px;
+        height: 470px;
+      }
     }
     .container-eye {
       position: absolute;
@@ -811,6 +1247,10 @@
             background-image: url('../images/eye-open.svg');
             width: 36px;
             height: 38px;
+            @include to(1440px) {
+              width: 26px;
+              height: 27px;
+            }
           }
         }
       }
@@ -820,6 +1260,10 @@
         background: #292935;
         border-radius: 50%;
         position: relative;
+        @include to(1440px) {
+          width: 110px;
+          height: 110px;
+        }
         &::before {
           content: '';
           background-image: url('../images/eye.svg');
@@ -834,6 +1278,10 @@
           transform: translate(-50%, -50%);
           z-index: 4;
           transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+          @include to(1440px) {
+            width: 26px;
+            height: 7px;
+          }
         }
       }
     }
@@ -844,11 +1292,17 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
+    @include to(992px) {
+      padding: 120px vw(88, 744);
+    }
     h2 {
       @include main-text-b(#2c2e65);
       @include title-after(#2c2e65);
       position: relative;
       margin-bottom: 62px;
+      @include to(1440px) {
+        margin-bottom: 42px;
+      }
       &::after {
         left: 15px;
       }
@@ -861,6 +1315,12 @@
         width: 48%;
         display: flex;
         flex-direction: column;
+        @include to(1440px) {
+          width: 50%;
+          &:nth-child(2) {
+            width: 43%;
+          }
+        }
         h5 {
           @include title-little;
           margin-bottom: 10px;
@@ -880,6 +1340,11 @@
             height: 65px;
             margin-right: 30px;
             flex-shrink: 0;
+            @include to(1440px) {
+              width: 50px;
+              height: 50px;
+              margin-right: 20px;
+            }
           }
           .text {
             display: flex;
@@ -916,6 +1381,11 @@
           justify-content: center;
           flex-shrink: 0;
           transition: background 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+          @include to(1440px) {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+          }
           &:last-child {
             margin-right: 0;
           }
@@ -977,22 +1447,43 @@
 
 .contacts__map {
   display: flex;
-  // width: 100%;
+  justify-content: space-between;
   padding-top: 100px;
   margin: 100px var(--padding) 0 var(--padding);
   border-top: 1px solid #292935;
+  @include to(1440px) {
+    margin: 120px var(--padding) 0 var(--padding);
+  }
+  @include to(992px) {
+    margin: 0;
+    flex-direction: column;
+    padding-top: 120px;
+  }
   .map {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include to(992px) {
+      width: 100%;
+      padding: 0 var(--padding) 120px var(--padding);
+    }
     h4 {
       @include main-text-m;
       margin-bottom: 30px;
+      @include to(992px) {
+        margin-bottom: 20px;
+      }
     }
     .map-container {
       width: 100%;
       height: 566px;
+      @include to(1440px) {
+        height: -webkit-fill-available;
+      }
+      @include to(992px) {
+        height: 500px;
+      }
       iframe {
         width: 100%;
         height: 100%;
@@ -1000,18 +1491,35 @@
     }
   }
 }
+.tablet-letter {
+  display: none;
+  @include to(992px) {
+    display: block;
+    width: 54%;
+  }
+}
 .contacts__person {
   @include container-left;
   padding-left: 0;
   flex-direction: column;
   align-items: flex-start;
+  @include to(992px) {
+    padding: 0 var(--padding) 60px var(--padding);
+  }
   h4 {
     @include main-text-m;
     margin-bottom: 30px;
+    @include to(1440px) {
+      margin-bottom: 20px;
+    }
+    @include to(992px) {
+      margin-bottom: 30px;
+    }
   }
   .contacts__list {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
   }
   .contacts__item {
     width: 268px;
@@ -1022,12 +1530,28 @@
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 30px;
+    @include to(1440px) {
+      width: 240px;
+      height: 240px;
+      margin-bottom: 20px;
+    }
+    @include to(992px) {
+      width: 333px;
+      height: 333px;
+      margin-bottom: 30px;
+    }
     &:nth-child(3),
     &:nth-child(4) {
       margin-bottom: 0;
     }
     &:nth-child(odd) {
       margin-right: 105px;
+      @include to(1440px) {
+        margin-right: 50px;
+      }
+      @include to(992px) {
+        margin-right: calc(100% - 666px);
+      }
     }
     .manager-foto {
       width: 100%;

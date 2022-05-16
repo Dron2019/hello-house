@@ -1,0 +1,61 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Цiни '
+    var id_page = 'prices'
+    var class_page = 'prices'
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
+block content
+ #prices-page 
+    .prices__container 
+      .prices__text 
+        .prices__title
+          include ../includes/breadcrumbs.pug 
+          h1 Цiни
+        .project-img 
+          img(src="./assets/images/prices1.jpg" data-paralax)
+        .text
+          ul.description-complex
+            li.description-complex__item
+              h4 Введеня в експлуатацію:
+              p 1 будинок — IV квартал 2023 року
+              p 2,3 будинки — II квартал 2024 року
+            li.description-complex__item
+              h4 Розстрочка
+              p до грудня 2023 — 1-й внесок від 50%
+          ul.prices__list 
+            li.prices__item 
+              h4 28 - 54 м2
+              p.rooms 1-кімнатні
+              p.price 26 950 - 34 100 грн/м2
+            li.prices__item 
+              h4 51 - 60 м2
+              p.rooms 2-кімнатні
+              p.price 26 950 - 31 900 грн/м2
+      .prices__img 
+        .project-img 
+          img(src="./assets/images/prices1.jpg" data-paralax)
+    .bottom-delimiter
+
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

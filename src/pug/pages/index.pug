@@ -31,6 +31,9 @@ block content
     video(class="video" autoplay loop preload="auto" muted width="100%" height="100%") 
       <source src="./assets/images/UA_Kyiv.mp4" type="video/mp4">
     h1 Привіт, моє сімейне гніздечко!
+    .header-medal 
+      img(src="assets/images/build2021.png")
+      +svg('build-medal')
     .btn-wrap 
       .location-svg
         a(href="#").main-section__link
@@ -40,7 +43,7 @@ block content
         a(href="#").main-section__link
           .hover-text м. Київ, Дніпровський район, вул. Миколи Кибальчича, 1
           +svg('build').js-hover
-    .scroll-down 
+    .scroll-down.js-scroll-home
       .svg
         +svg('scroll-down')
       span Scroll 
@@ -49,6 +52,7 @@ block content
     .video-container 
       video(class="video2" id="video" loop preload="auto" muted width="100%" height="100%") 
         <source src="./assets/images/hello.mp4" type="video/mp4">
+      img(src="./assets/images/video-h.jpg").tablet-letter
       <svg class="svg" preserveAspectRatio="none" width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM574.593 401.191V200H796V852H574.823V650.809C465.614 650.809 377.097 740.877 377.097 852H155V200H376.867C376.867 311.123 465.384 401.191 574.593 401.191Z" fill="white"/>
         <path class="texture" d="M575.093 401.191V200.5H795.5V851.5H575.323V650.809V650.309H574.823C465.493 650.309 376.862 740.339 376.597 851.5H155.5V200.5H376.368C376.633 311.661 465.263 401.691 574.593 401.691H575.093V401.191Z" fill="white"/>
@@ -105,13 +109,25 @@ block content
     .swiper-img 
       .swiper-wrapper 
         .swiper-slide 
-          img(src="./assets/images/slider-choose/1.jpg")
+          picture 
+            source(media="(min-width: 1920px)" srcset="./assets/images/slider-choose/1.jpg")
+            source(media="(max-width: 992px)" srcset="./assets/images/slider-choose/1-tablet.jpg")
+            img(src="./assets/images/slider-choose/1.jpg")
         .swiper-slide 
-          img(src="./assets/images/slider-choose/2.jpg")
+           picture 
+            source(media="(min-width: 1920px)" srcset="./assets/images/slider-choose/2.jpg")
+            source(media="(max-width: 992px)" srcset="./assets/images/slider-choose/2-tablet.jpg")
+            img(src="./assets/images/slider-choose/2.jpg")
         .swiper-slide 
-          img(src="./assets/images/slider-choose/3.jpg")
+           picture 
+            source(media="(min-width: 1920px)" srcset="./assets/images/slider-choose/3.jpg")
+            source(media="(max-width: 992px)" srcset="./assets/images/slider-choose/3-tablet.jpg")
+            img(src="./assets/images/slider-choose/3.jpg")
         .swiper-slide 
-          img(src="./assets/images/slider-choose/4.jpg")
+           picture 
+            source(media="(min-width: 1920px)" srcset="./assets/images/slider-choose/4.jpg")
+            source(media="(max-width: 992px)" srcset="./assets/images/slider-choose/4-tablet.jpg")
+            img(src="./assets/images/slider-choose/4.jpg")
     .choose-flat__container 
       .choose-flat__navigation 
         .title Hello house
@@ -264,12 +280,8 @@ block content
         </svg>
   .bottom-delimiter
   section.about-section.choose-apartment 
+    img(src="./assets/images/choose-h.jpg").tablet-letter
     .some
-      //- <svg width="960" height="1053" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
-      //-   <image preserveAspectRatio="xMidYMid slice" x="0" y="0" href="./assets/images/bg.jpg" width="960" height="1053"/>
-      //-   <path fill-rule="evenodd" clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
-      //-   //- <path d="M766.738 311V512.191C659.573 512.191 572.713 422.123 572.713 311H355V963H572.939C572.939 851.877 659.799 761.809 766.963 761.809V963H984V311H766.738Z" fill="#FF0000"/>
-      //- </svg>
       <svg preserveAspectRatio="none" viewBox="0 0 960 1053" fill="none" xmlns="http://www.w3.org/2000/svg">
         <image x="0" y="0" href="./assets/images/bg.jpg" width="100%" height="100%"/>
         <path clip-rule="evenodd" d="M960 0H0V1053H960V0ZM571.738 402.191V201H789V853H571.963V651.809C464.799 651.809 377.939 741.877 377.939 853H160V201H377.713C377.713 312.123 464.573 402.191 571.738 402.191Z" fill="white"/>
@@ -327,7 +339,7 @@ block content
     h2 Новини та акції
     .news 
       ul.news__list 
-        li.news__item 
+        li.news__item
           a(href="#").news__link
             .news__img 
               img(src="./assets/images/news/news1.jpg")
@@ -336,6 +348,9 @@ block content
               .date 01.02.2022
             .news__description
               p ЖК Hello House відзначено професійною нагородою премії «Український
+            .promotion
+              .promotion__bg 
+              .text Акція
         li.news__item 
           a(href="#").news__link
             .news__img 
@@ -388,7 +403,7 @@ block content
             a(href="mailto:sale@hello-house.com.ua").contacts-link sale@hello-house.com.ua
             a(href="tel:+380675990707").contacts-link +38 (067) 599 07 07
             a(href="tel:+380442229970").contacts-link +38 (044) 222 99 70
-            button.button.js-button 
+            button.button.js-button.js-call  
               span Зворотній дзвінок
             ul.social-list 
               li.social-item
@@ -418,6 +433,7 @@ block content
                     <rect class="cls-1" x="0.5" y="0.5" width="76.24" height="57.78" rx="15.4"/>
                     <path class="cls-1 cls-1-1" d="M29.57,24.14v10.5a3.42,3.42,0,0,0,4.86,3.1l11.25-5.2a3.42,3.42,0,0,0,0-6.2L34.45,21.05A3.42,3.42,0,0,0,29.57,24.14Z"/>
                   </svg>
+      img(src="./assets/images/contact-letter.jpg").tablet-letter
     .contacts__map 
       .contacts__person
         h4 Наші менеджери відділу продажів:

@@ -5,8 +5,21 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 72px;
+    @include to(1440px) {
+      margin-bottom: 52px;
+    }
     &::after {
       left: 16px;
+    }
+  }
+}
+#gallery {
+  @include to(992px) {
+    .gallery {
+      height: 826px;
+    }
+    .gallery .swiper-gallery {
+      height: 826px;
     }
   }
 }

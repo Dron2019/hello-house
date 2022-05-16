@@ -55,13 +55,13 @@ const backdrop = document.querySelector('.lightbox__overlay');
 closeModalBtn.addEventListener('click', onCloseModal);
 backdrop.addEventListener('click', onBackdropClick);
 
-// function onCloseModal() {
-//   lightBox.classList.remove('is-open');
-//   header.style.display = '';
-//   bigPhoto.removeAttribute('src');
-//   bigPhoto.removeAttribute('alt');
-//   document.addEventListener('keydown', onEscKeyPress);
-// }
+function onCloseModal() {
+  lightBox.classList.remove('is-open');
+  header.style.display = '';
+  bigPhoto.removeAttribute('src');
+  bigPhoto.removeAttribute('alt');
+  document.addEventListener('keydown', onEscKeyPress);
+}
 function onOpenModal(event) {
   event.preventDefault();
   // if (event.target.nodeName !== 'IMG') {

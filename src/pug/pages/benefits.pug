@@ -16,6 +16,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/btn-up.js')
   script(defer src='./assets/scripts/benefits.js')
 block content
   #benefits-page 
@@ -24,10 +25,12 @@ block content
         .benefits__title
           include ../includes/breadcrumbs.pug 
           h1 Переваги
+        .project-img 
+          img(src="./assets/images/benefits1.jpg" data-paralax)
         .text
           h4 5 хвилин до озера та парку
           p ЖК HELLO HOUSE обирають всі ті хто веде активний спосіб життя. Комплекс знаходится в 5 хв від озера та парку. Тому ранкові пробіжки та пікніки у вихідні будуть поруч з природою.
-          .scroll-down2 
+          .scroll-down2.js-scroll-down 
             .svg
               +svg('scroll-down')
             span Scroll
@@ -35,7 +38,7 @@ block content
         .project-img 
           img(src="./assets/images/benefits1.jpg" data-paralax)
     .bottom-delimiter
-    .benefits__section 
+    .benefits__section.js-section2
       .left 
         .left__img 
           img(src="./assets/images/benefits2.jpg" data-paralax)
@@ -48,7 +51,10 @@ block content
             h4 Благоустрій прибудинкової території
             p Паркова алея та зелені зони відпочинку, спортивне поле та тренажери, дитячі ігрові майданчики, безкоштовний Wi-Fi.
           .right__img 
-            img(src="./assets/images/benefits3.jpg" data-paralax)
+            picture 
+              source(media="(min-width: 1920px)" srcset="./assets/images/benefits3.jpg")
+              source(media="(max-width: 1440px)" srcset="./assets/images/benefits3-1360.jpg")
+              img(src="./assets/images/benefits3.jpg" data-paralax)
     .bottom-delimiter
     .benefits__section 
       .left.padding
@@ -58,7 +64,7 @@ block content
         .right__content
           .right__text
             h4 20 хвилин до метро
-            p Зручне розташування комплексу, та розвинена транспортна мережа дозволить дістатися до найближчих станцій метро «Почайна», «Лівобережна», «Дарниця», «Чернігівська» за мінімум часу.
+            p Зручне розташування комплексу, та розвинена транспортна мережа дозволить дістатися до найближчих станцій метро «Дарниця», «Почайна», «Лівобережна», «Чернігівська» за мінімум часу.
     .bottom-delimiter
     .benefits__section.benefits__last-section 
       .left 
@@ -66,7 +72,10 @@ block content
           h4 Безпека проживання
           p Закрита прибудинкова територія, організація сучасних систем безпеки включаючи цілодобовий відео нагляд.
         .left__img 
-          img(src="./assets/images/benefits6.jpg" data-paralax)
+          picture 
+            source(media="(min-width: 1920px)" srcset="./assets/images/benefits6.jpg")
+            source(media="(max-width: 1440px)" srcset="./assets/images/benefits6-1360.jpg")
+            img(src="./assets/images/benefits6.jpg" data-paralax)
       .right 
         .right__content
           .right__img 

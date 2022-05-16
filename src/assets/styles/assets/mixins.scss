@@ -55,6 +55,12 @@ $screen-height: 720;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: $color;
+  @include to(1440px) {
+    font-size: 48px;
+  }
+  @include to(992px) {
+    font-size: 36px;
+  }
 }
 @mixin main-text-s($color: #e1f2eb) {
   font-family: $default-font;
@@ -62,6 +68,9 @@ $screen-height: 720;
   font-size: 18px;
   line-height: 1.5;
   color: $color;
+  @include to(1440px) {
+    font-size: 16px;
+  }
 }
 @mixin main-text-m {
   font-family: $default-font;
@@ -71,6 +80,9 @@ $screen-height: 720;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #292935;
+  @include to(1440px) {
+    font-size: 20px;
+  }
 }
 @mixin menu-text-b {
   font-family: $default-font;
@@ -81,6 +93,9 @@ $screen-height: 720;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #292935;
+  @include to(1440px) {
+    font-size: 24px;
+  }
 }
 @mixin menu-text-s {
   font-family: $default-font;
@@ -90,6 +105,9 @@ $screen-height: 720;
   text-align: center;
   text-transform: uppercase;
   color: #292935;
+  @include to(1440px) {
+    font-size: 14px;
+  }
 }
 @mixin title-after($color: #ffffff) {
   &::after {
@@ -111,6 +129,9 @@ $screen-height: 720;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #292935;
+  @include to(1440px) {
+    font-size: 20px;
+  }
 }
 @mixin btn($color: $green) {
   height: 65px;
@@ -132,6 +153,16 @@ $screen-height: 720;
   position: relative;
   overflow: hidden;
   transform: translateZ(0);
+  @include to(1440px) {
+    height: 50px;
+    width: 260px;
+    padding: 0;
+    font-size: 16px;
+  }
+  // @include to(992px) {
+  //   height: 40px;
+  //   width: 180px;
+  // }
 }
 @mixin btn-js-after {
   &::after {
@@ -321,12 +352,20 @@ $screen-height: 720;
   align-items: center;
   justify-content: center;
   padding-left: vw(155, 1920);
+  @include to(992px) {
+    width: 100%;
+    // padding-left: var(--padding);
+    padding-left: 0;
+  }
 }
 @mixin container-right {
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(992px) {
+    width: 100%;
+  }
 }
 @mixin bottom-delimiter {
   width: 100vw;
@@ -346,5 +385,11 @@ $screen-height: 720;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 20;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      top: -25px;
+    }
   }
 }

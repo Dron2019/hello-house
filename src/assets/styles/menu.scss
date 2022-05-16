@@ -32,6 +32,9 @@
     align-content: center;
     align-items: center;
     justify-content: space-between;
+    // @include to(1440px) {
+    //   margin-top: 20px;
+    // }
     .burger:hover {
       @include from(992px) {
         .burger__icon svg {
@@ -70,13 +73,21 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  @include to(992px) {
+    margin-top: 80px;
+  }
 }
 .section-main__item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 60px;
-
+  margin-bottom: 50px;
+  @include to(1440px) {
+    margin-bottom: 30px;
+  }
+  @include to(992px) {
+    margin-bottom: 40px;
+  }
   a {
     @include menu-text-b;
     width: max-content;
@@ -100,6 +111,9 @@
 }
 .secondary-item {
   margin-right: 50px;
+  @include to(1440px) {
+    margin-right: 30px;
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -113,7 +127,12 @@
   width: 265px;
   height: 66px;
   bottom: 50px;
-  right: var(--pad-h);
+  // right: var(--pad-h);
+  right: 0;
+  @include to(1440px) {
+    width: 194px;
+    height: 49px;
+  }
 }
 .contacts-menu {
   position: absolute;
@@ -124,15 +143,18 @@
   .social {
     display: flex;
     flex-direction: column;
+    width: max-content;
     &__item {
       margin-bottom: 20px;
-      cursor: pointer;
+      // cursor: pointer;
       height: 65px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       flex-shrink: 0;
-
+      @include to(1440px) {
+        margin-bottom: 15px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -146,6 +168,10 @@
         align-items: center;
         justify-content: center;
         transition: background 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        @include to(1440px) {
+          width: 50px;
+          height: 50px;
+        }
         &:hover {
           @include from(992px) {
             background: #292935;
@@ -164,16 +190,12 @@
         }
       }
       .facebook {
-        width: 9px;
-        height: 19px;
         svg {
           width: 9px;
           height: 19px;
         }
       }
       .instagram {
-        width: 19px;
-        height: 19px;
         svg {
           width: 19px;
           height: 19px;
@@ -181,8 +203,6 @@
       }
       .youtube,
       .telegram {
-        width: 22px;
-        height: 17px;
         svg {
           width: 22px;
           height: 17px;
@@ -192,6 +212,7 @@
     &__link {
       display: flex;
       align-items: center;
+      // cursor: none;
 
       svg {
         stroke-width: 3px;
@@ -199,35 +220,41 @@
         stroke: #292935;
         stroke-width: 3px;
         transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        cursor: pointer;
       }
-      .hover-text {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 20px;
-        background: #292935;
-        border-radius: 10px;
-        font-size: 14px;
-        line-height: 1.4;
-        color: #ffffff;
-        margin-left: 12px;
-        position: relative;
-        opacity: 0;
-        transition: opacity 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-        &::after {
-          content: '';
-          background-image: url('../images/triangle.svg');
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          transform: rotate(-180deg);
-          width: 7px;
-          height: 14px;
-          position: absolute;
-          top: 50%;
-          left: -6px;
-          transform: translate(0, -50%) rotate(180deg);
-        }
+    }
+    .hover-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 20px;
+      background: #292935;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #ffffff;
+      margin-left: 12px;
+      position: relative;
+      opacity: 0;
+      transition: opacity 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      pointer-events: none;
+      cursor: none;
+      @include to(1440px) {
+        padding: 12px 15px;
+      }
+      &::after {
+        content: '';
+        background-image: url('../images/triangle.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: rotate(-180deg);
+        width: 7px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        left: -6px;
+        transform: translate(0, -50%) rotate(180deg);
       }
     }
   }
@@ -235,7 +262,10 @@
     @include btn;
     @include oval-hover;
     margin-top: 20px;
-
+    @include to(1440px) {
+      width: 240px;
+      margin-top: 15px;
+    }
     span {
       z-index: 5;
     }
@@ -243,7 +273,9 @@
 }
 .tel {
   margin-top: 118px;
-
+  @include to(1440px) {
+    margin-top: 40px;
+  }
   &__item {
     margin-bottom: 10px;
     width: max-content;
@@ -262,11 +294,19 @@
     text-transform: uppercase;
     color: #292935;
     @include hover-line;
+    @include to(1440px) {
+      font-size: 18px;
+    }
     svg {
       width: 18px;
       height: 18px;
       margin-right: 15px;
       fill: #292935;
+      @include to(1440px) {
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+      }
     }
   }
 }

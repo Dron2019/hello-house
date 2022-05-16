@@ -1,5 +1,11 @@
 #awards-page {
   padding: 0 var(--padding) 160px var(--padding);
+  @include to(1440px) {
+    padding: 0 var(--padding) 100px var(--padding);
+  }
+  @include to(992px) {
+    padding: 0 0 120px 0;
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -7,15 +13,31 @@
     margin-bottom: 20px;
     &::after {
       left: 16px;
+      @include to(992px) {
+        left: calc(var(--padding) + 16px);
+      }
+    }
+    @include to(992px) {
+      padding: 0 var(--padding);
     }
   }
 }
 .awards-container {
   display: flex;
   justify-content: space-between;
+  @include to(992px) {
+    flex-direction: column;
+  }
   &__text {
     width: 26%;
     padding-top: 52px;
+    @include to(1440px) {
+      padding-top: 30px;
+    }
+    @include to(992px) {
+      width: 100%;
+      padding: 30px vw(88, 744) 0;
+    }
     p {
       @include main-text-s($black);
     }
@@ -23,25 +45,49 @@
       width: 268px;
       height: 67px;
       margin-top: 50px;
+      @include to(1440px) {
+        width: 194px;
+        height: 49px;
+        margin-top: 30px;
+      }
     }
   }
   &__swiper {
     width: 68%;
     padding-left: 80px;
     position: relative;
+    @include to(1440px) {
+      padding-left: 62px;
+    }
+    @include to(992px) {
+      width: 100%;
+      padding-left: vw(88, 744);
+    }
   }
 }
 .awards-swiper {
   overflow: hidden;
   padding-top: 52px;
+  @include to(992px) {
+    padding-top: 80px;
+  }
   .swiper-slide {
     border: 1px solid #292935;
     background-image: url('../images/patern-drops.png');
-    background-position: center;
+    // background-position: center;
     background-repeat: no-repeat;
     background-image: cover;
     padding: 70px 90px 40px 90px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include to(1440px) {
+      padding: 50px 65px 30px 65px;
+    }
+    @include to(992px) {
+      padding: 70px 89px 38px 89px;
+    }
     &::before {
       content: '';
       display: inline-block;
@@ -55,11 +101,32 @@
       left: 50%;
       transform: translate(-50%, 0);
       z-index: 20;
+      @include to(1440px) {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        background-size: contain;
+      }
+      @include to(992px) {
+        width: 79px;
+        height: 79px;
+        top: -39px;
+      }
     }
     &__img {
       width: 312px;
       height: 396px;
       margin-bottom: 42px;
+      @include to(1440px) {
+        width: 225px;
+        height: 284px;
+        margin-bottom: 28px;
+      }
+      @include to(992px) {
+        width: 312px;
+        height: 396px;
+        margin-bottom: 42px;
+      }
       img {
         object-fit: fill;
       }
@@ -68,6 +135,12 @@
       @include main-text-s($black);
       text-align: center;
       position: relative;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 18px;
+      }
       &::after {
         content: '';
         display: inline-block;
@@ -102,7 +175,17 @@
 }
 .awards-btn-prev {
   left: 0;
+  @include to(992px) {
+    left: var(--padding);
+  }
 }
 .awards-btn-next {
   right: -70px;
+  @include to(1440px) {
+    right: -55px;
+  }
+  @include to(992px) {
+    right: var(--padding);
+    z-index: 2;
+  }
 }

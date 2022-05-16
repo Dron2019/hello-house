@@ -1,10 +1,19 @@
 #tour-page {
   padding: 0 var(--padding) 160px var(--padding);
+  @include to(1440px) {
+    padding: 0 var(--padding) 100px var(--padding);
+  }
+  @include to(992px) {
+    padding: 0 var(--padding) 120px;
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 72px;
+    @include to(1440px) {
+      margin-bottom: 52px;
+    }
     &::after {
       left: 16px;
     }
@@ -14,8 +23,16 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @include to(992px) {
+    flex-direction: column;
+    padding: 0 vw(88, 744);
+  }
   .text {
     width: 21.2%;
+    @include to(992px) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
     p {
       @include main-text-s(#292935);
     }
@@ -24,6 +41,13 @@
     width: 77%;
     height: 686px;
     position: relative;
+    @include to(1440px) {
+      height: 492px;
+    }
+    @include to(992px) {
+      width: 100%;
+      height: 314px;
+    }
     video {
       object-fit: cover;
     }

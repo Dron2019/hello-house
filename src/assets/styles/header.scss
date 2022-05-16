@@ -34,16 +34,29 @@
   display: flex;
   align-content: center;
   align-items: center;
-  // flex-shrink: 0;
+  flex-shrink: 0;
   margin-right: 70px;
+  @include to(992px) {
+    display: none;
+  }
   img {
     width: 80px;
     height: 80px;
     margin-right: 20px;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
   }
   svg {
     width: 80px;
     height: 80px;
+    flex-shrink: 0;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
   }
 }
 .header__link {
@@ -55,6 +68,13 @@
   color: $text-dark;
   margin-right: 70px;
   @include hover-line;
+  @include to(1440px) {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+  @include to(992px) {
+    display: none;
+  }
 }
 .header__link-call {
   font-weight: 500;
@@ -65,6 +85,27 @@
   color: $text-dark;
   margin-right: 70px;
   @include hover-line;
+  @include to(1440px) {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+  @include to(992px) {
+    display: none;
+  }
+}
+.js-mobile-call {
+  display: none;
+  @include to(992px) {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  @include to(575px) {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+  }
 }
 .header__link-realty {
   // @include btn;
@@ -85,6 +126,23 @@
   margin-right: 70px;
   transition: all 0.3 cubic-bezier(0.17, 0.67, 0.83, 0.67);
   transform: translateZ(0);
+  @include to(1440px) {
+    padding: 9px 26px;
+    font-size: 20px;
+    margin-right: 30px;
+  }
+  @include to(992px) {
+    padding: 11px 23px;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  @include to(575px) {
+    margin-right: 10px;
+    background: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+  }
   &:hover {
     @include from(992px) {
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -110,6 +168,15 @@
   span {
     position: relative;
     z-index: 2;
+    @include to(575px) {
+      display: none;
+    }
+  }
+  svg {
+    display: none;
+    @include to(575px) {
+      display: block;
+    }
   }
 }
 .burger {
@@ -135,6 +202,13 @@
     text-transform: uppercase;
     color: #435055;
     margin-right: 15px;
+    @include to(1440px) {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    @include to(575px) {
+      display: none;
+    }
   }
   &__icon {
     background: #292935;
@@ -146,6 +220,14 @@
     overflow: hidden;
     transform: translateZ(0);
     z-index: -1;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
+    @include to(575px) {
+      width: 42px;
+      height: 42px;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -170,4 +252,73 @@
       z-index: 4;
     }
   }
+}
+.form-header-call {
+  background: rgba(0, 1, 16, 0.8);
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  z-index: 190;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0 vw(200, 992);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    @include to(575px) {
+      padding: 0 vw(20, 360);
+    }
+  }
+  li {
+    width: 100%;
+    height: 50px;
+    background: #f4f7f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    a {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      color: #2d2d2d;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: none;
+    font-family: $default-font;
+    padding: 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    color: #2d2d2d;
+  }
+  .cancel {
+    background: #008b64;
+    color: #f4f7f9;
+  }
+}
+.sideform-active {
+  opacity: 1;
+  visibility: visible;
 }

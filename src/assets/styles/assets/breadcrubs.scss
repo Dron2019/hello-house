@@ -7,6 +7,10 @@
   color: $black;
   z-index: 1;
   margin: calc(var(--header-h) + 50px) var(--padding) 20px var(--padding);
+  @include to(1440px) {
+    font-size: 16px;
+    margin: calc(var(--header-h) + 30px) var(--padding) 15px var(--padding);
+  }
   &-item {
     cursor: pointer;
     &::before {
@@ -18,6 +22,10 @@
       width: 16px;
       height: 16px;
       margin: 0px 15px;
+      @include to(1440px) {
+        width: 12px;
+        height: 12px;
+      }
     }
     &__current::after {
       display: initial;
@@ -28,6 +36,9 @@
       font-size: 18px;
       line-height: 100%;
       color: $green;
+      @include to(1440px) {
+        font-size: 16px;
+      }
     }
     &:first-child::before {
       display: none;
@@ -38,6 +49,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 510px;
+      @include to(992px) {
+        max-width: 310px;
+      }
     }
   }
 }

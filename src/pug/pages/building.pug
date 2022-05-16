@@ -33,7 +33,10 @@ block content
             h4 1 секція
             p 4 квартал 2020 року
           li.section-item 
-            h4 4 секція
+            h4 2 секція
+            p 1 квартал 2021 року
+          li.section-item 
+            h4 3 секція
             p 1 квартал 2021 року
     .building-status__percent
       ul.percent-list 
@@ -45,7 +48,7 @@ block content
             // hidden svg that we refer to
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
-          .text Будівництво
+          .text Фундамент
         li.percent-item 
           .svg
             .percent-circle.pc3(data-percent='25')
@@ -53,7 +56,15 @@ block content
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
-          .text Фасад
+          .text Монолітний каркас
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='15')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Вікна
         li.percent-item 
           .svg
             .percent-circle.pc3(data-percent='62')
@@ -61,7 +72,7 @@ block content
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
-          .text Благоустрій
+          .text Мережі
         li.percent-item 
           .svg
             .percent-circle.pc3(data-percent='17')
@@ -69,10 +80,22 @@ block content
                 use.percent-circle-inner(xlink:href="#percent-circle-svg")
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
-          .text Мережі
+          .text Зовнішні стіни
+        li.percent-item 
+          .svg
+            .percent-circle.pc3(data-percent='8')
+              svg
+                use.percent-circle-inner(xlink:href="#percent-circle-svg")
+            svg.hidden
+              circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
+          .text Благоустрій
   .bottom-delimiter
+  .building-filter
+    button.building-filter__item(data-view="section1") 1 Секція
+    button.building-filter__item(data-view="section2") 2 Секція
+    button.building-filter__item(data-view="section3") 3 Секція
   ul.building-list(data-build-container)
-    //- li.building-item.js-build-card
+    li.building-item.js-build-card.section1
       .building-item__info 
         .month Вересень
         .info-container
@@ -86,7 +109,7 @@ block content
       .building-item__img 
         img(src="./assets/images/building/building-sw1.jpg", alt="")
         +svg('logo-hover')
-    //- li.building-item.js-build-card
+    li.building-item.js-build-card.section2
       .building-item__info 
         .month Вересень
         .info-container
@@ -100,7 +123,7 @@ block content
       .building-item__img 
         img(src="./assets/images/building/building-sw1.jpg", alt="")
         +svg('logo-hover')
-    //- li.building-item.js-build-card
+    li.building-item.js-build-card.section3
       .building-item__info 
         .month Вересень
         .info-container
@@ -114,7 +137,7 @@ block content
       .building-item__img 
         img(src="./assets/images/building/building-sw1.jpg", alt="")
         +svg('logo-hover')
-    //- li.building-item.js-build-card
+    li.building-item.js-build-card.section1
       .building-item__info 
         .month Вересень
         .info-container

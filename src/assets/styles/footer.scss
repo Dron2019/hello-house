@@ -2,6 +2,12 @@
   padding: 100px vw(155, 1920) 0 vw(155, 1920);
   display: flex;
   flex-direction: column;
+  @include to(1440px) {
+    padding: 50px vw(104, 1440) 0 vw(104, 1440);
+  }
+  @include to(992px) {
+    padding: 50px var(--padding) 0 var(--padding);
+  }
 }
 .footer-container {
   display: flex;
@@ -9,9 +15,28 @@
   align-items: center;
   padding-bottom: 48px;
   border-bottom: 1px solid #292935;
+  @include to(1440px) {
+    padding-bottom: 40px;
+  }
+  @include to(992px) {
+    align-items: flex-start;
+    position: relative;
+    min-height: 119px;
+  }
+  @include to(575px) {
+    min-height: 137px;
+  }
   svg {
     width: 268px;
     height: 67px;
+    @include to(1440px) {
+      width: 194px;
+      height: 49px;
+    }
+    @include to(992px) {
+      width: 156px;
+      height: 39px;
+    }
   }
   &__text {
     font-size: 18px;
@@ -19,6 +44,24 @@
     text-align: center;
     color: #292935;
     width: 570px;
+    @include to(1440px) {
+      font-size: 16px;
+      width: 500px;
+    }
+    @include to(992px) {
+      width: 48.4%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%);
+    }
+    @include to(575px) {
+      width: 100%;
+      left: 0;
+      top: 54px;
+      transform: translate(0);
+      text-align: left;
+    }
   }
   .btn-up {
     width: 65px;
@@ -28,6 +71,14 @@
     position: relative;
     cursor: pointer;
     @include round-hover;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
+    @include to(575px) {
+      width: 42px;
+      height: 42px;
+    }
     svg {
       width: 20px;
       height: 20px;
@@ -37,6 +88,19 @@
       transform: translate(-50%, -50%);
       z-index: 2;
       animation: wiggleUp 2s linear infinite;
+
+      @include to(1440px) {
+        width: 16px;
+        height: 16px;
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
+      }
+      @include to(575px) {
+        width: 13px;
+        height: 13px;
+        top: calc(50% - 6.5px);
+        left: calc(50% - 6.5px);
+      }
     }
   }
 }
@@ -45,18 +109,32 @@
   display: flex;
   justify-content: space-between;
   padding-top: 50px;
+  @include to(1440px) {
+    padding-top: 40px;
+  }
   &__text {
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
     color: $black;
+    @include to(1440px) {
+      font-size: 16px;
+    }
   }
   &__link {
     width: 64px;
     height: 71px;
+    @include to(1440px) {
+      width: 50px;
+      height: 55px;
+    }
     svg {
       width: 64px;
       height: 71px;
+      @include to(1440px) {
+        width: 50px;
+        height: 55px;
+      }
     }
   }
 }

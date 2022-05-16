@@ -5,18 +5,26 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 72px;
+    @include to(1440px) {
+      margin-bottom: 52px;
+    }
     &::after {
       left: 16px;
     }
   }
 }
-.button {
-  @include btn;
-  margin: 0 auto 210px auto;
+#building {
+  .button {
+    @include btn;
+    margin: 0 auto 210px auto;
+  }
 }
 .building-status {
   width: 100%;
   display: flex;
+  @include to(992px) {
+    flex-direction: column;
+  }
   &__text {
     width: 50%;
     background-image: url('../images/building-bg.svg');
@@ -26,12 +34,25 @@
     padding: 100px 108px 0 var(--padding);
     display: flex;
     justify-content: space-between;
+    @include to(1440px) {
+      padding: 85px vw(48, 1440) 0 var(--padding);
+    }
+    @include to(992px) {
+      width: 100%;
+      padding: 80px vw(88, 744) 40px;
+    }
     .text {
       width: 60%;
+      @include to(1440px) {
+        width: 58%;
+      }
       h4 {
         @include main-text-m;
         color: #ffffff;
         margin-bottom: 20px;
+        @include to(1440px) {
+          margin-bottom: 15px;
+        }
       }
       p {
         @include main-text-s(#ffffff);
@@ -39,6 +60,9 @@
     }
     .text-section {
       width: 26%;
+      @include to(1440px) {
+        width: 29%;
+      }
       .section-list {
         display: flex;
         flex-direction: column;
@@ -49,6 +73,9 @@
           @include main-text-m;
           color: #ffffff;
           margin-bottom: 20px;
+          @include to(1440px) {
+            margin-bottom: 15px;
+          }
         }
         p {
           @include main-text-s(#ffffff);
@@ -64,16 +91,36 @@
     border: 1px solid #292935;
     border-bottom: none;
     padding: 100px 90px 70px 90px;
+    @include to(1440px) {
+      padding: 80px 64px 50px 64px;
+    }
+    @include to(992px) {
+      width: 100%;
+      padding: 80px vw(88, 744) 50px vw(88, 744);
+    }
     .percent-list {
       column-count: 2;
+      @include to(992px) {
+        column-gap: 50px;
+      }
     }
     .percent-item {
       display: flex;
       align-items: center;
       margin-bottom: 50px;
+      @include to(1440px) {
+        margin-bottom: 30px;
+      }
       .text {
         margin-left: 20px;
         @include main-text-s(#292935);
+        @include to(1440px) {
+          margin-left: 15px;
+        }
+        @include to(992px) {
+          margin-left: 20px;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -140,11 +187,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include to(1440px) {
+      font-size: 24px;
+    }
+    @include to(992px) {
+      font-size: 36px;
+    }
   }
 }
 
 .pc3 {
   @include percent-circle(120px, 2px, #292935, #ffffff);
+  @include to(1440px) {
+    @include percent-circle(87px, 2px, #292935, #ffffff);
+  }
+  @include to(992px) {
+    @include percent-circle(120px, 2px, #292935, #ffffff);
+  }
 }
 
 .hidden {
@@ -153,21 +212,31 @@
 
 // building item start
 .building-list {
-  padding: 100px var(--padding) 0 var(--padding);
+  padding: 50px var(--padding) 0 var(--padding);
   display: flex;
   flex-wrap: wrap;
+  @include to(1440px) {
+    padding: 80px var(--padding) 0 var(--padding);
+  }
 }
 .building-item {
   width: calc(50% - 90px);
   margin-bottom: 100px;
   cursor: pointer;
+  @include to(1440px) {
+    width: calc(50% - 64px);
+  }
   &:nth-child(odd) {
     margin-right: 180px;
     position: relative;
+    @include to(1440px) {
+      margin-right: 128px;
+    }
+
     &::after {
       content: '';
       position: absolute;
-      top: -50px;
+      top: -100px;
       right: -90px;
       width: 4px;
       height: calc(100% + 100px);
@@ -175,7 +244,19 @@
       background-image: url('../images/border-dashed.svg');
       background-position: center;
       background-repeat: no-repeat;
+      @include to(1440px) {
+        top: -80px;
+        right: -64px;
+        height: calc(100% + 80px);
+      }
     }
+    &:first-child {
+      &::after {
+        top: -190px;
+        height: calc(100% + 190px);
+      }
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -187,6 +268,12 @@
       height: 49px;
       width: 180px;
       z-index: 2;
+      @include to(1440px) {
+        background-size: contain;
+        right: -128px;
+        height: 39px;
+        width: 128px;
+      }
     }
   }
 
@@ -215,9 +302,15 @@
     font-size: 14px;
     line-height: 100%;
     color: #292935;
+    @include to(1440px) {
+      font-size: 12px;
+    }
     .foto {
       display: flex;
       margin-right: 30px;
+      @include to(1440px) {
+        margin-right: 20px;
+      }
       .num {
         margin-right: 0.5ch;
       }
@@ -237,6 +330,9 @@
   overflow: hidden;
   width: 100%;
   height: 473px;
+  @include to(1440px) {
+    height: 340px;
+  }
   img {
     transition: transform 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   }
@@ -251,4 +347,33 @@
     opacity: 0;
     transition: opacity 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   }
+}
+.building-filter {
+  padding: 100px var(--padding) 0;
+  display: flex;
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    padding: 11px 49px;
+    @include menu-text-s;
+    border: 1px solid #292935;
+    border-radius: 50px;
+    cursor: pointer;
+    background: none;
+  }
+  .active {
+    color: #ffffff;
+    border: none;
+    background: #008b64;
+  }
+}
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
 }

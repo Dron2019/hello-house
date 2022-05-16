@@ -15,6 +15,9 @@
     font-size: 200px;
     position: relative;
     margin-bottom: 42px;
+    @include to(1440px) {
+      font-size: 128px;
+    }
   }
   p {
     @include main-text-m;
@@ -22,6 +25,10 @@
     margin-bottom: 50px;
     text-align: center;
     width: 28%;
+    @include to(1440px) {
+      margin-bottom: 40px;
+      width: 34%;
+    }
   }
   a {
     @include btn;
@@ -31,5 +38,9 @@
     position: absolute;
     right: 0;
     bottom: 50px;
+    @include to(1440px) {
+      width: 194px;
+      height: 49px;
+    }
   }
 }

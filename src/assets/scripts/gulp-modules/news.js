@@ -19,7 +19,7 @@
 // }));
 const list = document.querySelectorAll('.news__item');
 const btnNews = document.querySelectorAll('.filter__item');
-console.log(btnNews);
+console.log(list);
 btnNews.forEach(el => el.addEventListener('click', (event) => {
   if (event.target.tagName != 'BUTTON') return false;
   const target = event.target.dataset.view;

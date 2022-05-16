@@ -7,7 +7,7 @@ btn1.forEach(el => el.addEventListener('mouseleave', () => {
   el.previousElementSibling.style.opacity = '0';
 }));
 
-// video start
+// video hover start
 const videoHover = document.querySelector('.js-video');
 const video = document.getElementById('video');
 videoHover.addEventListener('mouseenter', () => {
@@ -18,13 +18,28 @@ videoHover.addEventListener('mouseleave', () => {
   document.querySelector('.texture').style.opacity = '1';
   video.pause();
 });
-
-// video end
+// video hover end
+// video-play start
+const popupVideo = document.querySelector('.video-popup');
+const closeVideo = document.querySelector('.js-close-video');
+videoHover.addEventListener('click', () => {
+  popupVideo.classList.add('video-active');
+});
+closeVideo.addEventListener('click', () => {
+  popupVideo.classList.remove('video-active');
+});
+// video-play end
+const scrollDown = document.querySelector('.js-scroll-home');
+if (scrollDown) {
+  scrollDown.addEventListener('click', () => {
+    document.querySelector('.about-section').scrollIntoView({ behavior: 'smooth' });
+  });
+}
 
 const swiper = new Swiper('.benefits-swiper', {
-  slidesPerView: 2.3,
+  slidesPerView: 1.3,
   // centeredSlides: true,
-  spaceBetween: 40,
+  spaceBetween: 30,
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
@@ -33,14 +48,38 @@ const swiper = new Swiper('.benefits-swiper', {
     nextEl: '.benefits-next',
     prevEl: '.benefits-prev',
   },
+  breakpoints: {
+    // 575: {
+    //   spaceBetween: 20,
+    // },
+    992: {
+      spaceBetween: 30,
+      slidesPerView: 2.3,
+    },
+    1440: {
+      spaceBetween: 40,
+      slidesPerView: 2.3,
+    },
+  },
 });
 
 const swiper2 = new Swiper('.swiper-gallery-bottom', {
   loop: true,
-  spaceBetween: 10,
+  spaceBetween: 15,
   slidesPerView: 6,
   freeMode: true,
   watchSlidesProgress: true,
+  breakpoints: {
+    // 575: {
+    //   spaceBetween: 20,
+    // },
+    // 992: {
+    //   spaceBetween: 50,
+    // },
+    1440: {
+      spaceBetween: 10,
+    },
+  },
 });
 const swiper3 = new Swiper('.swiper-gallery', {
   loop: true,

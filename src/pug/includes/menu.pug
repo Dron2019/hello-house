@@ -28,7 +28,7 @@
             a(href="commercial.html" data-animation1 data-text="Комерційна нерухомість")
               span Комерційна нерухомість
           li.section-main__item
-            h4(data-animation1) Про проєкт
+            h4(data-animation1) Про КОМПЛЕКС
             ul.secondary-list
               li.secondary-item
                 a(href="about-project.html" data-animation2 data-text="Про проєкт")
@@ -37,32 +37,33 @@
                 a(href="3d-tour.html" data-animation2 data-text="3D тур")
                   span 3D тур
               li.secondary-item 
+                a(href="gallery.html" data-animation3  data-text="Галерея")
+                  span Галерея
+              li.secondary-item 
+                a(href="prices.html" data-animation2 data-text="Цiни")
+                  span Цiни
+              li.secondary-item 
                 a(href="awards.html" data-animation2 data-text="Нагороди") 
                   span Нагороди
               li.secondary-item 
-                a(href="#" data-animation2 data-text="Цiни")
-                  span Цiни
-              li.secondary-item 
                 a(href="documents.html " data-animation2 data-text="Документи")
                   span Документи
-              li.secondary-item 
-                a(href="building.html" data-animation2 data-text="Хiд будiвництва")
-                  span Хiд будiвництва
+              
           li.section-main__item
-            h4(data-animation4) Про комплекс
+            h4(data-animation4) ОСОБЛИВОСТІ
             ul.secondary-list 
-              li.secondary-item 
-                a(href="gallery.html" data-animation3  data-text="Галерея")
-                  span Галерея
               li.secondary-item 
                 a(href="benefits.html" data-animation3 data-text="Переваги")
                   span Переваги
               li.secondary-item 
-                a(href="location.html" data-animation3 data-text="Розташування")
-                  span Розташування
-              li.secondary-item 
                 a(href="characteristics.html" data-animation3 data-text="Характеристики")
                   span Характеристики
+              li.secondary-item 
+                a(href="location.html" data-animation3 data-text="Розташування")
+                  span Розташування
+          li.section-main__item 
+            a(href="building.html" data-animation4 data-text="Хiд будiвництва")
+              span Хiд будiвництва
           li.section-main__item
             a(href="news.html" data-animation4 data-text="Новини та акції")
               span Новини та акції
@@ -75,36 +76,36 @@
   .contacts-menu 
     ul.social
       li.social__item
-        a(href="#").social__link.facebook
-          .svg.js-social-hover
+        a(href="#").social__link.facebook.js-social-hover
+          .svg
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.15 73.31">
               <path class="cls-1" d="M34.85,15.52h1.8V1.23L35.11,1A75.35,75.35,0,0,0,26.19.5,15.58,15.58,0,0,0,14.44,5.23C11.52,8.37,10,12.89,10,18.45v7.81H.5V42.09H10V72.81H25.16V42.09H34l.19-1.6,1.44-12.21.24-2H25.15v-6.6a5.32,5.32,0,0,1,.66-3.19c.33-.43,1.06-.95,3.1-.95Z"/>
             </svg>
-          .hover-text Facebook
+        .hover-text Facebook
       li.social__item
-        a(href="#").social__link.instagram
-          .svg.js-social-hover
+        a(href="#").social__link.instagram.js-social-hover
+          .svg
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.12 70.12">
               <rect class="cls-1" x="0.5" y="0.5" width="69.12" height="69.12" rx="21.25"/>
               <circle class="cls-1 cls-1-1" cx="35.06" cy="35.06" r="14.47"/>
               <circle class="cls-1 cls-1-1" cx="53.87" cy="15.2" r="5.73"/>
             </svg>
-          .hover-text Instagram
+        .hover-text Instagram
       li.social__item
-        a(href="#").social__link.youtube
-          .svg.js-social-hover
+        a(href="#").social__link.youtube.js-social-hover
+          .svg
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.54 62.46">
               <path class="cls-1" d="M31.71,41,30.4,58.17a4.71,4.71,0,0,0,3.67-1.65L42.9,48.7,61.19,61.11c3.35,1.74,5.71.82,6.62-2.86l12-52.15h0C80.88,1.5,78-.3,74.75.83L4.2,25.88c-4.82,1.73-4.75,4.22-.82,5.35l18,5.2,41.9-24.31c2-1.21,3.76-.54,2.29.67Z"/>
             </svg>
-          .hover-text Youtube
+        .hover-text Youtube
       li.social__item
-        a(href="#").social__link.telegram
-          .svg.js-social-hover
+        a(href="#").social__link.telegram.js-social-hover
+          .svg
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.24 58.78">
               <rect class="cls-1" x="0.5" y="0.5" width="76.24" height="57.78" rx="15.4"/>
               <path class="cls-1 cls-1-1" d="M29.57,24.14v10.5a3.42,3.42,0,0,0,4.86,3.1l11.25-5.2a3.42,3.42,0,0,0,0-6.2L34.45,21.05A3.42,3.42,0,0,0,29.57,24.14Z"/>
             </svg>
-          .hover-text Telegram
+        .hover-text Telegram
     ul.tel
       li.tel__item 
         a(href='tel:+380442229970').tel__link
@@ -114,7 +115,7 @@
         a(href='tel:+380673135529').tel__link
            +svg('tel')
            | +38 (067) 313 55 29
-    button.button.js-button 
+    button.button.js-button.js-call 
       span Зворотній дзвінок
 
 

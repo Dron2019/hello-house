@@ -7,38 +7,85 @@
     margin-bottom: 20px;
     &::after {
       left: calc(var(--padding) + 16px);
+      @include to(992px) {
+        bottom: -10px;
+      }
     }
   }
 }
 .benefits {
   display: flex;
+  @include to(992px) {
+    flex-direction: column-reverse;
+  }
+}
+.benefits-tablet {
+  @include to(992px) {
+    flex-direction: column;
+  }
 }
 .benefits__item {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include to(992px) {
+    width: 100%;
+  }
   &:first-child {
     border-right: 1px solid #292935;
+    @include to(992px) {
+      border-right: none;
+    }
   }
   .text-left {
     padding: 354px 0 354px var(--padding);
+    @include to(1440px) {
+      padding: 202px 0 202px var(--padding);
+    }
+    @include to(992px) {
+      padding: 0px vw(88, 744) 80px vw(88, 744);
+    }
   }
   .text-left,
   .text-right {
     width: 61.3%;
+    @include to(1440px) {
+      width: 70%;
+    }
+    @include to(992px) {
+      width: 100%;
+    }
     h3 {
       @include main-text-m;
       margin-bottom: 20px;
+      @include to(1440px) {
+        margin-bottom: 15px;
+      }
     }
     p {
       @include main-text-s(#292935);
+    }
+  }
+  .text-right {
+    @include to(1440px) {
+      width: 53%;
+    }
+    @include to(992px) {
+      width: auto;
     }
   }
   .img-letter {
     padding: 112px 0;
     width: 76.5%;
     margin: 0 auto;
+    @include to(1440px) {
+      padding: 65px 0;
+    }
+    @include to(992px) {
+      width: 54%;
+      padding: 80px 0 30px 0;
+    }
   }
   .img {
     width: 100%;
@@ -47,9 +94,19 @@
   .text-right {
     padding: 199px 0;
     margin: 0 auto;
+    @include to(1440px) {
+      padding: 72px 0;
+    }
+    @include to(992px) {
+      padding: 30px 0 80px;
+      margin: 0 vw(88, 744);
+    }
   }
   .left-padding {
     padding: 0 0 0 var(--padding);
+    @include to(992px) {
+      padding: 0 vw(88, 744) 120px vw(88, 744);
+    }
   }
 }
 .location__map {
@@ -57,12 +114,27 @@
   margin-top: 50px;
   width: 100%;
   border: 1px solid #292935;
+  @include to(1440px) {
+    margin-top: 30px;
+  }
   .map {
     width: 100%;
     height: 850px;
+    @include to(1440px) {
+      height: 570px;
+    }
+    @include to(992px) {
+      height: 708px;
+    }
     #map {
       width: 100%;
       height: 850px;
+      @include to(1440px) {
+        height: 570px;
+      }
+      @include to(992px) {
+        height: 708px;
+      }
     }
   }
 }
@@ -74,11 +146,23 @@
   height: 100%;
   border-right: 1px solid #292935;
   background: #ffffff;
+  @include to(992px) {
+    position: initial;
+    width: 100%;
+    column-count: 2;
+    column-gap: 0;
+  }
 }
 .map-markers__list {
   display: flex;
   flex-direction: column;
   height: 850px;
+  @include to(1440px) {
+    height: 570px;
+  }
+  @include to(992px) {
+    height: auto;
+  }
 }
 .map-markers__item {
   display: flex;
@@ -88,9 +172,23 @@
   border-bottom: 1px solid #292935;
   cursor: pointer;
   transition: padding 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  @include to(1440px) {
+    padding-left: 50px;
+  }
+  @include to(992px) {
+    height: calc(100% / 4);
+    padding: 24px 58px;
+    border-right: 1px solid #292935;
+    &:first-child {
+      border-top: 1px solid #292935;
+    }
+  }
   &:hover {
     @include from(992px) {
       padding-left: 100px;
+      @include to(1440px) {
+        padding-left: 70px;
+      }
     }
   }
   &:last-child {
@@ -101,6 +199,11 @@
     max-width: 30px;
     max-height: 30px;
     fill: none;
+    @include to(1440px) {
+      margin-right: 15px;
+      max-width: 23px;
+      max-height: 23px;
+    }
   }
   p {
     @include main-text-s(#292935);

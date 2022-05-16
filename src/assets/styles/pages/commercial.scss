@@ -5,6 +5,9 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 72px;
+    @include to(1440px) {
+      margin-bottom: 52px;
+    }
     &::after {
       left: 16px;
     }
@@ -14,6 +17,13 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 160px;
+  @include to(1440px) {
+    margin-bottom: 100px;
+  }
+  @include to(992px) {
+    flex-direction: column;
+    margin-bottom: 120px;
+  }
 }
 
 .commercial-list {
@@ -21,6 +31,12 @@
   display: flex;
   justify-content: space-between;
   // margin-bottom: 160px;
+  @include to(992px) {
+    width: 100%;
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
 }
 .commercial-item {
   width: 48.1%;
@@ -30,17 +46,15 @@
   display: flex;
   align-items: flex-end;
   cursor: pointer;
-  // &::before {
-  //   content: '';
-  //   display: inline-block;
-  //   width: 100%;
-  //   height: 55.5%;
-  //   background: linear-gradient(360deg, #1c1c1f 0%, rgba(28, 28, 31, 0) 100%);
-  //   position: absolute;
-  //   left: 0;
-  //   bottom: 0;
-  //   z-index: -1;
-  // }
+  @include to(1440px) {
+    height: 385px;
+  }
+  @include to(992px) {
+    height: 467px;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
   a {
     position: relative;
     width: 100%;
@@ -87,6 +101,16 @@
     position: absolute;
     left: 30px;
     bottom: 30px;
+    @include to(1440px) {
+      left: 20px;
+      bottom: 20px;
+    }
+    @include to(992px) {
+      width: 80%;
+      font-size: 18px;
+      left: 30px;
+      bottom: 30px;
+    }
   }
 }
 
@@ -149,6 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   p {
     font-weight: 500;
     font-size: 18px;
@@ -157,6 +182,10 @@
     text-transform: uppercase;
     color: #435055;
     margin-right: 15px;
+    @include to(1440px) {
+      font-size: 16px;
+      margin-right: 10px;
+    }
   }
 }
 .lightbox__button {
@@ -175,6 +204,10 @@
   height: 65px;
   border-radius: 50%;
   position: relative;
+  @include to(1440px) {
+    width: 50px;
+    height: 50px;
+  }
   &::before {
     content: '';
     display: inline-block;
@@ -194,8 +227,15 @@
   display: flex;
   justify-content: space-between;
   padding: 40px 80px;
+  @include to(1440px) {
+    padding: 25px var(--pad-h);
+  }
   svg {
     width: 193px;
     height: 60px;
+    @include to(1440px) {
+      width: 142px;
+      height: 44px;
+    }
   }
 }

@@ -66,19 +66,6 @@ formsWithRedirect.forEach((form) => {
             valid: false,
             error: [],
           },
-          // email: {
-          //   inputWrapper: new SexyInput({
-          //     animation: 'none',
-          //     $field: $form.querySelector('[data-field-email]'),
-          //   }),
-          //   rule: yup
-          //     .string()
-          //     .required(i18next.t('required'))
-          //     .trim(),
-          //   defaultMessage: i18next.t('name'),
-          //   valid: false,
-          //   error: [],
-          // },
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -97,14 +84,6 @@ formsWithRedirect.forEach((form) => {
         },
       },
     });
-
-    $form.querySelector('.js-mask-absolute').addEventListener(
-      'click',
-      () => {
-        $form.querySelector('[name="phone"]').focus();
-      },
-      false,
-    );
   }
 });
 
@@ -167,14 +146,6 @@ formsTel.forEach((form) => {
         },
       },
     });
-
-    $form.querySelector('.js-mask-absolute').addEventListener(
-      'click',
-      () => {
-        $form.querySelector('[name="phone"]').focus();
-      },
-      false,
-    );
   }
 });
 

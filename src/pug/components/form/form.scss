@@ -24,18 +24,18 @@
 
 .form-field:not(#t) {
   position: relative;
-  margin: 60px 0 0;
+  // margin: 60px 0 0;
   background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
   @include to(1440px) {
-    margin: 40px 0 0;
+    // margin: 40px 0 0;
   }
   @include to(992px) {
-    margin: 50px 0 0;
+    // margin: 50px 0 0;
   }
   @include to(576px) {
-    margin: 30px 0 0;
+    // margin: 30px 0 0;
   }
 }
 
@@ -210,7 +210,7 @@
   line-height: 100%;
   transform: translate(0%, 100%);
   @include to(1440px) {
-    font-size: 12px;
+    font-size: 10px;
   }
   @include to(576px) {
     font-size: 10px;
@@ -458,6 +458,12 @@
     width: 65px;
     height: 65px;
     border-radius: 50%;
+    @include to(1440px) {
+      top: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+    }
     &:hover {
       @include from(992px) {
         svg {
@@ -473,6 +479,10 @@
       width: 14px;
       height: 14px;
       transition: transform 0.3s ease-in-out;
+      @include to(1440px) {
+        width: 11px;
+        height: 11px;
+      }
     }
   }
   h2 {
@@ -482,11 +492,19 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 52px;
+    @include to(1440px) {
+      font-size: 40px;
+      margin-bottom: 32px;
+    }
   }
   h3 {
     @include main-text-m;
     text-align: center;
     margin-bottom: 30px;
+    @include to(1440px) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
   }
   .contact-form {
     background-image: none;
@@ -494,6 +512,14 @@
     label {
       text-transform: none;
       color: #292935;
+      @include to(1440px) {
+        font-size: 12px;
+      }
+    }
+    .form-field-input {
+      @include to(1440px) {
+        margin-bottom: 20px;
+      }
     }
   }
   .confirm-text {
@@ -503,6 +529,11 @@
     text-align: center;
     color: #71727b;
     margin: 30px 0 15px 0;
+    @include to(1440px) {
+      font-size: 12px;
+      text-align: left;
+      margin: 20px 0 10px 0;
+    }
   }
   .contact-form__btn {
     margin: 0 auto;
@@ -513,4 +544,58 @@
   right: 0;
   transform: translateX(0);
   visibility: visible;
+}
+.video-popup {
+  width: 100vw;
+  height: 100vh;
+  z-index: 250;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px vw(80, 1920);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .icon--logo {
+      width: 193px;
+      height: 60px;
+    }
+    .burger {
+      cursor: pointer;
+    }
+    .burger__icon::before {
+      display: none;
+    }
+    .burger:hover {
+      @include from(992px) {
+        .burger__icon svg {
+          animation: rotate-center 0.6s ease-in-out;
+        }
+      }
+    }
+    .burger__icon {
+      z-index: 1;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+  video {
+    object-fit: cover;
+  }
+}
+
+.video-active {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
 }

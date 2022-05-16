@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.building-popup').style.display = '';
+  document.querySelector('.thanks-page').style.display = '';
+  document.querySelector('.js-call-mobile').style.display = '';
+  document.querySelector('.feedback-form').style.display = '';
+  document.querySelector('.video-popup').style.display = '';
+});
+
 function menuOpen(menu) {
   menu.classList.add('menu__active');
   const createAnimation = (links, translateY = 0, delay = 0) => {
@@ -54,6 +62,35 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init);
+// Mobile phone menu start
+const btnCallMobile = document.querySelectorAll('.js-mobile-call');
+const btnCloseMobile = document.querySelector('.js-mobile-close');
+const formMobile = document.querySelector('.form-header-call');
+const formCallMobile = document.querySelector('.js-mobile-form');
+formCallMobile.addEventListener('click', () => {
+  formMobile.classList.remove('sideform-active');
+  formCall.classList.toggle('feedback-active');
+  document.querySelector('body').style.overflow = 'hidden';
+});
+btnCallMobile.forEach(el => el.addEventListener('click', () => {
+  formMobile.classList.toggle('sideform-active');
+  document.querySelector('body').style.overflow = 'hidden';
+}));
+
+btnCloseMobile.addEventListener('click', () => {
+  formMobile.classList.remove('sideform-active');
+  document.querySelector('body').style.overflow = 'auto';
+  // formGratitude.classList.remove('sideform-active');
+  // document.querySelector('body').style.overflow = 'auto';
+});
+formMobile.addEventListener('click', onBackdropClick);
+function onBackdropClick(event) {
+  if (event.currentTarget === event.target) {
+    formMobile.classList.remove('sideform-active');
+    document.querySelector('body').style.overflow = 'auto';
+  }
+}
+// Mobile phone menu end
 
 // button hover start
 const btn = document.querySelectorAll('.js-button');
@@ -69,7 +106,6 @@ btn.forEach(el => el.addEventListener('mousemove', (e) => {
 
 // button hover social start
 const btnSociale = document.querySelectorAll('.js-social-hover');
-
 btnSociale.forEach(el => el.addEventListener('mouseenter', () => {
   el.nextElementSibling.style.opacity = '1';
 }));
@@ -86,6 +122,8 @@ const formGratitude = document.querySelector('.thanks-page');
 // const btnForm = document.querySelectorAll('form-button-js');
 
 btnCallMenu.forEach(el => el.addEventListener('click', () => {
+  const menu = document.querySelector('[data-menu]');
+  menu.classList.remove('menu__active');
   formCall.classList.toggle('feedback-active');
   document.querySelector('body').style.overflow = 'hidden';
 }));
