@@ -8,8 +8,15 @@
     @include to(1440px) {
       margin-bottom: 52px;
     }
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
     &::after {
       left: 16px;
+      @include to(575px) {
+        bottom: -10px;
+      }
     }
   }
 }
@@ -20,6 +27,38 @@
     }
     .gallery .swiper-gallery {
       height: 826px;
+    }
+  }
+  @include to(575px) {
+    .gallery {
+      height: 466px;
+    }
+    .gallery .swiper-gallery {
+      height: 466px;
+    }
+    .gallery .swiper-btn-container {
+      width: 100%;
+      padding: 0 var(--padding);
+    }
+    .gallery .swiper-bottom-container {
+      width: 210px;
+    }
+    .gallery .swiper-button-prev {
+      left: var(--padding);
+      bottom: 24px;
+    }
+    .gallery .swiper-button-next {
+      right: var(--padding);
+      bottom: 24px;
+    }
+    .gallery .swiper-bottom-container .swiper-wrapper {
+      height: 80px;
+    }
+    .gallery .swiper-bottom-container .swiper-wrapper .swiper-slide {
+      height: 60px;
+    }
+    .gallery .swiper-bottom-container .swiper-wrapper .swiper-slide-thumb-active {
+      transform: translateY(-10px);
     }
   }
 }

@@ -6,6 +6,9 @@
   @include to(992px) {
     padding: 0 0 120px 0;
   }
+  @include to(575px) {
+    padding: 0 0 128px 0;
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -19,6 +22,13 @@
     }
     @include to(992px) {
       padding: 0 var(--padding);
+    }
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+      &::after {
+        bottom: -15px;
+      }
     }
   }
 }
@@ -38,6 +48,9 @@
       width: 100%;
       padding: 30px vw(88, 744) 0;
     }
+    @include to(575px) {
+      padding: 0 var(--padding) 0;
+    }
     p {
       @include main-text-s($black);
     }
@@ -49,6 +62,11 @@
         width: 194px;
         height: 49px;
         margin-top: 30px;
+      }
+      @include to(575px) {
+        width: 156px;
+        height: 39px;
+        margin-top: 10px;
       }
     }
   }
@@ -62,6 +80,9 @@
     @include to(992px) {
       width: 100%;
       padding-left: vw(88, 744);
+    }
+    @include to(575px) {
+      padding: 0 var(--pad-h);
     }
   }
 }
@@ -88,6 +109,9 @@
     @include to(992px) {
       padding: 70px 89px 38px 89px;
     }
+    @include to(575px) {
+      padding: 40px 57px;
+    }
     &::before {
       content: '';
       display: inline-block;
@@ -112,6 +136,11 @@
         height: 79px;
         top: -39px;
       }
+      @include to(575px) {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+      }
     }
     &__img {
       width: 312px;
@@ -127,6 +156,11 @@
         height: 396px;
         margin-bottom: 42px;
       }
+      @include to(575px) {
+        width: 216px;
+        height: 274px;
+        margin-bottom: 22px;
+      }
       img {
         object-fit: fill;
       }
@@ -140,6 +174,9 @@
       }
       @include to(992px) {
         font-size: 18px;
+      }
+      @include to(575px) {
+        font-size: 14px;
       }
       &::after {
         content: '';
@@ -160,6 +197,10 @@
   cursor: pointer;
   position: absolute;
   top: 50%;
+  @include to(575px) {
+    bottom: -50px;
+    top: auto;
+  }
   &:hover {
     @include from(992px) {
       svg {
@@ -171,12 +212,19 @@
     stroke: #292935;
     width: 20px;
     height: 20px;
+    @include to(575px) {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 .awards-btn-prev {
   left: 0;
   @include to(992px) {
     left: var(--padding);
+  }
+  @include to(575px) {
+    left: 128px;
   }
 }
 .awards-btn-next {
@@ -187,5 +235,8 @@
   @include to(992px) {
     right: var(--padding);
     z-index: 2;
+  }
+  @include to(575px) {
+    right: 128px;
   }
 }

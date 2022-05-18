@@ -70,6 +70,15 @@
     @include to(992px) {
       padding: 15px var(--padding) 120px var(--padding);
     }
+    @include to(575px) {
+      padding: 20px var(--padding) 80px var(--padding);
+    }
+    h2 {
+      @include to(575px) {
+        font-size: 36px;
+        margin-bottom: 32px;
+      }
+    }
   }
   .button {
     margin: 10px 0 45px 0;
@@ -89,12 +98,21 @@
     @include to(992px) {
       padding-top: 120px;
     }
+    @include to(575px) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
     .map {
       width: 49%;
       @include to(992px) {
         width: 100%;
         height: 500px;
         padding-bottom: 60px;
+      }
+      @include to(575px) {
+        height: 410px;
+        padding-bottom: 0;
+        margin-bottom: 80px;
       }
     }
     .form {
@@ -119,6 +137,9 @@
   @include to(992px) {
     padding: 120px 0 90px 0;
   }
+  @include to(575px) {
+    padding: 80px 0 60px 0;
+  }
   h4 {
     text-align: center;
   }
@@ -129,6 +150,9 @@
   @include to(992px) {
     flex-wrap: wrap;
   }
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .manager__item {
   width: 23.6%;
@@ -137,11 +161,17 @@
     width: 48%;
     margin-bottom: 30px;
   }
+  @include to(575px) {
+    width: 100%;
+  }
 }
 .manager__img {
   height: 600px;
   @include to(1440px) {
     height: 430px;
+  }
+  @include to(575px) {
+    height: 400px;
   }
 }
 .manager__name {
@@ -154,6 +184,10 @@
     width: 115px;
     height: 35px;
   }
+  @include to(575px) {
+    width: 130px;
+    height: 40px;
+  }
   .container {
     width: 100%;
     height: 100%;
@@ -162,6 +196,11 @@
     position: relative;
     @include to(1440px) {
       padding: 10px 14px;
+    }
+    @include to(575px) {
+      padding: 11px 15px;
+      display: flex;
+      align-items: center;
     }
     &::before {
       content: '';
@@ -179,6 +218,10 @@
         width: 34px;
         left: -34px;
       }
+      @include to(575px) {
+        width: 39px;
+        left: -39px;
+      }
     }
   }
   p {
@@ -190,6 +233,9 @@
     color: #ffffff;
     @include to(1440px) {
       font-size: 14px;
+    }
+    @include to(575px) {
+      font-size: 16px;
     }
   }
 }
@@ -203,6 +249,9 @@
   }
   @include to(992px) {
     padding: vw(118, 744);
+  }
+  @include to(575px) {
+    padding: 50px 20px;
   }
   label {
     @include menu-text-s;
@@ -223,6 +272,9 @@
     @include to(1440px) {
       padding-left: 20px;
       height: 50px;
+    }
+    @include to(575px) {
+      height: 42px;
     }
     &::placeholder {
       @include menu-text-s;

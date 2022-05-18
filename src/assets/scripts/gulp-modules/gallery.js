@@ -23,9 +23,21 @@
 const swiper2 = new Swiper('.swiper-gallery-bottom', {
   loop: true,
   spaceBetween: 10,
-  slidesPerView: 6,
+  slidesPerView: 3,
   freeMode: true,
   watchSlidesProgress: true,
+  breakpoints: {
+    575: {
+      slidesPerView: 6,
+    },
+    // 992: {
+    //   //   spaceBetween: 50,
+    //   slidesPerView: 2,
+    // },
+    // 1440: {
+    //   spaceBetween: 30,
+    // },
+  },
 });
 const swiper3 = new Swiper('.swiper-gallery', {
   loop: true,

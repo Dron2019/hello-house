@@ -37,9 +37,9 @@ if (scrollDown) {
 }
 
 const swiper = new Swiper('.benefits-swiper', {
-  slidesPerView: 1.3,
+  slidesPerView: 1,
   // centeredSlides: true,
-  spaceBetween: 30,
+  spaceBetween: 20,
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',
@@ -49,9 +49,10 @@ const swiper = new Swiper('.benefits-swiper', {
     prevEl: '.benefits-prev',
   },
   breakpoints: {
-    // 575: {
-    //   spaceBetween: 20,
-    // },
+    575: {
+      spaceBetween: 30,
+      slidesPerView: 1.3,
+    },
     992: {
       spaceBetween: 30,
       slidesPerView: 2.3,
@@ -66,13 +67,13 @@ const swiper = new Swiper('.benefits-swiper', {
 const swiper2 = new Swiper('.swiper-gallery-bottom', {
   loop: true,
   spaceBetween: 15,
-  slidesPerView: 6,
+  slidesPerView: 3,
   freeMode: true,
   watchSlidesProgress: true,
   breakpoints: {
-    // 575: {
-    //   spaceBetween: 20,
-    // },
+    575: {
+      slidesPerView: 6,
+    },
     // 992: {
     //   spaceBetween: 50,
     // },

@@ -17,6 +17,9 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+    @include to(992px) {
+      overflow-y: scroll;
+    }
     &.menu__active {
       transition: opacity 0.5s ease-in, visibility 1ms linear;
       visibility: visible;
@@ -45,13 +48,26 @@
     .burger__icon::before {
       display: none;
     }
+
     .burger__icon svg {
-      // top: calc(50% - 8px);
-      // left: calc(50% - 8px);
-      // transform: translate(-50%, -50%);
+      @include to(992px) {
+        width: 9px;
+        height: 9px;
+      }
     }
   }
-
+  &__right {
+    display: flex;
+    .menu__call {
+      display: none;
+      @include to(575px) {
+        display: flex;
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+      }
+    }
+  }
   // a {
 
   // @include to(1440px) {
@@ -76,6 +92,9 @@
   @include to(992px) {
     margin-top: 80px;
   }
+  @include to(575px) {
+    margin-top: 24px;
+  }
 }
 .section-main__item {
   display: flex;
@@ -87,6 +106,9 @@
   }
   @include to(992px) {
     margin-bottom: 40px;
+  }
+  @include to(575px) {
+    margin-bottom: 30px;
   }
   a {
     @include menu-text-b;
@@ -102,17 +124,38 @@
   }
   h4 ~ .secondary-list {
     margin-top: 20px;
+    @include to(992px) {
+      margin-top: 40px;
+    }
+    @include to(575px) {
+      margin-top: 20px;
+    }
   }
 }
 .secondary-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(992px) {
+    flex-wrap: wrap;
+    max-width: 490px;
+  }
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .secondary-item {
   margin-right: 50px;
   @include to(1440px) {
     margin-right: 30px;
+  }
+  @include to(992px) {
+    margin-bottom: 40px;
+    margin-right: 60px;
+  }
+  @include to(575px) {
+    margin-bottom: 20px;
+    margin-right: 0;
   }
   &:last-child {
     margin-right: 0;
@@ -120,6 +163,11 @@
   a {
     @include menu-text-s;
     @include hover-menu-s;
+  }
+}
+.margin-item {
+  @include to(992px) {
+    margin-bottom: 0;
   }
 }
 .logo-nice {
@@ -133,6 +181,12 @@
     width: 194px;
     height: 49px;
   }
+  @include to(992px) {
+    position: fixed;
+  }
+  @include to(575px) {
+    display: none;
+  }
 }
 .contacts-menu {
   position: absolute;
@@ -140,6 +194,12 @@
   left: var(--pad-h);
   display: flex;
   flex-direction: column;
+  @include to(992px) {
+    position: fixed;
+  }
+  @include to(575px) {
+    bottom: 20px;
+  }
   .social {
     display: flex;
     flex-direction: column;
@@ -147,13 +207,16 @@
     &__item {
       margin-bottom: 20px;
       // cursor: pointer;
-      height: 65px;
+      // height: 65px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       flex-shrink: 0;
       @include to(1440px) {
         margin-bottom: 15px;
+      }
+      @include to(575px) {
+        margin-bottom: 10px;
       }
       &:last-child {
         margin-bottom: 0;
@@ -171,6 +234,10 @@
         @include to(1440px) {
           width: 50px;
           height: 50px;
+        }
+        @include to(575px) {
+          width: 42px;
+          height: 42px;
         }
         &:hover {
           @include from(992px) {
@@ -193,12 +260,28 @@
         svg {
           width: 9px;
           height: 19px;
+          @include to(992px) {
+            width: 7px;
+            height: 15px;
+          }
+          @include to(575px) {
+            width: 6px;
+            height: 12px;
+          }
         }
       }
       .instagram {
         svg {
           width: 19px;
           height: 19px;
+          @include to(992px) {
+            width: 15px;
+            height: 15px;
+          }
+          @include to(575px) {
+            width: 12px;
+            height: 12px;
+          }
         }
       }
       .youtube,
@@ -206,6 +289,14 @@
         svg {
           width: 22px;
           height: 17px;
+          @include to(992px) {
+            width: 17px;
+            height: 13px;
+          }
+          @include to(575px) {
+            width: 14px;
+            height: 11px;
+          }
         }
       }
     }
@@ -266,21 +357,31 @@
       width: 240px;
       margin-top: 15px;
     }
+    @include to(575px) {
+      display: none;
+    }
     span {
       z-index: 5;
     }
   }
 }
+
 .tel {
   margin-top: 118px;
   @include to(1440px) {
     margin-top: 40px;
+  }
+  @include to(575px) {
+    display: none;
   }
   &__item {
     margin-bottom: 10px;
     width: max-content;
     &:last-child {
       margin-bottom: 0;
+    }
+    @include to(992px) {
+      margin-bottom: 5px;
     }
   }
   &__link {

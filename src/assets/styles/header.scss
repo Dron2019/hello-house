@@ -93,7 +93,7 @@
     display: none;
   }
 }
-.js-mobile-call {
+.mobile-call {
   display: none;
   @include to(992px) {
     display: block;
@@ -257,10 +257,11 @@
   background: rgba(0, 1, 16, 0.8);
   width: 100vw;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  // height: calc(var(--vh, 1vh) * 100);
   z-index: 190;
   position: fixed;
-  top: 0;
+  // top: 0;
+  bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;

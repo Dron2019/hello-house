@@ -7,8 +7,15 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 20px;
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
     &::after {
       left: calc(var(--padding) + 16px);
+      @include to(575px) {
+        bottom: -15px;
+      }
     }
   }
 }
@@ -46,6 +53,9 @@
   @include to(992px) {
     width: 100%;
   }
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .characteristics__deco-item {
   width: 50%;
@@ -57,6 +67,13 @@
   padding: 50px 0;
   @include to(1440px) {
     padding: 30px 0;
+  }
+  @include to(575px) {
+    justify-content: flex-start;
+    min-height: 130px;
+    padding: 20px 10px;
+    border-right: none;
+    border-left: 1px solid #292935;
   }
   h2 {
     @include main-text-b($text-dark);
@@ -71,6 +88,9 @@
   }
   p {
     @include main-text-s(#292935);
+    @include to(575px) {
+      text-align: center;
+    }
   }
 }
 .characteristics__item {
@@ -82,6 +102,13 @@
   border-right: 1px solid #292935;
   @include to(992px) {
     padding: 60px 0;
+  }
+  @include to(575px) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #292935;
+    padding: 30px vw(46, 360);
+    justify-content: flex-start;
   }
   .characteristics__text {
     display: flex;
@@ -95,6 +122,9 @@
   }
   p {
     @include main-text-s(#292935);
+    @include to(575px) {
+      font-size: 16px;
+    }
   }
   &:last-child {
     border-right: none;
@@ -121,6 +151,9 @@
     width: 100%;
     padding: 109px 0;
   }
+  @include to(575px) {
+    padding: 40px var(--pad-h);
+  }
 }
 .characteristics__description-item {
   display: flex;
@@ -134,6 +167,13 @@
     width: 60%;
     margin: 0 auto 40px auto;
   }
+  @include to(575px) {
+    width: 100%;
+    margin: 0;
+    &:first-child {
+      margin-bottom: 30px;
+    }
+  }
   svg {
     fill: none;
     width: 115px;
@@ -145,6 +185,11 @@
       height: 80px;
       margin-right: 30px;
     }
+    @include to(575px) {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
   }
   h2 {
     @include main-text-m;
@@ -153,6 +198,9 @@
   }
   p {
     @include main-text-s(#ffffff);
+    @include to(575px) {
+      font-size: 16px;
+    }
   }
   &:last-child {
     margin-bottom: 0;
@@ -169,6 +217,10 @@
   }
   .characteristics__item:last-child {
     border-left: 1px solid #292935;
+    @include to(575px) {
+      border-left: none;
+      border-bottom: none;
+    }
   }
   .characteristics__deco-list {
     width: 100%;
@@ -185,6 +237,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    flex-direction: column;
+  }
   .characteristics__text {
     padding: 118px 0;
     width: 69%;
@@ -206,6 +261,9 @@
   }
   @include to(992px) {
     margin-bottom: 120px;
+  }
+  @include to(575px) {
+    margin-bottom: 80px;
   }
   .characteristics__list {
     width: 100%;
@@ -229,7 +287,14 @@
       &:nth-child(3),
       &:nth-child(4) {
         border-top: 1px solid #292935;
+        @include to(575px) {
+          border-top: none;
+        }
       }
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 29px vw(48, 360);
     }
     &:last-child {
       background: #008b64;
@@ -237,6 +302,10 @@
       @include to(992px) {
         padding: 45px 0;
         padding-left: vw(66, 744);
+      }
+      @include to(575px) {
+        padding: 29px vw(48, 360);
+        border: none;
       }
       h2,
       p {

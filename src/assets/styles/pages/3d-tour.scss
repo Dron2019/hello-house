@@ -6,6 +6,9 @@
   @include to(992px) {
     padding: 0 var(--padding) 120px;
   }
+  @include to(575px) {
+    padding: 0 var(--padding) 80px;
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -13,6 +16,13 @@
     margin-bottom: 72px;
     @include to(1440px) {
       margin-bottom: 52px;
+    }
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+      &::after {
+        bottom: -15px;
+      }
     }
     &::after {
       left: 16px;
@@ -26,6 +36,9 @@
   @include to(992px) {
     flex-direction: column;
     padding: 0 vw(88, 744);
+  }
+  @include to(575px) {
+    padding: 0;
   }
   .text {
     width: 21.2%;
@@ -47,6 +60,9 @@
     @include to(992px) {
       width: 100%;
       height: 314px;
+    }
+    @include to(575px) {
+      height: 190px;
     }
     video {
       object-fit: cover;

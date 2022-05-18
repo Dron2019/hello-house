@@ -42,8 +42,16 @@
     @include to(1440px) {
       margin-bottom: 52px;
     }
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+
     &::after {
       left: 16px;
+      @include to(575px) {
+        bottom: -15px;
+      }
     }
   }
   .project-img {
@@ -52,6 +60,9 @@
       display: block;
       width: 54%;
       margin: 0 auto;
+    }
+    @include to(575) {
+      width: 61%;
     }
   }
   .text {
@@ -62,6 +73,9 @@
     }
     @include to(992px) {
       padding: 30px vw(88, 744) 80px vw(88, 744);
+    }
+    @include to(575px) {
+      padding: 30px var(--padding) 80px var(--padding);
     }
     p {
       width: 52.2%;
@@ -143,6 +157,9 @@
       border-right: none;
       padding: 80px vw(88, 744);
     }
+    @include to(575px) {
+      padding: 80px var(--padding);
+    }
     &__img {
       margin-bottom: 50px;
       @include to(1440px) {
@@ -151,6 +168,9 @@
     }
     &__text {
       width: 75%;
+      @include to(575px) {
+        width: 100%;
+      }
     }
   }
   .padding {
@@ -163,6 +183,9 @@
       .left__img {
         margin: 0 auto;
         width: 54%;
+        @include to(575px) {
+          width: 61%;
+        }
       }
     }
     .left__img {
@@ -181,6 +204,9 @@
     @include to(992px) {
       width: 100%;
       padding: 0 vw(88, 744) 80px vw(88, 744);
+    }
+    @include to(575px) {
+      padding: 0 var(--padding) 80px var(--padding);
     }
     &__content {
       width: 51%;
@@ -216,6 +242,9 @@
       flex-direction: column-reverse;
       padding: 80px vw(88, 744);
     }
+    @include to(575px) {
+      padding: 80px var(--padding);
+    }
     &__img {
       margin-bottom: 0;
       @include to(992px) {
@@ -240,6 +269,9 @@
     }
     @include to(992px) {
       padding: 0 vw(88, 744) 120px vw(88, 744);
+    }
+    @include to(575px) {
+      padding: 0 var(--padding) s80px var(--padding);
     }
     &__content {
       width: 65.5%;

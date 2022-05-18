@@ -61,6 +61,9 @@ $screen-height: 720;
   @include to(992px) {
     font-size: 36px;
   }
+  @include to(575px) {
+    font-size: 24px;
+  }
 }
 @mixin main-text-s($color: #e1f2eb) {
   font-family: $default-font;
@@ -70,6 +73,9 @@ $screen-height: 720;
   color: $color;
   @include to(1440px) {
     font-size: 16px;
+  }
+  @include to(575px) {
+    font-size: 14px;
   }
 }
 @mixin main-text-m {
@@ -107,6 +113,9 @@ $screen-height: 720;
   color: #292935;
   @include to(1440px) {
     font-size: 14px;
+  }
+  @include to(992px) {
+    font-size: 16px;
   }
 }
 @mixin title-after($color: #ffffff) {
@@ -159,10 +168,10 @@ $screen-height: 720;
     padding: 0;
     font-size: 16px;
   }
-  // @include to(992px) {
-  //   height: 40px;
-  //   width: 180px;
-  // }
+  @include to(575px) {
+    height: 40px;
+    width: 220px;
+  }
 }
 @mixin btn-js-after {
   &::after {

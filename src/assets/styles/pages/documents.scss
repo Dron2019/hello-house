@@ -6,6 +6,9 @@
   @include to(992px) {
     padding: 0 var(--padding) 120px var(--padding);
   }
+  @include to(575px) {
+    padding-bottom: 80px;
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -14,8 +17,15 @@
     @include to(1440px) {
       margin-bottom: 52px;
     }
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
     &::after {
       left: 16px;
+      @include to(575px) {
+        bottom: -15px;
+      }
     }
   }
 }
@@ -73,6 +83,11 @@
       height: 162px;
       margin-right: 30px;
     }
+    @include to(575px) {
+      width: 66px;
+      height: 90px;
+      margin-right: 20px;
+    }
     img {
       object-fit: fill;
     }
@@ -89,6 +104,10 @@
       font-size: 20px;
       width: 100%;
     }
+    @include to(575px) {
+      font-size: 12px;
+      margin-right: 58px;
+    }
   }
   svg {
     width: 20px;
@@ -97,5 +116,8 @@
     position: absolute;
     // top: 50%;
     right: 40px;
+    @include to(575px) {
+      right: 20px;
+    }
   }
 }

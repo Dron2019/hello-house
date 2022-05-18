@@ -1,3 +1,16 @@
+const openList = document.querySelector('.js-open-list');
+const titleArrow = document.querySelector('.map__arrow');
+const projectsList = document.querySelector('.map-markers__list');
+
+openList.addEventListener('click', () => {
+  projectsList.classList.toggle('map-markers__list-open');
+  if (projectsList.classList.contains('map-markers__list-open')) {
+    titleArrow.style.transform = 'rotate(0deg)';
+  } else {
+    titleArrow.style.transform = '';
+  }
+});
+
 // Google map start
 function func() {
   const script = document.createElement('script');

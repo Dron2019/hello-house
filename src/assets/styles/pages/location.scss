@@ -5,6 +5,10 @@
     @include title-after($text-dark);
     position: relative;
     margin-bottom: 20px;
+    @include to(575px) {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
     &::after {
       left: calc(var(--padding) + 16px);
       @include to(992px) {
@@ -46,6 +50,9 @@
     @include to(992px) {
       padding: 0px vw(88, 744) 80px vw(88, 744);
     }
+    @include to(575px) {
+      padding: 0px var(--padding) 80px var(--padding);
+    }
   }
   .text-left,
   .text-right {
@@ -61,6 +68,9 @@
       margin-bottom: 20px;
       @include to(1440px) {
         margin-bottom: 15px;
+      }
+      @include to(575px) {
+        margin-bottom: 10px;
       }
     }
     p {
@@ -86,6 +96,10 @@
       width: 54%;
       padding: 80px 0 30px 0;
     }
+    @include to(575px) {
+      width: 61%;
+      padding: 60px 0 30px 0;
+    }
   }
   .img {
     width: 100%;
@@ -101,11 +115,17 @@
       padding: 30px 0 80px;
       margin: 0 vw(88, 744);
     }
+    @include to(575px) {
+      margin: 0 var(--padding);
+    }
   }
   .left-padding {
     padding: 0 0 0 var(--padding);
     @include to(992px) {
       padding: 0 vw(88, 744) 120px vw(88, 744);
+    }
+    @include to(575px) {
+      padding: 0 var(--padding) 80px var(--padding);
     }
   }
 }
@@ -126,6 +146,9 @@
     @include to(992px) {
       height: 708px;
     }
+    @include to(575px) {
+      height: 397px;
+    }
     #map {
       width: 100%;
       height: 850px;
@@ -134,6 +157,9 @@
       }
       @include to(992px) {
         height: 708px;
+      }
+      @include to(575px) {
+        height: 397px;
       }
     }
   }
@@ -149,8 +175,8 @@
   @include to(992px) {
     position: initial;
     width: 100%;
-    column-count: 2;
-    column-gap: 0;
+    // column-count: 2;
+    // column-gap: 0;
   }
 }
 .map-markers__list {
@@ -162,6 +188,20 @@
   }
   @include to(992px) {
     height: auto;
+    column-count: 2;
+    column-gap: 0;
+    display: block;
+  }
+  @include to(575px) {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    width: 100%;
+    height: 397px;
+    background: #ffffff;
+    opacity: 0;
   }
 }
 .map-markers__item {
@@ -179,9 +219,13 @@
     height: calc(100% / 4);
     padding: 24px 58px;
     border-right: 1px solid #292935;
+
     &:first-child {
       border-top: 1px solid #292935;
     }
+  }
+  @include to(575px) {
+    padding: 20px 26px;
   }
   &:hover {
     @include from(992px) {
@@ -199,6 +243,7 @@
     max-width: 30px;
     max-height: 30px;
     fill: none;
+    flex-shrink: 0;
     @include to(1440px) {
       margin-right: 15px;
       max-width: 23px;
@@ -207,5 +252,29 @@
   }
   p {
     @include main-text-s(#292935);
+    white-space: nowrap;
   }
+}
+.map-markers__mobile {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #ffffff;
+    background: #2c2e65;
+    border: 1px solid #292935;
+    span {
+      margin-right: 10px;
+    }
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+.map-markers__list-open {
+  opacity: 1;
 }

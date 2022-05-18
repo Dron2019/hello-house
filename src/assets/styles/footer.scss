@@ -24,7 +24,9 @@
     min-height: 119px;
   }
   @include to(575px) {
-    min-height: 137px;
+    flex-wrap: wrap;
+    min-height: 0;
+    padding-bottom: 20px;
   }
   svg {
     width: 268px;
@@ -36,6 +38,9 @@
     @include to(992px) {
       width: 156px;
       height: 39px;
+    }
+    @include to(575px) {
+      order: 1;
     }
   }
   &__text {
@@ -56,11 +61,13 @@
       transform: translate(-50%);
     }
     @include to(575px) {
+      font-size: 14px;
       width: 100%;
-      left: 0;
-      top: 54px;
       transform: translate(0);
       text-align: left;
+      position: initial;
+      order: 3;
+      margin-top: 15px;
     }
   }
   .btn-up {
@@ -78,6 +85,7 @@
     @include to(575px) {
       width: 42px;
       height: 42px;
+      order: 2;
     }
     svg {
       width: 20px;
@@ -112,6 +120,9 @@
   @include to(1440px) {
     padding-top: 40px;
   }
+  @include to(575px) {
+    padding-top: 20px;
+  }
   &__text {
     font-weight: 400;
     font-size: 18px;
@@ -119,6 +130,10 @@
     color: $black;
     @include to(1440px) {
       font-size: 16px;
+    }
+    @include to(575px) {
+      font-size: 14px;
+      width: 80%;
     }
   }
   &__link {
