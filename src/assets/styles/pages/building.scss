@@ -286,7 +286,7 @@
     width: 100%;
     margin-bottom: 30px;
   }
-  &:nth-child(odd) {
+  &:not(:only-child):nth-child(odd) {
     margin-right: 180px;
     position: relative;
     @include to(1440px) {

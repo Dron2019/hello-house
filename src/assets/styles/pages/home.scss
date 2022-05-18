@@ -1839,6 +1839,11 @@
     &:nth-child(4) {
       margin-bottom: 0;
     }
+    &:nth-child(3) {
+      @include to(575px) {
+        margin-bottom: 20px;
+      }
+    }
     &:nth-child(odd) {
       margin-right: 105px;
       @include to(1440px) {

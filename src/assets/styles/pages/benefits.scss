@@ -271,7 +271,7 @@
       padding: 0 vw(88, 744) 120px vw(88, 744);
     }
     @include to(575px) {
-      padding: 0 var(--padding) s80px var(--padding);
+      padding: 0 var(--padding) 80px var(--padding);
     }
     &__content {
       width: 65.5%;

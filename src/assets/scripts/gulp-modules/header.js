@@ -64,10 +64,10 @@ function init() {
 window.addEventListener('DOMContentLoaded', init);
 // Mobile phone menu start
 const btnCallMobile = document.querySelectorAll('.js-mobile-call');
+const btnMenuMobile = document.querySelectorAll('.js-menu-call');
 const btnCloseMobile = document.querySelector('.js-mobile-close');
 const formMobile = document.querySelector('.form-header-call');
 const formCallMobile = document.querySelector('.js-mobile-form');
-console.log(btnCallMobile);
 
 formCallMobile.addEventListener('click', () => {
   formMobile.classList.remove('sideform-active');
@@ -78,7 +78,12 @@ btnCallMobile.forEach(el => el.addEventListener('click', () => {
   formMobile.classList.toggle('sideform-active');
   document.querySelector('body').style.overflow = 'hidden';
 }));
-
+btnMenuMobile.forEach(el => el.addEventListener('click', () => {
+  const menu = document.querySelector('[data-menu]');
+  menu.classList.remove('menu__active');
+  formMobile.classList.toggle('sideform-active');
+  document.querySelector('body').style.overflow = 'hidden';
+}));
 btnCloseMobile.addEventListener('click', () => {
   formMobile.classList.remove('sideform-active');
   document.querySelector('body').style.overflow = 'auto';

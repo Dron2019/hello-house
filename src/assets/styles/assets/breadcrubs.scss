@@ -50,7 +50,20 @@
     &:first-child::before {
       display: none;
     }
-    &:last-child {
+    // &:last-child {
+    //   display: initial;
+    //   white-space: nowrap;
+    //   overflow: hidden;
+    //   text-overflow: ellipsis;
+    //   max-width: 510px;
+    //   @include to(992px) {
+    //     max-width: 310px;
+    //   }
+    //   @include to(575px) {
+    //     max-width: 111px;
+    //   }
+    // }
+    &:nth-child(3) {
       display: initial;
       white-space: nowrap;
       overflow: hidden;
