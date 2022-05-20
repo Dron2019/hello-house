@@ -66,6 +66,9 @@
     @include to(992px) {
       display: flex;
       align-items: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-end;
       padding-bottom: 50px;
     }
     @include to(575px) {
@@ -613,7 +616,8 @@
       width: 590px;
     }
     @include to(575px) {
-      width: 210px;
+      // width: 210px;
+      width: calc(100% - 150px);
     }
     .swiper-wrapper {
       height: 110px;
@@ -1812,6 +1816,9 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    @include to(575px) {
+      justify-content: center;
+    }
   }
   .contacts__item {
     width: 268px;

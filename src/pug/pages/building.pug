@@ -39,7 +39,7 @@ block content
             h4 3 секція
             p 1 квартал 2021 року
     .building-status__percent
-      ul.percent-list 
+      //- ul.percent-list 
         li.percent-item 
           .svg
             .percent-circle.pc3(data-percent='74')
@@ -89,6 +89,55 @@ block content
             svg.hidden
               circle(id="percent-circle-svg", cx="50%", cy="50%", r="50%", stroke-alignment="inner")
           .text Благоустрій
+      ul.percent-list 
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="458, 150" ></circle>
+            </svg>
+            p.percent-text 74%
+          .text Фундамент
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="150, 450" ></circle>
+            </svg>
+            p.percent-text 25%
+          .text Монолітний каркас
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="100, 500" ></circle>
+            </svg>
+            p.percent-text 15%
+          .text Вікна
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="350, 250" ></circle>
+            </svg>
+            p.percent-text 62%
+          .text Мережі
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="100, 500" ></circle>
+            </svg>
+            p.percent-text 17%
+          .text Зовнішні стіни
+        li.percent-item 
+          .percent-circle
+            <svg class="btn-circle" viewBox="0 0 200 200">
+              <circle class="circle-basis" cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0"></circle>
+              <circle class="circle-build" cx="100" cy="100" r="95" stroke-width="3" fill-opacity="0" stroke-dasharray="60, 550" ></circle>
+            </svg>
+            p.percent-text 8%
+          .text Благоустрій
   .bottom-delimiter
   .building-filter
     button.building-filter__item(data-view="section1") 1 Секція
@@ -110,6 +159,34 @@ block content
         img(src="./assets/images/building/building-sw1.jpg", alt="")
         +svg('logo-hover')
     //- li.building-item.js-build-card.section2
+      .building-item__info 
+        .month Вересень
+        .info-container
+          .foto 
+            .num 14
+            .text фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
+    //- li.building-item.js-build-card.section3
+      .building-item__info 
+        .month Вересень
+        .info-container
+          .foto 
+            .num 14
+            .text фото
+          p.date
+            span(data-build-date) 23
+            span(data-build-month) 01
+            span(data-build-year) 2022
+      .building-item__img 
+        img(src="./assets/images/building/building-sw1.jpg", alt="")
+        +svg('logo-hover')
+    //- li.building-item.js-build-card.section1
       .building-item__info 
         .month Вересень
         .info-container

@@ -167,7 +167,66 @@
     }
   }
 }
-
+.percent-circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  @include to(1440px) {
+    width: 87px;
+    height: 87px;
+  }
+  @include to(992px) {
+    width: 120px;
+    height: 120px;
+  }
+  @include to(575px) {
+    width: 103px;
+    height: 103px;
+  }
+  .btn-circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(90deg);
+  }
+  .circle-basis {
+    stroke: rgba(41, 41, 53, 0.25);
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+  .circle-build {
+    stroke: #292935;
+    // stroke-dasharray: 458, 150;
+  }
+  .percent-text {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #292935;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include to(1440px) {
+      font-size: 24px;
+    }
+    @include to(992px) {
+      font-size: 36px;
+    }
+    @include to(575px) {
+      font-size: 24px;
+    }
+  }
+}
 @mixin percent-circle($diameter, $stroke-width, $fg-color, $bg-color) {
   $percent: attr(data-percent);
   $pi: 3.14159;
@@ -210,6 +269,8 @@
     //write the percetage in straight from the data attribute
     content: $percent '%';
     display: block;
+    // width: $diameter - $stroke-width * 2;
+    // height: $diameter - $stroke-width * 2;
     width: $diameter - $stroke-width * 2;
     height: $diameter - $stroke-width * 2;
     background: $bg-color;

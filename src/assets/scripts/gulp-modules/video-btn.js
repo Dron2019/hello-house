@@ -42,76 +42,76 @@ function calculateDistance(elem, mouseX, mouseY) {
   );
 }
 
-/* - MOUSE STICKY -*/
-function lerp(a, b, n) {
-  return (1 - n) * a + n * b;
-}
+// /* - MOUSE STICKY -*/
+// function lerp(a, b, n) {
+//   return (1 - n) * a + n * b;
+// }
 
-// Inizio Cursor
-class Cursor {
-  constructor() {
-    this.bind();
-    // seleziono la classe del cursore
-    this.cursor = document.querySelector('.js-cursor');
+// // Inizio Cursor
+// class Cursor {
+//   constructor() {
+//     this.bind();
+//     // seleziono la classe del cursore
+//     this.cursor = document.querySelector('.js-cursor');
 
-    this.mouseCurrent = {
-      x: 0,
-      y: 0,
-    };
+//     this.mouseCurrent = {
+//       x: 0,
+//       y: 0,
+//     };
 
-    this.mouseLast = {
-      x: this.mouseCurrent.x,
-      y: this.mouseCurrent.y,
-    };
+//     this.mouseLast = {
+//       x: this.mouseCurrent.x,
+//       y: this.mouseCurrent.y,
+//     };
 
-    this.rAF = undefined;
-  }
+//     this.rAF = undefined;
+//   }
 
-  bind() {
-    ['getMousePosition', 'run'].forEach(fn => (this[fn] = this[fn].bind(this)));
-  }
+//   bind() {
+//     ['getMousePosition', 'run'].forEach(fn => (this[fn] = this[fn].bind(this)));
+//   }
 
-  getMousePosition(e) {
-    this.mouseCurrent = {
-      x: e.clientX,
-      y: e.clientY,
-    };
-  }
+//   getMousePosition(e) {
+//     this.mouseCurrent = {
+//       x: e.clientX,
+//       y: e.clientY,
+//     };
+//   }
 
-  run() {
-    this.mouseLast.x = lerp(this.mouseLast.x, this.mouseCurrent.x, 0.2);
-    this.mouseLast.y = lerp(this.mouseLast.y, this.mouseCurrent.y, 0.2);
+//   run() {
+//     this.mouseLast.x = lerp(this.mouseLast.x, this.mouseCurrent.x, 0.2);
+//     this.mouseLast.y = lerp(this.mouseLast.y, this.mouseCurrent.y, 0.2);
 
-    this.mouseLast.x = Math.floor(this.mouseLast.x * 100) / 100;
-    this.mouseLast.y = Math.floor(this.mouseLast.y * 100) / 100;
+//     this.mouseLast.x = Math.floor(this.mouseLast.x * 100) / 100;
+//     this.mouseLast.y = Math.floor(this.mouseLast.y * 100) / 100;
 
-    this.cursor.style.transform = `translate3d(${this.mouseLast.x}px, ${this.mouseLast.y}px, 0)`;
+//     this.cursor.style.transform = `translate3d(${this.mouseLast.x}px, ${this.mouseLast.y}px, 0)`;
 
-    this.rAF = requestAnimationFrame(this.run);
-  }
+//     this.rAF = requestAnimationFrame(this.run);
+//   }
 
-  requestAnimationFrame() {
-    this.rAF = requestAnimationFrame(this.run);
-  }
+//   requestAnimationFrame() {
+//     this.rAF = requestAnimationFrame(this.run);
+//   }
 
-  addEvents() {
-    window.addEventListener('mousemove', this.getMousePosition, false);
-  }
+//   addEvents() {
+//     window.addEventListener('mousemove', this.getMousePosition, false);
+//   }
 
-  on() {
-    this.addEvents();
+//   on() {
+//     this.addEvents();
 
-    this.requestAnimationFrame();
-  }
+//     this.requestAnimationFrame();
+//   }
 
-  init() {
-    this.on();
-  }
-}
+//   init() {
+//     this.on();
+//   }
+// }
 
-const cursor = new Cursor();
+// const cursor = new Cursor();
 
-cursor.init();
+// cursor.init();
 
 // play sound on hover
 // var SoundHover = $('#sound-hover')[0];

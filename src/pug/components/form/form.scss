@@ -390,6 +390,9 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.4s ease-in-out;
+  @include to(575px) {
+    padding: 0 var(--padding);
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -397,11 +400,30 @@
     margin-bottom: 42px;
     text-align: center;
     width: 37%;
+    @include to(992px) {
+      font-size: 48px;
+      width: 70%;
+    }
+    @include to(575px) {
+      font-size: 36px;
+      width: 100%;
+      margin-bottom: 22px;
+      &::after {
+        bottom: -10px;
+      }
+    }
   }
   p {
     @include main-text-m;
     text-transform: none;
     margin-bottom: 50px;
+    @include to(992px) {
+      margin-bottom: 40px;
+    }
+    @include to(575px) {
+      margin-bottom: 30px;
+      text-align: center;
+    }
   }
   a {
     @include btn;
@@ -410,6 +432,14 @@
     position: absolute;
     right: 0;
     bottom: 50px;
+    @include to(992px) {
+      width: 156px;
+      height: 39px;
+      bottom: 40px;
+    }
+    @include to(575px) {
+      display: none;
+    }
   }
 }
 // call-back
@@ -422,8 +452,7 @@
   top: 0;
   right: -100%;
   // right: 0;
-  background: #ffffff;
-
+  // background: #ffffff;
   visibility: hidden;
   // opacity: 0;
   z-index: 150;
@@ -432,9 +461,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 vw(190, 1920) 0 vw(170, 1920);
+  // padding: 0 vw(190, 1920) 0 vw(170, 1920);
   @include to(992px) {
+    background: rgba(0, 1, 16, 0.8);
     width: 100vw;
+    padding: 0 vw(30, 744);
+    // overflow: scroll;
+  }
+  @include to(575px) {
+    padding: 0;
+    height: 100%;
+    // // background: #ffffff;
+    // justify-content: flex-start;
   }
   &::after {
     content: '';
@@ -446,8 +484,31 @@
     z-index: 2;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(8px);
+    @include to(575px) {
+      display: none;
+    }
   }
-
+  &__container {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 vw(190, 1920) 0 vw(170, 1920);
+    width: 100%;
+    height: 100%;
+    @include to(992px) {
+      height: max-content;
+      position: relative;
+      padding: 70px vw(117, 744) 70px vw(137, 744);
+    }
+    @include to(575px) {
+      width: 100%;
+      height: 100%;
+      padding: 70px var(--padding);
+      position: initial;
+      overflow: scroll;
+    }
+  }
   .form-close {
     position: absolute;
     top: 50px;
@@ -463,6 +524,12 @@
       right: 30px;
       width: 50px;
       height: 50px;
+    }
+    @include to(575px) {
+      top: 15px;
+      right: 15px;
+      width: 42px;
+      height: 42px;
     }
     &:hover {
       @include from(992px) {
@@ -496,6 +563,13 @@
       font-size: 40px;
       margin-bottom: 32px;
     }
+    @include to(575px) {
+      font-size: 32px;
+      margin-bottom: 22px;
+      &::after {
+        bottom: -10px;
+      }
+    }
   }
   h3 {
     @include main-text-m;
@@ -504,6 +578,10 @@
     @include to(1440px) {
       font-size: 18px;
       margin-bottom: 20px;
+    }
+    @include to(575px) {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
   }
   .contact-form {
@@ -515,10 +593,21 @@
       @include to(1440px) {
         font-size: 12px;
       }
+      @include to(575px) {
+        margin-bottom: 5px;
+      }
     }
     .form-field-input {
       @include to(1440px) {
         margin-bottom: 20px;
+      }
+    }
+    input {
+      @include to(575px) {
+        height: 50px;
+        &::placeholder {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -533,6 +622,13 @@
       font-size: 12px;
       text-align: left;
       margin: 20px 0 10px 0;
+    }
+    @include to(992px) {
+      margin: 20px 0 30px 0;
+    }
+    @include to(575px) {
+      margin: 20px 0 15px 0;
+      text-align: center;
     }
   }
   .contact-form__btn {
@@ -549,6 +645,9 @@
   width: 100vw;
   height: 100vh;
   z-index: 250;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
   position: relative;
   position: fixed;
   top: 0;
@@ -559,6 +658,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px vw(80, 1920);
     width: 100%;
     position: absolute;
@@ -567,6 +667,14 @@
     .icon--logo {
       width: 193px;
       height: 60px;
+      @include to(992px) {
+        width: 142px;
+        height: 44px;
+      }
+      @include to(575px) {
+        width: 110px;
+        height: 34px;
+      }
     }
     .burger {
       cursor: pointer;
@@ -591,6 +699,10 @@
   }
   video {
     object-fit: cover;
+    @include to(992px) {
+      width: 100%;
+      height: 65vh;
+    }
   }
 }
 

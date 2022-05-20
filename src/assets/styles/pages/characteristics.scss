@@ -104,6 +104,7 @@
     padding: 60px 0;
   }
   @include to(575px) {
+    height: min-content;
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #292935;
@@ -249,6 +250,10 @@
     }
     @include to(992px) {
       padding: 0;
+    }
+    @include to(575px) {
+      width: 100%;
+      height: min-content;
     }
   }
 }

@@ -1,27 +1,3 @@
-/**
- * Draws the outline of the svg circle to the percent set in data attr
- */
-function drawCharts() {
-  const circles = document.querySelectorAll('.percent-circle');
-
-  circles.forEach((el) => {
-    // pull the percentage and turn it into a fraction
-    const percent = el.dataset.percent / 100;
-    // work out the circumference from the width
-    const diameter = el.offsetWidth;
-    const circumference = Math.ceil(diameter * Math.PI);
-    // now we have the circumference, we know how long the ouline should be
-    const stroke = Math.ceil(circumference * percent);
-    // also workout how long the line doesn't exist for
-    const diff = circumference - stroke;
-
-    // now add the strok dash array for the first two values
-    // TODO : could this all be done with css?
-    el.querySelector('.percent-circle-inner').style.strokeDasharray = `${stroke}px ${diff}px`;
-  });
-}
-document.addEventListener('DOMContentLoaded', drawCharts);
-
 // const swiper2 = new Swiper('.swiper-building-bottom', {
 //   loop: true,
 //   spaceBetween: 10,
@@ -39,9 +15,6 @@ document.addEventListener('DOMContentLoaded', drawCharts);
 //   thumbs: {
 //     swiper: swiper2,
 //   },
-//   // autoplay: {
-//   //   delay: 5000,
-//   // },
 // });
 
 const buildPopupActive = 'build-popup-active';

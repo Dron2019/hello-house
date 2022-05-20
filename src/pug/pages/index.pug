@@ -22,6 +22,7 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
   script(defer src='./assets/scripts/btn-up.js')
   script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/video-btn.js')
@@ -30,7 +31,11 @@ block content
   section.main-section
     video(class="video" autoplay loop preload="auto" muted width="100%" height="100%") 
       <source src="./assets/images/UA_Kyiv.mp4" type="video/mp4">
-    h1 Привіт, моє сімейне гніздечко!
+    //- h1 Привіт, моє сімейне гніздечко!
+    h1 
+      span(data-span-entry1) Привіт, моє <br>
+      span(data-span-entry2) сімейне 
+      span(data-span-entry3) гніздечко!
     .header-medal 
       img(src="assets/images/build2021.png")
       +svg('build-medal')

@@ -8,7 +8,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  @include to(575px) {
+    padding: 0 var(--padding);
+  }
   h1 {
     @include main-text-b($text-dark);
     @include title-after($text-dark);
@@ -17,6 +19,9 @@
     margin-bottom: 42px;
     @include to(1440px) {
       font-size: 128px;
+    }
+    @include to(575px) {
+      font-size: 96px;
     }
   }
   p {
@@ -28,6 +33,13 @@
     @include to(1440px) {
       margin-bottom: 40px;
       width: 34%;
+    }
+    @include to(992px) {
+      width: 60%;
+    }
+    @include to(575px) {
+      width: 100%;
+      margin-bottom: 30px;
     }
   }
   a {
@@ -41,6 +53,9 @@
     @include to(1440px) {
       width: 194px;
       height: 49px;
+    }
+    @include to(575px) {
+      display: none;
     }
   }
 }
