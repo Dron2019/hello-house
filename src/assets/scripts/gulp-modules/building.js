@@ -66,7 +66,7 @@ function loadMoreHandler(state, containers) {
     // eslint-disable-next-line no-param-reassign
     containers.loadMore.style.display = 'none';
   }
-  const buildsHtml = createBuilds(state.countShowBuild, state.builds, count);
+  const buildsHtml = createBuilds(state.countShowBuild, state.filteredBuild, count);
   containers.buildContainer.insertAdjacentHTML('beforeend', buildsHtml);
 }
 
@@ -105,6 +105,29 @@ function prevBuildHandler(state, containers) {
 
 async function getBuilds() {
   const data = [
+    {
+      date: {
+        d: '19',
+        m: '05',
+        y: '2021',
+      },
+      id: '723',
+      month: 'Грудень',
+      section: 'section2',
+      slider: [
+        './assets/images/building/building-sw1.jpg',
+        './assets/images/building/building-sw2.jpg',
+        './assets/images/building/building-sw3.jpg',
+        './assets/images/building/building-sw4.jpg',
+      ],
+      slider_bottom: [
+        './assets/images/building/building1.jpg',
+        './assets/images/building/building2.jpg',
+        './assets/images/building/building3.jpg',
+        './assets/images/building/building4.jpg',
+      ],
+      isIncludeVideo: true,
+    },
     {
       date: {
         d: '19',
@@ -280,7 +303,8 @@ async function initBuild() {
   const builds = await getBuilds().then(res => JSON.parse(res));
   const buildsId = builds.map(build => +build.id);
   const state = {
-    builds,
+    builds: [...builds],
+    filteredBuild: [...builds],
     countShowBuild: 0,
     buildsList: buildsId,
     currentBuildId: null,
@@ -309,7 +333,7 @@ async function initBuild() {
     buildDate: buildPopup.querySelector('[data-build-date]'),
     buildMonth: buildPopup.querySelector('[data-build-month]'),
     buildYear: buildPopup.querySelector('[data-build-year]'),
-    // loadMore: document.querySelector('[data-build-load-more]'),
+    loadMore: document.querySelector('[data-build-load-more]'),
   };
 
   containers.buildContainer.addEventListener(
@@ -323,13 +347,27 @@ async function initBuild() {
 
   // containers.loadMore.addEventListener('click', () => loadMoreHandler(state, containers));
   loadMoreHandler(state, containers);
-  // init filter location in filter.js
-  // initFilter();
 
-  // sideSwitchArrow(
-  //   document.querySelector('.btn-gallery'),
-  //   document.querySelector('.gallery-swiper'),
-  // );
+
+  containers.loadMore.remove();
+  const btnBuild = document.querySelectorAll('.building-filter__item');
+  let cardsCopied = [];
+  btnBuild.forEach(el => el.addEventListener('click', (event) => {
+    if (event.target.closest('[data-view]') === null) return false;
+    const target = event.target.dataset.view;
+    const buildList = document.querySelectorAll('.js-build-card');
+    if (cardsCopied.length === 0) cardsCopied = [...buildList];
+    btnBuild.forEach(button => button.classList.remove('active'));
+    el.classList.add('active');
+
+
+    state.filteredBuild = state.builds.filter(card => card.section === target || target === 'all');
+    containers.buildContainer.innerHTML = '';
+    const cardsToRender = createBuilds(0, state.filteredBuild, state.filteredBuild.length);
+    containers.buildContainer.insertAdjacentHTML('beforeend', cardsToRender);
+    state.countShowBuild = state.filteredBuild.length;
+  }));
+  // filter end
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -412,22 +450,3 @@ function updateContentPopup(build, containers) {
   // swiperBig.updateSlides();
   // swiperMini.updateSlides();
 }
-
-// filter start
-const buildList = document.querySelectorAll('.js-build-card');
-const btnBuild = document.querySelectorAll('.building-filter__item');
-
-btnBuild.forEach(el => el.addEventListener('click', (event) => {
-  if (event.target.tagName != 'BUTTON') return false;
-  const target = event.target.dataset.view;
-  btnBuild.forEach(button => button.classList.remove('active'));
-  el.classList.add('active');
-  buildList.forEach((elem) => {
-    elem.classList.remove('hide');
-    document.querySelector('[data-build-container]').insertAdjacentElement('afterbegin', elem);
-    if (!elem.classList.contains(target) && target != 'all') {
-      elem.remove();
-    }
-  });
-}));
-// filter end

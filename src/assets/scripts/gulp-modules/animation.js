@@ -1,5 +1,5 @@
 const spanBezier1 = 'power4.ease';
-const spanEntries1 = document.querySelectorAll('[data-span-entry1]');
+const spanEntries1 = document.querySelectorAll('[data-span-entry1], [data-span-entry2], [data-span-entry3]');
 const spanEntries2 = document.querySelectorAll('[data-span-entry2]');
 const spanEntries3 = document.querySelectorAll('[data-span-entry3]');
 spanEntries1.forEach((section, index) => {
@@ -110,8 +110,9 @@ paralaxImages.forEach((image) => {
     .timeline({
       ease: 'none',
       scrollTrigger: {
-        start: -100 % top,
-        end: 100 % top,
+        start: '-100% top',
+        end: '100% top',
+        scroller: document.querySelector('.page__inner'),
         trigger: wrap,
         scrub: 0.5,
         onLeave: () => {

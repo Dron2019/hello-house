@@ -25,10 +25,10 @@ function magnetize(el, e) {
   const distance = calculateDistance(item, mX, mY);
 
   if (distance < customDist) {
-    TweenMax.to(item, 0.5, { y: deltaY, x: deltaX, scale: 1.1 });
+    gsap.timeline().to(item, 0.5, { y: deltaY, x: deltaX, scale: 1.1 });
     item.addClass('magnet');
   } else {
-    TweenMax.to(item, 0.6, { y: 0, x: 0, scale: 1 });
+    gsap.timeline().to(item, 0.6, { y: 0, x: 0, scale: 1 });
     item.removeClass('magnet');
   }
 }
@@ -37,7 +37,7 @@ function calculateDistance(elem, mouseX, mouseY) {
   return Math.floor(
     Math.sqrt(
       Math.pow(mouseX - (elem.offset().left + elem.width() / 2), 2)
-        + Math.pow(mouseY - (elem.offset().top + elem.height() / 2), 2),
+      + Math.pow(mouseY - (elem.offset().top + elem.height() / 2), 2),
     ),
   );
 }

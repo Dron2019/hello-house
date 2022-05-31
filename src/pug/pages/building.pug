@@ -140,6 +140,7 @@ block content
           .text Благоустрій
   .bottom-delimiter
   .building-filter
+    button.building-filter__item.active(data-view="all") Всі
     button.building-filter__item(data-view="section1") 1 Секція
     button.building-filter__item(data-view="section2") 2 Секція
     button.building-filter__item(data-view="section3") 3 Секція
@@ -229,7 +230,7 @@ block content
         img(src="./assets/images/building/building-sw1.jpg", alt="")
         +svg('logo-hover')
 
-  button.building__button 
+  button.building__button(data-build-load-more)
     span Більше звітів
   .bottom-delimiter
 block footer
