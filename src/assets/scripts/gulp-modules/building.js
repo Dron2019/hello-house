@@ -32,7 +32,7 @@ function getBuildData(id) {
 
 function createBuildCard(build) {
   return `
-  <li class="building-item js-build-card ${build.section}  data-build-id="${build.id}">
+  <li class="building-item js-build-card ${build.section}"  data-build-id="${build.id}">
     <div class="building-item__info">
       <div class="month">${build.month}</div>
       <div class="info-container">
@@ -80,10 +80,11 @@ function buildContainerHandler(event, state, containers) {
   // const isTouchCard = card.classList.contains('js-build-card');
   const id = +card.dataset.buildId;
   console.log(124);
+  console.log(id);
   // if (!id) return;
   // state.updateCurrentId(id);
 
-  const build = state.builds.filter(build => build.id === id);
+  const build = state.builds.filter(build => build.id == id);
   console.log(125);
   // if (build.length === 0) return;
   initBuildPopup(build[0], containers);
@@ -308,6 +309,7 @@ async function initBuild() {
     countShowBuild: 0,
     buildsList: buildsId,
     currentBuildId: null,
+    portion: 2,
     nextBuildId: function nextBuildId() {
       const index = this.buildsList.indexOf(this.currentBuildId);
       if (index >= this.buildsList.length - 1) return 0;
@@ -345,28 +347,48 @@ async function initBuild() {
   // containers.nextBuildCard.addEventListener('click', () => nextBuildHandler(state, containers));
   // containers.prevBuildCard.addEventListener('click', () => prevBuildHandler(state, containers));
 
-  // containers.loadMore.addEventListener('click', () => loadMoreHandler(state, containers));
-  loadMoreHandler(state, containers);
+  containers.loadMore.addEventListener('click', portionRender);
+  // loadMoreHandler(state, containers);
 
-
-  containers.loadMore.remove();
+  containers.loadMore.style.display = 'none';
+  // containers.loadMore.remove();
   const btnBuild = document.querySelectorAll('.building-filter__item');
-  let cardsCopied = [];
+
+  filterCardsAndRender('all'); // initial Render
+
   btnBuild.forEach(el => el.addEventListener('click', (event) => {
     if (event.target.closest('[data-view]') === null) return false;
     const target = event.target.dataset.view;
     const buildList = document.querySelectorAll('.js-build-card');
-    if (cardsCopied.length === 0) cardsCopied = [...buildList];
     btnBuild.forEach(button => button.classList.remove('active'));
     el.classList.add('active');
-
-
-    state.filteredBuild = state.builds.filter(card => card.section === target || target === 'all');
-    containers.buildContainer.innerHTML = '';
-    const cardsToRender = createBuilds(0, state.filteredBuild, state.filteredBuild.length);
-    containers.buildContainer.insertAdjacentHTML('beforeend', cardsToRender);
-    state.countShowBuild = state.filteredBuild.length;
+    filterCardsAndRender(target);
   }));
+
+  function filterCardsAndRender(filterValue) {
+    state.filteredBuild = state.builds.filter(card => card.section === filterValue || filterValue === 'all');
+    containers.buildContainer.innerHTML = '';
+
+    if (state.filteredBuild.length > state.portion) {
+      containers.loadMore.style.display = '';
+    }
+    state.countShowBuild = 0;
+    portionRender();
+  }
+
+  function portionRender() {
+    const portionToRender = [];
+    for (let i = state.countShowBuild; i < state.countShowBuild + state.portion; i++) {
+      const cardToRender = state.filteredBuild[i];
+      if (cardToRender === undefined) break;
+      portionToRender.push(createBuildCard(cardToRender));
+    }
+    containers.buildContainer.insertAdjacentHTML('beforeend', portionToRender.join(''));
+    state.countShowBuild += state.portion;
+    if (state.countShowBuild >= state.filteredBuild.length) {
+      containers.loadMore.style.display = 'none';
+    }
+  }
   // filter end
 }
 
@@ -433,10 +455,11 @@ function handleSlider() {
 }
 function updateContentPopup(build, containers) {
   const { buildDate, buildMonth, buildYear } = containers;
-  console.log('aaaaaaaaa');
-  // buildDate.textContent = build.date.d;
-  // buildMonth.textContent = build.month;
-  // buildYear.textContent = build.date.y;
+  console.log(buildDate, buildMonth, buildYear);
+  console.log(build);
+  buildDate.textContent = build.date.d;
+  buildMonth.textContent = build.month;
+  buildYear.textContent = build.date.y;
 
   slider = createSliderPopup(build.slider);
   // currentCountSlides = build.slider.length;

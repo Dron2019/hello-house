@@ -21,6 +21,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+    z-index: 2;
 }
 .popup-date-container {
   position: absolute;
